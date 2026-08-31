@@ -190,14 +190,6 @@ type Msg
     | Reload
 
 
-{-| Untergrenze für die „jüngste Daten"-Abfrage: Browser-Jetzt minus 90 Tage
-(großzügige Marge über den Daten-Verzug; vermeidet die langsame
-Voll-Tabellen-Abfrage). -}
-lbOf : Model -> Int
-lbOf model =
-    model.nowSeconds - 90 * 86400
-
-
 {-| `id`-Block `(lo, hi]` des Landes aus den Block-Obergrenzen ableiten:
 `hi` = Obergrenze des Landes, `lo` = nächstkleinere Obergrenze (Blöcke sind
 zusammenhängend und nach `id` geordnet). Unbekanntes Land -> ganzer Bereich. -}
@@ -337,7 +329,7 @@ update msg model =
             in
             if manual /= "" then
                 ( { model | token = Just manual, status = LoadingBounds, elapsed = 0 }
-                , Api.getRecent manual (lbOf model) GotRecent
+                , Api.getRecent manual GotRecent
                 )
 
             else
@@ -345,7 +337,7 @@ update msg model =
 
         GotToken (Ok t) ->
             ( { model | token = Just t, status = LoadingBounds }
-            , Api.getRecent t (lbOf model) GotRecent
+            , Api.getRecent t GotRecent
             )
 
         GotToken (Err e) ->

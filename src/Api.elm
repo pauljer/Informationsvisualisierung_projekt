@@ -102,14 +102,16 @@ getToken toMsg =
 
 {-| Jüngste Zeilen ab `lbUnix` als `(country_id, id, unix_seconds)`-Tripel.
 `Main` liest daraus `tmax` und je Land die größte `id`. -}
-getRecent : String -> Int -> (Result Http.Error (List ( String, Int, Int )) -> msg) -> Cmd msg
-getRecent token lbUnix toMsg =
+getRecent : String -> (Result Http.Error (List ( String, Int, Int )) -> msg) -> Cmd msg
+getRecent token toMsg =
     get token
         "energycharts"
         (publicpowerUrl
             (params
-                [ ( "unix_seconds", "gte." ++ String.fromInt lbUnix )
-                , ( "order", "unix_seconds.desc" )
+                -- Bewusst OHNE untere Zeitgrenze: Eine Grenze relativ zu „heute"
+                -- liefert nichts mehr, sobald die Datenbank länger nicht befüllt
+                -- wurde. Sortiert und begrenzt ist die Abfrage ohnehin schnell.
+                [ ( "order", "unix_seconds.desc" )
                 , ( "select", "country_id,id,unix_seconds" )
                 , ( "limit", String.fromInt limit )
                 ]

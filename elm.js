@@ -77,7 +77,7 @@ function A9(fun, a, b, c, d, e, f, g, h, i) {
   return fun.a === 9 ? fun.f(a, b, c, d, e, f, g, h, i) : fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 }
 
-console.warn('Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.');
+
 
 
 var _JsArray_empty = [];
@@ -234,12 +234,12 @@ var _JsArray_appendN = F3(function(n, dest, source)
 
 // LOG
 
-var _Debug_log_UNUSED = F2(function(tag, value)
+var _Debug_log = F2(function(tag, value)
 {
 	return value;
 });
 
-var _Debug_log = F2(function(tag, value)
+var _Debug_log_UNUSED = F2(function(tag, value)
 {
 	console.log(tag + ': ' + _Debug_toString(value));
 	return value;
@@ -265,12 +265,12 @@ function _Debug_todoCase(moduleName, region, value)
 
 // TO STRING
 
-function _Debug_toString_UNUSED(value)
+function _Debug_toString(value)
 {
 	return '<internals>';
 }
 
-function _Debug_toString(value)
+function _Debug_toString_UNUSED(value)
 {
 	return _Debug_toAnsiString(false, value);
 }
@@ -455,13 +455,13 @@ function _Debug_toHexDigit(n)
 // CRASH
 
 
-function _Debug_crash_UNUSED(identifier)
+function _Debug_crash(identifier)
 {
 	throw new Error('https://github.com/elm/core/blob/1.0.0/hints/' + identifier + '.md');
 }
 
 
-function _Debug_crash(identifier, fact1, fact2, fact3, fact4)
+function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 {
 	switch(identifier)
 	{
@@ -519,11 +519,11 @@ function _Debug_crash(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.start.line === region.end.line)
+	if (region.eu.cd === region.e2.cd)
 	{
-		return 'on line ' + region.start.line;
+		return 'on line ' + region.eu.cd;
 	}
-	return 'on lines ' + region.start.line + ' through ' + region.end.line;
+	return 'on lines ' + region.eu.cd + ' through ' + region.e2.cd;
 }
 
 
@@ -561,7 +561,7 @@ function _Utils_eqHelp(x, y, depth, stack)
 		return true;
 	}
 
-	/**/
+	/**_UNUSED/
 	if (x.$ === 'Set_elm_builtin')
 	{
 		x = $elm$core$Set$toList(x);
@@ -574,7 +574,7 @@ function _Utils_eqHelp(x, y, depth, stack)
 	}
 	//*/
 
-	/**_UNUSED/
+	/**/
 	if (x.$ < 0)
 	{
 		x = $elm$core$Dict$toList(x);
@@ -609,7 +609,7 @@ function _Utils_cmp(x, y, ord)
 		return x === y ? /*EQ*/ 0 : x < y ? /*LT*/ -1 : /*GT*/ 1;
 	}
 
-	/**/
+	/**_UNUSED/
 	if (x instanceof String)
 	{
 		var a = x.valueOf();
@@ -618,10 +618,10 @@ function _Utils_cmp(x, y, ord)
 	}
 	//*/
 
-	/**_UNUSED/
+	/**/
 	if (typeof x.$ === 'undefined')
 	//*/
-	/**/
+	/**_UNUSED/
 	if (x.$[0] === '#')
 	//*/
 	{
@@ -651,17 +651,17 @@ var _Utils_compare = F2(function(x, y)
 
 // COMMON VALUES
 
-var _Utils_Tuple0_UNUSED = 0;
-var _Utils_Tuple0 = { $: '#0' };
+var _Utils_Tuple0 = 0;
+var _Utils_Tuple0_UNUSED = { $: '#0' };
 
-function _Utils_Tuple2_UNUSED(a, b) { return { a: a, b: b }; }
-function _Utils_Tuple2(a, b) { return { $: '#2', a: a, b: b }; }
+function _Utils_Tuple2(a, b) { return { a: a, b: b }; }
+function _Utils_Tuple2_UNUSED(a, b) { return { $: '#2', a: a, b: b }; }
 
-function _Utils_Tuple3_UNUSED(a, b, c) { return { a: a, b: b, c: c }; }
-function _Utils_Tuple3(a, b, c) { return { $: '#3', a: a, b: b, c: c }; }
+function _Utils_Tuple3(a, b, c) { return { a: a, b: b, c: c }; }
+function _Utils_Tuple3_UNUSED(a, b, c) { return { $: '#3', a: a, b: b, c: c }; }
 
-function _Utils_chr_UNUSED(c) { return c; }
-function _Utils_chr(c) { return new String(c); }
+function _Utils_chr(c) { return c; }
+function _Utils_chr_UNUSED(c) { return new String(c); }
 
 
 // RECORDS
@@ -712,11 +712,11 @@ function _Utils_ap(xs, ys)
 
 
 
-var _List_Nil_UNUSED = { $: 0 };
-var _List_Nil = { $: '[]' };
+var _List_Nil = { $: 0 };
+var _List_Nil_UNUSED = { $: '[]' };
 
-function _List_Cons_UNUSED(hd, tl) { return { $: 1, a: hd, b: tl }; }
-function _List_Cons(hd, tl) { return { $: '::', a: hd, b: tl }; }
+function _List_Cons(hd, tl) { return { $: 1, a: hd, b: tl }; }
+function _List_Cons_UNUSED(hd, tl) { return { $: '::', a: hd, b: tl }; }
 
 
 var _List_cons = F2(_List_Cons);
@@ -1212,7 +1212,7 @@ function _Char_toLocaleLower(char)
 
 
 
-/**/
+/**_UNUSED/
 function _Json_errorToString(error)
 {
 	return $elm$json$Json$Decode$errorToString(error);
@@ -1616,11 +1616,11 @@ var _Json_encode = F2(function(indentLevel, value)
 	return JSON.stringify(_Json_unwrap(value), null, indentLevel) + '';
 });
 
-function _Json_wrap(value) { return { $: 0, a: value }; }
-function _Json_unwrap(value) { return value.a; }
+function _Json_wrap_UNUSED(value) { return { $: 0, a: value }; }
+function _Json_unwrap_UNUSED(value) { return value.a; }
 
-function _Json_wrap_UNUSED(value) { return value; }
-function _Json_unwrap_UNUSED(value) { return value; }
+function _Json_wrap(value) { return value; }
+function _Json_unwrap(value) { return value; }
 
 function _Json_emptyArray() { return []; }
 function _Json_emptyObject() { return {}; }
@@ -1861,9 +1861,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.init,
-		impl.update,
-		impl.subscriptions,
+		impl.hb,
+		impl.hX,
+		impl.hN,
 		function() { return function() {} }
 	);
 });
@@ -1876,7 +1876,7 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 function _Platform_initialize(flagDecoder, args, init, update, subscriptions, stepperBuilder)
 {
 	var result = A2(_Json_run, flagDecoder, _Json_wrap(args ? args['flags'] : undefined));
-	$elm$core$Result$isOk(result) || _Debug_crash(2 /**/, _Json_errorToString(result.a) /**/);
+	$elm$core$Result$isOk(result) || _Debug_crash(2 /**_UNUSED/, _Json_errorToString(result.a) /**/);
 	var managers = {};
 	var initPair = init(result.a);
 	var model = initPair.a;
@@ -2320,7 +2320,7 @@ function _Platform_setupIncomingPort(name, sendToApp)
 //
 
 
-function _Platform_export_UNUSED(exports)
+function _Platform_export(exports)
 {
 	scope['Elm']
 		? _Platform_mergeExportsProd(scope['Elm'], exports)
@@ -2341,7 +2341,7 @@ function _Platform_mergeExportsProd(obj, exports)
 }
 
 
-function _Platform_export(exports)
+function _Platform_export_UNUSED(exports)
 {
 	scope['Elm']
 		? _Platform_mergeExportsDebug('Elm', scope['Elm'], exports)
@@ -2381,10 +2381,10 @@ var _VirtualDom_init = F4(function(virtualNode, flagDecoder, debugMetadata, args
 {
 	// NOTE: this function needs _Platform_export available to work
 
-	/**_UNUSED/
+	/**/
 	var node = args['node'];
 	//*/
-	/**/
+	/**_UNUSED/
 	var node = args && args['node'] ? args['node'] : _Debug_crash(0);
 	//*/
 
@@ -2659,14 +2659,14 @@ function _VirtualDom_noInnerHtmlOrFormAction(key)
 function _VirtualDom_noJavaScriptUri(value)
 {
 	return _VirtualDom_RE_js.test(value)
-		? /**_UNUSED/''//*//**/'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'//*/
+		? /**/''//*//**_UNUSED/'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'//*/
 		: value;
 }
 
 function _VirtualDom_noJavaScriptOrHtmlUri(value)
 {
 	return _VirtualDom_RE_js_html.test(value)
-		? /**_UNUSED/''//*//**/'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'//*/
+		? /**/''//*//**_UNUSED/'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'//*/
 		: value;
 }
 
@@ -2678,7 +2678,7 @@ function _VirtualDom_noJavaScriptOrHtmlJson(value)
 		(Array.isArray(_Json_unwrap(value)) && _VirtualDom_RE_js_html.test(String(_Json_unwrap(value))))
 	)
 		? _Json_wrap(
-			/**_UNUSED/''//*//**/'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'//*/
+			/**/''//*//**_UNUSED/'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'//*/
 		) : value;
 }
 
@@ -2727,9 +2727,9 @@ var _VirtualDom_mapEventTuple = F2(function(func, tuple)
 var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
-		message: func(record.message),
-		stopPropagation: record.stopPropagation,
-		preventDefault: record.preventDefault
+		aR: func(record.aR),
+		ev: record.ev,
+		ee: record.ee
 	}
 });
 
@@ -2997,11 +2997,11 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 		// 3 = Custom
 
 		var value = result.a;
-		var message = !tag ? value : tag < 3 ? value.a : value.message;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.stopPropagation;
+		var message = !tag ? value : tag < 3 ? value.a : value.aR;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.ev;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.preventDefault) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.ee) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3951,15 +3951,15 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.init,
-		impl.update,
-		impl.subscriptions,
+		impl.hb,
+		impl.hX,
+		impl.hN,
 		function(sendToApp, initialModel) {
-			var view = impl.view;
-			/**_UNUSED/
+			var view = impl.h$;
+			/**/
 			var domNode = args['node'];
 			//*/
-			/**/
+			/**_UNUSED/
 			var domNode = args && args['node'] ? args['node'] : _Debug_crash(0);
 			//*/
 			var currNode = _VirtualDom_virtualize(domNode);
@@ -3987,12 +3987,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.init,
-		impl.update,
-		impl.subscriptions,
+		impl.hb,
+		impl.hX,
+		impl.hN,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.setup && impl.setup(sendToApp)
-			var view = impl.view;
+			var divertHrefToApp = impl.el && impl.el(sendToApp)
+			var view = impl.h$;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -4000,12 +4000,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.body);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.eS);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.title) && (_VirtualDom_doc.title = title = doc.title);
+				(title !== doc.hQ) && (_VirtualDom_doc.title = title = doc.hQ);
 			});
 		}
 	);
@@ -4061,12 +4061,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.onUrlChange;
-	var onUrlRequest = impl.onUrlRequest;
+	var onUrlChange = impl.hs;
+	var onUrlRequest = impl.ht;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		setup: function(sendToApp)
+		el: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4082,9 +4082,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.protocol === next.protocol
-							&& curr.host === next.host
-							&& curr.port_.a === next.port_.a
+							&& curr.f1 === next.f1
+							&& curr.fg === next.fg
+							&& curr.fY.a === next.fY.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4092,13 +4092,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		init: function(flags)
+		hb: function(flags)
 		{
-			return A3(impl.init, flags, _Browser_getUrl(), key);
+			return A3(impl.hb, flags, _Browser_getUrl(), key);
 		},
-		view: impl.view,
-		update: impl.update,
-		subscriptions: impl.subscriptions
+		h$: impl.h$,
+		hX: impl.hX,
+		hN: impl.hN
 	});
 }
 
@@ -4164,17 +4164,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { hidden: 'hidden', change: 'visibilitychange' }
+		? { g8: 'hidden', gN: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { hidden: 'mozHidden', change: 'mozvisibilitychange' }
+		? { g8: 'mozHidden', gN: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { hidden: 'msHidden', change: 'msvisibilitychange' }
+		? { g8: 'msHidden', gN: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { hidden: 'webkitHidden', change: 'webkitvisibilitychange' }
-		: { hidden: 'hidden', change: 'visibilitychange' };
+		? { g8: 'webkitHidden', gN: 'webkitvisibilitychange' }
+		: { g8: 'hidden', gN: 'visibilitychange' };
 }
 
 
@@ -4255,12 +4255,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		scene: _Browser_getScene(),
-		viewport: {
-			x: _Browser_window.pageXOffset,
-			y: _Browser_window.pageYOffset,
-			width: _Browser_doc.documentElement.clientWidth,
-			height: _Browser_doc.documentElement.clientHeight
+		ge: _Browser_getScene(),
+		gz: {
+			eJ: _Browser_window.pageXOffset,
+			eK: _Browser_window.pageYOffset,
+			eF: _Browser_doc.documentElement.clientWidth,
+			cM: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4270,8 +4270,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		width: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		height: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		eF: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		cM: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4294,15 +4294,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			scene: {
-				width: node.scrollWidth,
-				height: node.scrollHeight
+			ge: {
+				eF: node.scrollWidth,
+				cM: node.scrollHeight
 			},
-			viewport: {
-				x: node.scrollLeft,
-				y: node.scrollTop,
-				width: node.clientWidth,
-				height: node.clientHeight
+			gz: {
+				eJ: node.scrollLeft,
+				eK: node.scrollTop,
+				eF: node.clientWidth,
+				cM: node.clientHeight
 			}
 		};
 	});
@@ -4332,18 +4332,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			scene: _Browser_getScene(),
-			viewport: {
-				x: x,
-				y: y,
-				width: _Browser_doc.documentElement.clientWidth,
-				height: _Browser_doc.documentElement.clientHeight
+			ge: _Browser_getScene(),
+			gz: {
+				eJ: x,
+				eK: y,
+				eF: _Browser_doc.documentElement.clientWidth,
+				cM: _Browser_doc.documentElement.clientHeight
 			},
-			element: {
-				x: x + rect.left,
-				y: y + rect.top,
-				width: rect.width,
-				height: rect.height
+			g2: {
+				eJ: x + rect.left,
+				eK: y + rect.top,
+				eF: rect.width,
+				cM: rect.height
 			}
 		};
 	});
@@ -4388,25 +4388,25 @@ var _Http_toTask = F3(function(router, toTask, request)
 	return _Scheduler_binding(function(callback)
 	{
 		function done(response) {
-			callback(toTask(request.expect.a(response)));
+			callback(toTask(request.e5.a(response)));
 		}
 
 		var xhr = new XMLHttpRequest();
 		xhr.addEventListener('error', function() { done($elm$http$Http$NetworkError_); });
 		xhr.addEventListener('timeout', function() { done($elm$http$Http$Timeout_); });
-		xhr.addEventListener('load', function() { done(_Http_toResponse(request.expect.b, xhr)); });
-		$elm$core$Maybe$isJust(request.tracker) && _Http_track(router, xhr, request.tracker.a);
+		xhr.addEventListener('load', function() { done(_Http_toResponse(request.e5.b, xhr)); });
+		$elm$core$Maybe$isJust(request.gr) && _Http_track(router, xhr, request.gr.a);
 
 		try {
-			xhr.open(request.method, request.url, true);
+			xhr.open(request.fB, request.gx, true);
 		} catch (e) {
-			return done($elm$http$Http$BadUrl_(request.url));
+			return done($elm$http$Http$BadUrl_(request.gx));
 		}
 
 		_Http_configureRequest(xhr, request);
 
-		request.body.a && xhr.setRequestHeader('Content-Type', request.body.a);
-		xhr.send(request.body.b);
+		request.eS.a && xhr.setRequestHeader('Content-Type', request.eS.a);
+		xhr.send(request.eS.b);
 
 		return function() { xhr.c = true; xhr.abort(); };
 	});
@@ -4417,13 +4417,13 @@ var _Http_toTask = F3(function(router, toTask, request)
 
 function _Http_configureRequest(xhr, request)
 {
-	for (var headers = request.headers; headers.b; headers = headers.b) // WHILE_CONS
+	for (var headers = request.ff; headers.b; headers = headers.b) // WHILE_CONS
 	{
 		xhr.setRequestHeader(headers.a.a, headers.a.b);
 	}
-	xhr.timeout = request.timeout.a || 0;
-	xhr.responseType = request.expect.d;
-	xhr.withCredentials = request.allowCookiesFromOtherDomains;
+	xhr.timeout = request.gp.a || 0;
+	xhr.responseType = request.e5.d;
+	xhr.withCredentials = request.gG;
 }
 
 
@@ -4444,10 +4444,10 @@ function _Http_toResponse(toBody, xhr)
 function _Http_toMetadata(xhr)
 {
 	return {
-		url: xhr.responseURL,
-		statusCode: xhr.status,
-		statusText: xhr.statusText,
-		headers: _Http_parseHeaders(xhr.getAllResponseHeaders())
+		gx: xhr.responseURL,
+		hI: xhr.status,
+		hJ: xhr.statusText,
+		ff: _Http_parseHeaders(xhr.getAllResponseHeaders())
 	};
 }
 
@@ -4542,15 +4542,15 @@ function _Http_track(router, xhr, tracker)
 	xhr.upload.addEventListener('progress', function(event) {
 		if (xhr.c) { return; }
 		_Scheduler_rawSpawn(A2($elm$core$Platform$sendToSelf, router, _Utils_Tuple2(tracker, $elm$http$Http$Sending({
-			sent: event.loaded,
-			size: event.total
+			hG: event.loaded,
+			gi: event.total
 		}))));
 	});
 	xhr.addEventListener('progress', function(event) {
 		if (xhr.c) { return; }
 		_Scheduler_rawSpawn(A2($elm$core$Platform$sendToSelf, router, _Utils_Tuple2(tracker, $elm$http$Http$Receiving({
-			received: event.loaded,
-			size: event.lengthComputable ? $elm$core$Maybe$Just(event.total) : $elm$core$Maybe$Nothing
+			hy: event.loaded,
+			gi: event.lengthComputable ? $elm$core$Maybe$Just(event.total) : $elm$core$Maybe$Nothing
 		}))));
 	});
 }
@@ -4644,7 +4644,7 @@ var $elm$core$Array$foldr = F3(
 		var tail = _v0.d;
 		var helper = F2(
 			function (node, acc) {
-				if (node.$ === 'SubTree') {
+				if (!node.$) {
 					var subTree = node.a;
 					return A3($elm$core$Elm$JsArray$foldr, helper, acc, subTree);
 				} else {
@@ -4665,7 +4665,7 @@ var $elm$core$Dict$foldr = F3(
 	function (func, acc, t) {
 		foldr:
 		while (true) {
-			if (t.$ === 'RBEmpty_elm_builtin') {
+			if (t.$ === -2) {
 				return acc;
 			} else {
 				var key = t.b;
@@ -4710,39 +4710,39 @@ var $elm$core$Dict$keys = function (dict) {
 		dict);
 };
 var $elm$core$Set$toList = function (_v0) {
-	var dict = _v0.a;
+	var dict = _v0;
 	return $elm$core$Dict$keys(dict);
 };
-var $elm$core$Basics$EQ = {$: 'EQ'};
-var $elm$core$Basics$GT = {$: 'GT'};
-var $elm$core$Basics$LT = {$: 'LT'};
+var $elm$core$Basics$EQ = 1;
+var $elm$core$Basics$GT = 2;
+var $elm$core$Basics$LT = 0;
 var $elm$core$Result$Err = function (a) {
-	return {$: 'Err', a: a};
+	return {$: 1, a: a};
 };
 var $elm$json$Json$Decode$Failure = F2(
 	function (a, b) {
-		return {$: 'Failure', a: a, b: b};
+		return {$: 3, a: a, b: b};
 	});
 var $elm$json$Json$Decode$Field = F2(
 	function (a, b) {
-		return {$: 'Field', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $elm$json$Json$Decode$Index = F2(
 	function (a, b) {
-		return {$: 'Index', a: a, b: b};
+		return {$: 1, a: a, b: b};
 	});
 var $elm$core$Result$Ok = function (a) {
-	return {$: 'Ok', a: a};
+	return {$: 0, a: a};
 };
 var $elm$json$Json$Decode$OneOf = function (a) {
-	return {$: 'OneOf', a: a};
+	return {$: 2, a: a};
 };
-var $elm$core$Basics$False = {$: 'False'};
+var $elm$core$Basics$False = 1;
 var $elm$core$Basics$add = _Basics_add;
 var $elm$core$Maybe$Just = function (a) {
-	return {$: 'Just', a: a};
+	return {$: 0, a: a};
 };
-var $elm$core$Maybe$Nothing = {$: 'Nothing'};
+var $elm$core$Maybe$Nothing = {$: 1};
 var $elm$core$String$all = _String_all;
 var $elm$core$Basics$and = _Basics_and;
 var $elm$core$Basics$append = _Utils_append;
@@ -4867,12 +4867,12 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 		errorToStringHelp:
 		while (true) {
 			switch (error.$) {
-				case 'Field':
+				case 0:
 					var f = error.a;
 					var err = error.b;
 					var isSimple = function () {
 						var _v1 = $elm$core$String$uncons(f);
-						if (_v1.$ === 'Nothing') {
+						if (_v1.$ === 1) {
 							return false;
 						} else {
 							var _v2 = _v1.a;
@@ -4887,7 +4887,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 					error = $temp$error;
 					context = $temp$context;
 					continue errorToStringHelp;
-				case 'Index':
+				case 1:
 					var i = error.a;
 					var err = error.b;
 					var indexName = '[' + ($elm$core$String$fromInt(i) + ']');
@@ -4896,7 +4896,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 					error = $temp$error;
 					context = $temp$context;
 					continue errorToStringHelp;
-				case 'OneOf':
+				case 2:
 					var errors = error.a;
 					if (!errors.b) {
 						return 'Ran into a Json.Decode.oneOf with no possibilities' + function () {
@@ -4960,7 +4960,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 var $elm$core$Array$branchFactor = 32;
 var $elm$core$Array$Array_elm_builtin = F4(
 	function (a, b, c, d) {
-		return {$: 'Array_elm_builtin', a: a, b: b, c: c, d: d};
+		return {$: 0, a: a, b: b, c: c, d: d};
 	});
 var $elm$core$Elm$JsArray$empty = _JsArray_empty;
 var $elm$core$Basics$ceiling = _Basics_ceiling;
@@ -4975,7 +4975,7 @@ var $elm$core$Array$shiftStep = $elm$core$Basics$ceiling(
 var $elm$core$Array$empty = A4($elm$core$Array$Array_elm_builtin, 0, $elm$core$Array$shiftStep, $elm$core$Elm$JsArray$empty, $elm$core$Elm$JsArray$empty);
 var $elm$core$Elm$JsArray$initialize = _JsArray_initialize;
 var $elm$core$Array$Leaf = function (a) {
-	return {$: 'Leaf', a: a};
+	return {$: 1, a: a};
 };
 var $elm$core$Basics$apL = F2(
 	function (f, x) {
@@ -4995,7 +4995,7 @@ var $elm$core$Basics$max = F2(
 	});
 var $elm$core$Basics$mul = _Basics_mul;
 var $elm$core$Array$SubTree = function (a) {
-	return {$: 'SubTree', a: a};
+	return {$: 0, a: a};
 };
 var $elm$core$Elm$JsArray$initializeFromList = _JsArray_initializeFromList;
 var $elm$core$Array$compressNodes = F2(
@@ -5042,25 +5042,25 @@ var $elm$core$Array$treeFromBuilder = F2(
 	});
 var $elm$core$Array$builderToArray = F2(
 	function (reverseNodeList, builder) {
-		if (!builder.nodeListSize) {
+		if (!builder.r) {
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.tail),
+				$elm$core$Elm$JsArray$length(builder.u),
 				$elm$core$Array$shiftStep,
 				$elm$core$Elm$JsArray$empty,
-				builder.tail);
+				builder.u);
 		} else {
-			var treeLen = builder.nodeListSize * $elm$core$Array$branchFactor;
+			var treeLen = builder.r * $elm$core$Array$branchFactor;
 			var depth = $elm$core$Basics$floor(
 				A2($elm$core$Basics$logBase, $elm$core$Array$branchFactor, treeLen - 1));
-			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.nodeList) : builder.nodeList;
-			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.nodeListSize);
+			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.y) : builder.y;
+			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.r);
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.tail) + treeLen,
+				$elm$core$Elm$JsArray$length(builder.u) + treeLen,
 				A2($elm$core$Basics$max, 5, depth * $elm$core$Array$shiftStep),
 				tree,
-				builder.tail);
+				builder.u);
 		}
 	});
 var $elm$core$Basics$idiv = _Basics_idiv;
@@ -5073,7 +5073,7 @@ var $elm$core$Array$initializeHelp = F5(
 				return A2(
 					$elm$core$Array$builderToArray,
 					false,
-					{nodeList: nodeList, nodeListSize: (len / $elm$core$Array$branchFactor) | 0, tail: tail});
+					{y: nodeList, r: (len / $elm$core$Array$branchFactor) | 0, u: tail});
 			} else {
 				var leaf = $elm$core$Array$Leaf(
 					A3($elm$core$Elm$JsArray$initialize, $elm$core$Array$branchFactor, fromIndex, fn));
@@ -5103,9 +5103,9 @@ var $elm$core$Array$initialize = F2(
 			return A5($elm$core$Array$initializeHelp, fn, initialFromIndex, len, _List_Nil, tail);
 		}
 	});
-var $elm$core$Basics$True = {$: 'True'};
+var $elm$core$Basics$True = 0;
 var $elm$core$Result$isOk = function (result) {
-	if (result.$ === 'Ok') {
+	if (!result.$) {
 		return true;
 	} else {
 		return false;
@@ -5117,33 +5117,31 @@ var $elm$json$Json$Decode$map2 = _Json_map2;
 var $elm$json$Json$Decode$succeed = _Json_succeed;
 var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 	switch (handler.$) {
-		case 'Normal':
+		case 0:
 			return 0;
-		case 'MayStopPropagation':
+		case 1:
 			return 1;
-		case 'MayPreventDefault':
+		case 2:
 			return 2;
 		default:
 			return 3;
 	}
 };
 var $elm$browser$Browser$External = function (a) {
-	return {$: 'External', a: a};
+	return {$: 1, a: a};
 };
 var $elm$browser$Browser$Internal = function (a) {
-	return {$: 'Internal', a: a};
+	return {$: 0, a: a};
 };
 var $elm$core$Basics$identity = function (x) {
 	return x;
 };
-var $elm$browser$Browser$Dom$NotFound = function (a) {
-	return {$: 'NotFound', a: a};
-};
-var $elm$url$Url$Http = {$: 'Http'};
-var $elm$url$Url$Https = {$: 'Https'};
+var $elm$browser$Browser$Dom$NotFound = $elm$core$Basics$identity;
+var $elm$url$Url$Http = 0;
+var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {fragment: fragment, host: host, path: path, port_: port_, protocol: protocol, query: query};
+		return {fb: fragment, fg: host, fV: path, fY: port_, f1: protocol, f2: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5179,7 +5177,7 @@ var $elm$url$Url$chompBeforePath = F5(
 					var i = _v0.a;
 					var _v1 = $elm$core$String$toInt(
 						A2($elm$core$String$dropLeft, i + 1, str));
-					if (_v1.$ === 'Nothing') {
+					if (_v1.$ === 1) {
 						return $elm$core$Maybe$Nothing;
 					} else {
 						var port_ = _v1;
@@ -5262,26 +5260,24 @@ var $elm$core$String$startsWith = _String_startsWith;
 var $elm$url$Url$fromString = function (str) {
 	return A2($elm$core$String$startsWith, 'http://', str) ? A2(
 		$elm$url$Url$chompAfterProtocol,
-		$elm$url$Url$Http,
+		0,
 		A2($elm$core$String$dropLeft, 7, str)) : (A2($elm$core$String$startsWith, 'https://', str) ? A2(
 		$elm$url$Url$chompAfterProtocol,
-		$elm$url$Url$Https,
+		1,
 		A2($elm$core$String$dropLeft, 8, str)) : $elm$core$Maybe$Nothing);
 };
 var $elm$core$Basics$never = function (_v0) {
 	never:
 	while (true) {
-		var nvr = _v0.a;
+		var nvr = _v0;
 		var $temp$_v0 = nvr;
 		_v0 = $temp$_v0;
 		continue never;
 	}
 };
-var $elm$core$Task$Perform = function (a) {
-	return {$: 'Perform', a: a};
-};
+var $elm$core$Task$Perform = $elm$core$Basics$identity;
 var $elm$core$Task$succeed = _Scheduler_succeed;
-var $elm$core$Task$init = $elm$core$Task$succeed(_Utils_Tuple0);
+var $elm$core$Task$init = $elm$core$Task$succeed(0);
 var $elm$core$List$foldrHelper = F4(
 	function (fn, acc, ctr, ls) {
 		if (!ls.b) {
@@ -5387,7 +5383,7 @@ var $elm$core$Task$sequence = function (tasks) {
 var $elm$core$Platform$sendToApp = _Platform_sendToApp;
 var $elm$core$Task$spawnCmd = F2(
 	function (router, _v0) {
-		var task = _v0.a;
+		var task = _v0;
 		return _Scheduler_spawn(
 			A2(
 				$elm$core$Task$andThen,
@@ -5399,7 +5395,7 @@ var $elm$core$Task$onEffects = F3(
 		return A2(
 			$elm$core$Task$map,
 			function (_v0) {
-				return _Utils_Tuple0;
+				return 0;
 			},
 			$elm$core$Task$sequence(
 				A2(
@@ -5409,55 +5405,53 @@ var $elm$core$Task$onEffects = F3(
 	});
 var $elm$core$Task$onSelfMsg = F3(
 	function (_v0, _v1, _v2) {
-		return $elm$core$Task$succeed(_Utils_Tuple0);
+		return $elm$core$Task$succeed(0);
 	});
 var $elm$core$Task$cmdMap = F2(
 	function (tagger, _v0) {
-		var task = _v0.a;
-		return $elm$core$Task$Perform(
-			A2($elm$core$Task$map, tagger, task));
+		var task = _v0;
+		return A2($elm$core$Task$map, tagger, task);
 	});
 _Platform_effectManagers['Task'] = _Platform_createManager($elm$core$Task$init, $elm$core$Task$onEffects, $elm$core$Task$onSelfMsg, $elm$core$Task$cmdMap);
 var $elm$core$Task$command = _Platform_leaf('Task');
 var $elm$core$Task$perform = F2(
 	function (toMessage, task) {
 		return $elm$core$Task$command(
-			$elm$core$Task$Perform(
-				A2($elm$core$Task$map, toMessage, task)));
+			A2($elm$core$Task$map, toMessage, task));
 	});
 var $elm$browser$Browser$element = _Browser_element;
 var $elm$json$Json$Decode$field = _Json_decodeField;
 var $elm$json$Json$Decode$float = _Json_decodeFloat;
-var $author$project$Main$Connecting = {$: 'Connecting'};
+var $author$project$Main$Connecting = {$: 1};
 var $author$project$Main$GotToken = function (a) {
-	return {$: 'GotToken', a: a};
+	return {$: 2, a: a};
 };
-var $author$project$Energy$SolarShare = {$: 'SolarShare'};
-var $elm$core$Dict$RBEmpty_elm_builtin = {$: 'RBEmpty_elm_builtin'};
+var $author$project$Energy$SolarShare = 0;
+var $elm$core$Dict$RBEmpty_elm_builtin = {$: -2};
 var $elm$core$Dict$empty = $elm$core$Dict$RBEmpty_elm_builtin;
 var $author$project$Api$apiBase = 'https://dbs.informatik.uni-halle.de/sciencedata';
 var $author$project$Api$basicCred = 'ZGVtb191c2VyOmhhbGxv';
 var $elm$http$Http$BadStatus_ = F2(
 	function (a, b) {
-		return {$: 'BadStatus_', a: a, b: b};
+		return {$: 3, a: a, b: b};
 	});
 var $elm$http$Http$BadUrl_ = function (a) {
-	return {$: 'BadUrl_', a: a};
+	return {$: 0, a: a};
 };
 var $elm$http$Http$GoodStatus_ = F2(
 	function (a, b) {
-		return {$: 'GoodStatus_', a: a, b: b};
+		return {$: 4, a: a, b: b};
 	});
-var $elm$http$Http$NetworkError_ = {$: 'NetworkError_'};
+var $elm$http$Http$NetworkError_ = {$: 2};
 var $elm$http$Http$Receiving = function (a) {
-	return {$: 'Receiving', a: a};
+	return {$: 1, a: a};
 };
 var $elm$http$Http$Sending = function (a) {
-	return {$: 'Sending', a: a};
+	return {$: 0, a: a};
 };
-var $elm$http$Http$Timeout_ = {$: 'Timeout_'};
+var $elm$http$Http$Timeout_ = {$: 1};
 var $elm$core$Maybe$isJust = function (maybe) {
-	if (maybe.$ === 'Just') {
+	if (!maybe.$) {
 		return true;
 	} else {
 		return false;
@@ -5469,7 +5463,7 @@ var $elm$core$Dict$get = F2(
 	function (targetKey, dict) {
 		get:
 		while (true) {
-			if (dict.$ === 'RBEmpty_elm_builtin') {
+			if (dict.$ === -2) {
 				return $elm$core$Maybe$Nothing;
 			} else {
 				var key = dict.b;
@@ -5477,14 +5471,14 @@ var $elm$core$Dict$get = F2(
 				var left = dict.d;
 				var right = dict.e;
 				var _v1 = A2($elm$core$Basics$compare, targetKey, key);
-				switch (_v1.$) {
-					case 'LT':
+				switch (_v1) {
+					case 0:
 						var $temp$targetKey = targetKey,
 							$temp$dict = left;
 						targetKey = $temp$targetKey;
 						dict = $temp$dict;
 						continue get;
-					case 'EQ':
+					case 1:
 						return $elm$core$Maybe$Just(value);
 					default:
 						var $temp$targetKey = targetKey,
@@ -5496,21 +5490,21 @@ var $elm$core$Dict$get = F2(
 			}
 		}
 	});
-var $elm$core$Dict$Black = {$: 'Black'};
+var $elm$core$Dict$Black = 1;
 var $elm$core$Dict$RBNode_elm_builtin = F5(
 	function (a, b, c, d, e) {
-		return {$: 'RBNode_elm_builtin', a: a, b: b, c: c, d: d, e: e};
+		return {$: -1, a: a, b: b, c: c, d: d, e: e};
 	});
-var $elm$core$Dict$Red = {$: 'Red'};
+var $elm$core$Dict$Red = 0;
 var $elm$core$Dict$balance = F5(
 	function (color, key, value, left, right) {
-		if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Red')) {
+		if ((right.$ === -1) && (!right.a)) {
 			var _v1 = right.a;
 			var rK = right.b;
 			var rV = right.c;
 			var rLeft = right.d;
 			var rRight = right.e;
-			if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
+			if ((left.$ === -1) && (!left.a)) {
 				var _v3 = left.a;
 				var lK = left.b;
 				var lV = left.c;
@@ -5518,22 +5512,22 @@ var $elm$core$Dict$balance = F5(
 				var lRight = left.e;
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Red,
+					0,
 					key,
 					value,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, 1, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, 1, rK, rV, rLeft, rRight));
 			} else {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
 					color,
 					rK,
 					rV,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, left, rLeft),
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, key, value, left, rLeft),
 					rRight);
 			}
 		} else {
-			if ((((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) && (left.d.$ === 'RBNode_elm_builtin')) && (left.d.a.$ === 'Red')) {
+			if ((((left.$ === -1) && (!left.a)) && (left.d.$ === -1)) && (!left.d.a)) {
 				var _v5 = left.a;
 				var lK = left.b;
 				var lV = left.c;
@@ -5546,11 +5540,11 @@ var $elm$core$Dict$balance = F5(
 				var lRight = left.e;
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Red,
+					0,
 					lK,
 					lV,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, key, value, lRight, right));
+					A5($elm$core$Dict$RBNode_elm_builtin, 1, llK, llV, llLeft, llRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, 1, key, value, lRight, right));
 			} else {
 				return A5($elm$core$Dict$RBNode_elm_builtin, color, key, value, left, right);
 			}
@@ -5558,8 +5552,8 @@ var $elm$core$Dict$balance = F5(
 	});
 var $elm$core$Dict$insertHelp = F3(
 	function (key, value, dict) {
-		if (dict.$ === 'RBEmpty_elm_builtin') {
-			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, $elm$core$Dict$RBEmpty_elm_builtin, $elm$core$Dict$RBEmpty_elm_builtin);
+		if (dict.$ === -2) {
+			return A5($elm$core$Dict$RBNode_elm_builtin, 0, key, value, $elm$core$Dict$RBEmpty_elm_builtin, $elm$core$Dict$RBEmpty_elm_builtin);
 		} else {
 			var nColor = dict.a;
 			var nKey = dict.b;
@@ -5567,8 +5561,8 @@ var $elm$core$Dict$insertHelp = F3(
 			var nLeft = dict.d;
 			var nRight = dict.e;
 			var _v1 = A2($elm$core$Basics$compare, key, nKey);
-			switch (_v1.$) {
-				case 'LT':
+			switch (_v1) {
+				case 0:
 					return A5(
 						$elm$core$Dict$balance,
 						nColor,
@@ -5576,7 +5570,7 @@ var $elm$core$Dict$insertHelp = F3(
 						nValue,
 						A3($elm$core$Dict$insertHelp, key, value, nLeft),
 						nRight);
-				case 'EQ':
+				case 1:
 					return A5($elm$core$Dict$RBNode_elm_builtin, nColor, nKey, value, nLeft, nRight);
 				default:
 					return A5(
@@ -5592,13 +5586,13 @@ var $elm$core$Dict$insertHelp = F3(
 var $elm$core$Dict$insert = F3(
 	function (key, value, dict) {
 		var _v0 = A3($elm$core$Dict$insertHelp, key, value, dict);
-		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
+		if ((_v0.$ === -1) && (!_v0.a)) {
 			var _v1 = _v0.a;
 			var k = _v0.b;
 			var v = _v0.c;
 			var l = _v0.d;
 			var r = _v0.e;
-			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
+			return A5($elm$core$Dict$RBNode_elm_builtin, 1, k, v, l, r);
 		} else {
 			var x = _v0;
 			return x;
@@ -5607,7 +5601,7 @@ var $elm$core$Dict$insert = F3(
 var $elm$core$Dict$getMin = function (dict) {
 	getMin:
 	while (true) {
-		if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
+		if ((dict.$ === -1) && (dict.d.$ === -1)) {
 			var left = dict.d;
 			var $temp$dict = left;
 			dict = $temp$dict;
@@ -5618,8 +5612,8 @@ var $elm$core$Dict$getMin = function (dict) {
 	}
 };
 var $elm$core$Dict$moveRedLeft = function (dict) {
-	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
-		if ((dict.e.d.$ === 'RBNode_elm_builtin') && (dict.e.d.a.$ === 'Red')) {
+	if (((dict.$ === -1) && (dict.d.$ === -1)) && (dict.e.$ === -1)) {
+		if ((dict.e.d.$ === -1) && (!dict.e.d.a)) {
 			var clr = dict.a;
 			var k = dict.b;
 			var v = dict.c;
@@ -5642,17 +5636,17 @@ var $elm$core$Dict$moveRedLeft = function (dict) {
 			var rRight = _v2.e;
 			return A5(
 				$elm$core$Dict$RBNode_elm_builtin,
-				$elm$core$Dict$Red,
+				0,
 				rlK,
 				rlV,
 				A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
+					1,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
 					rlL),
-				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rlR, rRight));
+				A5($elm$core$Dict$RBNode_elm_builtin, 1, rK, rV, rlR, rRight));
 		} else {
 			var clr = dict.a;
 			var k = dict.b;
@@ -5669,22 +5663,22 @@ var $elm$core$Dict$moveRedLeft = function (dict) {
 			var rV = _v5.c;
 			var rLeft = _v5.d;
 			var rRight = _v5.e;
-			if (clr.$ === 'Black') {
+			if (clr === 1) {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
+					1,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
 			} else {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
+					1,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
 			}
 		}
 	} else {
@@ -5692,8 +5686,8 @@ var $elm$core$Dict$moveRedLeft = function (dict) {
 	}
 };
 var $elm$core$Dict$moveRedRight = function (dict) {
-	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
-		if ((dict.d.d.$ === 'RBNode_elm_builtin') && (dict.d.d.a.$ === 'Red')) {
+	if (((dict.$ === -1) && (dict.d.$ === -1)) && (dict.e.$ === -1)) {
+		if ((dict.d.d.$ === -1) && (!dict.d.d.a)) {
 			var clr = dict.a;
 			var k = dict.b;
 			var v = dict.c;
@@ -5716,17 +5710,17 @@ var $elm$core$Dict$moveRedRight = function (dict) {
 			var rRight = _v4.e;
 			return A5(
 				$elm$core$Dict$RBNode_elm_builtin,
-				$elm$core$Dict$Red,
+				0,
 				lK,
 				lV,
-				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
+				A5($elm$core$Dict$RBNode_elm_builtin, 1, llK, llV, llLeft, llRight),
 				A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
+					1,
 					k,
 					v,
 					lRight,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight)));
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight)));
 		} else {
 			var clr = dict.a;
 			var k = dict.b;
@@ -5743,22 +5737,22 @@ var $elm$core$Dict$moveRedRight = function (dict) {
 			var rV = _v6.c;
 			var rLeft = _v6.d;
 			var rRight = _v6.e;
-			if (clr.$ === 'Black') {
+			if (clr === 1) {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
+					1,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
 			} else {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
+					1,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
 			}
 		}
 	} else {
@@ -5767,7 +5761,7 @@ var $elm$core$Dict$moveRedRight = function (dict) {
 };
 var $elm$core$Dict$removeHelpPrepEQGT = F7(
 	function (targetKey, dict, color, key, value, left, right) {
-		if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
+		if ((left.$ === -1) && (!left.a)) {
 			var _v1 = left.a;
 			var lK = left.b;
 			var lV = left.c;
@@ -5779,13 +5773,13 @@ var $elm$core$Dict$removeHelpPrepEQGT = F7(
 				lK,
 				lV,
 				lLeft,
-				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, lRight, right));
+				A5($elm$core$Dict$RBNode_elm_builtin, 0, key, value, lRight, right));
 		} else {
 			_v2$2:
 			while (true) {
-				if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Black')) {
-					if (right.d.$ === 'RBNode_elm_builtin') {
-						if (right.d.a.$ === 'Black') {
+				if ((right.$ === -1) && (right.a === 1)) {
+					if (right.d.$ === -1) {
+						if (right.d.a === 1) {
 							var _v3 = right.a;
 							var _v4 = right.d;
 							var _v5 = _v4.a;
@@ -5806,7 +5800,7 @@ var $elm$core$Dict$removeHelpPrepEQGT = F7(
 		}
 	});
 var $elm$core$Dict$removeMin = function (dict) {
-	if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
+	if ((dict.$ === -1) && (dict.d.$ === -1)) {
 		var color = dict.a;
 		var key = dict.b;
 		var value = dict.c;
@@ -5814,8 +5808,8 @@ var $elm$core$Dict$removeMin = function (dict) {
 		var lColor = left.a;
 		var lLeft = left.d;
 		var right = dict.e;
-		if (lColor.$ === 'Black') {
-			if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
+		if (lColor === 1) {
+			if ((lLeft.$ === -1) && (!lLeft.a)) {
 				var _v3 = lLeft.a;
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
@@ -5826,7 +5820,7 @@ var $elm$core$Dict$removeMin = function (dict) {
 					right);
 			} else {
 				var _v4 = $elm$core$Dict$moveRedLeft(dict);
-				if (_v4.$ === 'RBNode_elm_builtin') {
+				if (_v4.$ === -1) {
 					var nColor = _v4.a;
 					var nKey = _v4.b;
 					var nValue = _v4.c;
@@ -5858,7 +5852,7 @@ var $elm$core$Dict$removeMin = function (dict) {
 };
 var $elm$core$Dict$removeHelp = F2(
 	function (targetKey, dict) {
-		if (dict.$ === 'RBEmpty_elm_builtin') {
+		if (dict.$ === -2) {
 			return $elm$core$Dict$RBEmpty_elm_builtin;
 		} else {
 			var color = dict.a;
@@ -5867,10 +5861,10 @@ var $elm$core$Dict$removeHelp = F2(
 			var left = dict.d;
 			var right = dict.e;
 			if (_Utils_cmp(targetKey, key) < 0) {
-				if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Black')) {
+				if ((left.$ === -1) && (left.a === 1)) {
 					var _v4 = left.a;
 					var lLeft = left.d;
-					if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
+					if ((lLeft.$ === -1) && (!lLeft.a)) {
 						var _v6 = lLeft.a;
 						return A5(
 							$elm$core$Dict$RBNode_elm_builtin,
@@ -5881,7 +5875,7 @@ var $elm$core$Dict$removeHelp = F2(
 							right);
 					} else {
 						var _v7 = $elm$core$Dict$moveRedLeft(dict);
-						if (_v7.$ === 'RBNode_elm_builtin') {
+						if (_v7.$ === -1) {
 							var nColor = _v7.a;
 							var nKey = _v7.b;
 							var nValue = _v7.c;
@@ -5917,7 +5911,7 @@ var $elm$core$Dict$removeHelp = F2(
 	});
 var $elm$core$Dict$removeHelpEQGT = F2(
 	function (targetKey, dict) {
-		if (dict.$ === 'RBNode_elm_builtin') {
+		if (dict.$ === -1) {
 			var color = dict.a;
 			var key = dict.b;
 			var value = dict.c;
@@ -5925,7 +5919,7 @@ var $elm$core$Dict$removeHelpEQGT = F2(
 			var right = dict.e;
 			if (_Utils_eq(targetKey, key)) {
 				var _v1 = $elm$core$Dict$getMin(right);
-				if (_v1.$ === 'RBNode_elm_builtin') {
+				if (_v1.$ === -1) {
 					var minKey = _v1.b;
 					var minValue = _v1.c;
 					return A5(
@@ -5954,13 +5948,13 @@ var $elm$core$Dict$removeHelpEQGT = F2(
 var $elm$core$Dict$remove = F2(
 	function (key, dict) {
 		var _v0 = A2($elm$core$Dict$removeHelp, key, dict);
-		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
+		if ((_v0.$ === -1) && (!_v0.a)) {
 			var _v1 = _v0.a;
 			var k = _v0.b;
 			var v = _v0.c;
 			var l = _v0.d;
 			var r = _v0.e;
-			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
+			return A5($elm$core$Dict$RBNode_elm_builtin, 1, k, v, l, r);
 		} else {
 			var x = _v0;
 			return x;
@@ -5970,7 +5964,7 @@ var $elm$core$Dict$update = F3(
 	function (targetKey, alter, dictionary) {
 		var _v0 = alter(
 			A2($elm$core$Dict$get, targetKey, dictionary));
-		if (_v0.$ === 'Just') {
+		if (!_v0.$) {
 			var value = _v0.a;
 			return A3($elm$core$Dict$insert, targetKey, value, dictionary);
 		} else {
@@ -5994,7 +5988,7 @@ var $elm$http$Http$expectStringResponse = F2(
 	});
 var $elm$core$Result$mapError = F2(
 	function (f, result) {
-		if (result.$ === 'Ok') {
+		if (!result.$) {
 			var v = result.a;
 			return $elm$core$Result$Ok(v);
 		} else {
@@ -6004,31 +5998,31 @@ var $elm$core$Result$mapError = F2(
 		}
 	});
 var $elm$http$Http$BadBody = function (a) {
-	return {$: 'BadBody', a: a};
+	return {$: 4, a: a};
 };
 var $elm$http$Http$BadStatus = function (a) {
-	return {$: 'BadStatus', a: a};
+	return {$: 3, a: a};
 };
 var $elm$http$Http$BadUrl = function (a) {
-	return {$: 'BadUrl', a: a};
+	return {$: 0, a: a};
 };
-var $elm$http$Http$NetworkError = {$: 'NetworkError'};
-var $elm$http$Http$Timeout = {$: 'Timeout'};
+var $elm$http$Http$NetworkError = {$: 2};
+var $elm$http$Http$Timeout = {$: 1};
 var $elm$http$Http$resolve = F2(
 	function (toResult, response) {
 		switch (response.$) {
-			case 'BadUrl_':
+			case 0:
 				var url = response.a;
 				return $elm$core$Result$Err(
 					$elm$http$Http$BadUrl(url));
-			case 'Timeout_':
+			case 1:
 				return $elm$core$Result$Err($elm$http$Http$Timeout);
-			case 'NetworkError_':
+			case 2:
 				return $elm$core$Result$Err($elm$http$Http$NetworkError);
-			case 'BadStatus_':
+			case 3:
 				var metadata = response.a;
 				return $elm$core$Result$Err(
-					$elm$http$Http$BadStatus(metadata.statusCode));
+					$elm$http$Http$BadStatus(metadata.hI));
 			default:
 				var body = response.b;
 				return A2(
@@ -6052,15 +6046,15 @@ var $elm$http$Http$expectJson = F2(
 	});
 var $elm$http$Http$Header = F2(
 	function (a, b) {
-		return {$: 'Header', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $elm$http$Http$header = $elm$http$Http$Header;
 var $elm$http$Http$Request = function (a) {
-	return {$: 'Request', a: a};
+	return {$: 1, a: a};
 };
 var $elm$http$Http$State = F2(
 	function (reqs, subs) {
-		return {reqs: reqs, subs: subs};
+		return {f6: reqs, gl: subs};
 	});
 var $elm$http$Http$init = $elm$core$Task$succeed(
 	A2($elm$http$Http$State, $elm$core$Dict$empty, _List_Nil));
@@ -6075,10 +6069,10 @@ var $elm$http$Http$updateReqs = F3(
 			} else {
 				var cmd = cmds.a;
 				var otherCmds = cmds.b;
-				if (cmd.$ === 'Cancel') {
+				if (!cmd.$) {
 					var tracker = cmd.a;
 					var _v2 = A2($elm$core$Dict$get, tracker, reqs);
-					if (_v2.$ === 'Nothing') {
+					if (_v2.$ === 1) {
 						var $temp$router = router,
 							$temp$cmds = otherCmds,
 							$temp$reqs = reqs;
@@ -6104,8 +6098,8 @@ var $elm$http$Http$updateReqs = F3(
 					return A2(
 						$elm$core$Task$andThen,
 						function (pid) {
-							var _v4 = req.tracker;
-							if (_v4.$ === 'Nothing') {
+							var _v4 = req.gr;
+							if (_v4.$ === 1) {
 								return A3($elm$http$Http$updateReqs, router, otherCmds, reqs);
 							} else {
 								var tracker = _v4.a;
@@ -6134,12 +6128,12 @@ var $elm$http$Http$onEffects = F4(
 				return $elm$core$Task$succeed(
 					A2($elm$http$Http$State, reqs, subs));
 			},
-			A3($elm$http$Http$updateReqs, router, cmds, state.reqs));
+			A3($elm$http$Http$updateReqs, router, cmds, state.f6));
 	});
 var $elm$core$List$maybeCons = F3(
 	function (f, mx, xs) {
 		var _v0 = f(mx);
-		if (_v0.$ === 'Just') {
+		if (!_v0.$) {
 			var x = _v0.a;
 			return A2($elm$core$List$cons, x, xs);
 		} else {
@@ -6177,34 +6171,34 @@ var $elm$http$Http$onSelfMsg = F3(
 				A2(
 					$elm$core$List$filterMap,
 					A3($elm$http$Http$maybeSend, router, tracker, progress),
-					state.subs)));
+					state.gl)));
 	});
 var $elm$http$Http$Cancel = function (a) {
-	return {$: 'Cancel', a: a};
+	return {$: 0, a: a};
 };
 var $elm$http$Http$cmdMap = F2(
 	function (func, cmd) {
-		if (cmd.$ === 'Cancel') {
+		if (!cmd.$) {
 			var tracker = cmd.a;
 			return $elm$http$Http$Cancel(tracker);
 		} else {
 			var r = cmd.a;
 			return $elm$http$Http$Request(
 				{
-					allowCookiesFromOtherDomains: r.allowCookiesFromOtherDomains,
-					body: r.body,
-					expect: A2(_Http_mapExpect, func, r.expect),
-					headers: r.headers,
-					method: r.method,
-					timeout: r.timeout,
-					tracker: r.tracker,
-					url: r.url
+					gG: r.gG,
+					eS: r.eS,
+					e5: A2(_Http_mapExpect, func, r.e5),
+					ff: r.ff,
+					fB: r.fB,
+					gp: r.gp,
+					gr: r.gr,
+					gx: r.gx
 				});
 		}
 	});
 var $elm$http$Http$MySub = F2(
 	function (a, b) {
-		return {$: 'MySub', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $elm$http$Http$subMap = F2(
 	function (func, _v0) {
@@ -6221,78 +6215,78 @@ var $elm$http$Http$subscription = _Platform_leaf('Http');
 var $elm$http$Http$request = function (r) {
 	return $elm$http$Http$command(
 		$elm$http$Http$Request(
-			{allowCookiesFromOtherDomains: false, body: r.body, expect: r.expect, headers: r.headers, method: r.method, timeout: r.timeout, tracker: r.tracker, url: r.url}));
+			{gG: false, eS: r.eS, e5: r.e5, ff: r.ff, fB: r.fB, gp: r.gp, gr: r.gr, gx: r.gx}));
 };
 var $elm$json$Json$Decode$string = _Json_decodeString;
 var $author$project$Api$getToken = function (toMsg) {
 	return $elm$http$Http$request(
 		{
-			body: $elm$http$Http$emptyBody,
-			expect: A2(
+			eS: $elm$http$Http$emptyBody,
+			e5: A2(
 				$elm$http$Http$expectJson,
 				toMsg,
 				A2($elm$json$Json$Decode$field, 'token', $elm$json$Json$Decode$string)),
-			headers: _List_fromArray(
+			ff: _List_fromArray(
 				[
 					A2($elm$http$Http$header, 'Authorization', 'Basic ' + $author$project$Api$basicCred)
 				]),
-			method: 'POST',
-			timeout: $elm$core$Maybe$Nothing,
-			tracker: $elm$core$Maybe$Nothing,
-			url: $author$project$Api$apiBase + '/token'
+			fB: 'POST',
+			gp: $elm$core$Maybe$Nothing,
+			gr: $elm$core$Maybe$Nothing,
+			gx: $author$project$Api$apiBase + '/token'
 		});
 };
 var $elm$core$Basics$round = _Basics_round;
 var $author$project$Main$init = function (flags) {
 	return _Utils_Tuple2(
 		{
-			areaOffset: 0,
-			areaSpan: 7 * 24,
-			calAnchor: $elm$core$Maybe$Nothing,
-			calOpen: false,
-			ceilings: $elm$core$Dict$empty,
-			country: 'all',
-			elapsed: 0,
-			focusedDay: $elm$core$Maybe$Nothing,
-			heatOffset: 0,
-			heatSpan: 0,
-			hovered: $elm$core$Maybe$Nothing,
-			infoTip: $elm$core$Maybe$Nothing,
-			lastScroll: 0,
-			latest: $elm$core$Maybe$Nothing,
-			loadedDays: $elm$core$Dict$empty,
-			metric: $author$project$Energy$SolarShare,
-			mouse: _Utils_Tuple2(0, 0),
-			navHidden: false,
-			navPinned: false,
-			nowSeconds: $elm$core$Basics$round(flags.now / 1000),
-			pinned: _List_Nil,
-			previewCountry: $elm$core$Maybe$Nothing,
-			previewMetric: $elm$core$Maybe$Nothing,
-			rowsByCountry: $elm$core$Dict$empty,
-			solar: _List_Nil,
-			status: $author$project$Main$Connecting,
-			token: $elm$core$Maybe$Nothing,
-			tokenInput: '',
-			treemapFull: false,
-			tz: flags.tz,
-			windowDays: 7
+			as: 0,
+			aL: 7 * 24,
+			bu: $elm$core$Maybe$Nothing,
+			au: false,
+			cD: $elm$core$Dict$empty,
+			U: 'all',
+			az: 0,
+			e9: $elm$core$Maybe$Nothing,
+			aP: 0,
+			bB: 0,
+			aQ: $elm$core$Maybe$Nothing,
+			bC: $elm$core$Maybe$Nothing,
+			cO: 0,
+			bd: $elm$core$Maybe$Nothing,
+			bG: $elm$core$Dict$empty,
+			aS: 0,
+			ci: _Utils_Tuple2(0, 0),
+			cj: false,
+			bf: false,
+			fK: $elm$core$Basics$round(flags.dT / 1000),
+			ae: _List_Nil,
+			bi: $elm$core$Maybe$Nothing,
+			bM: $elm$core$Maybe$Nothing,
+			a_: $elm$core$Dict$empty,
+			en: _List_Nil,
+			o: $author$project$Main$Connecting,
+			bl: $elm$core$Maybe$Nothing,
+			c7: '',
+			bY: false,
+			c9: flags.c9,
+			m: 7
 		},
 		$author$project$Api$getToken($author$project$Main$GotToken));
 };
 var $elm$json$Json$Decode$int = _Json_decodeInt;
 var $author$project$Main$Scrolled = function (a) {
-	return {$: 'Scrolled', a: a};
+	return {$: 13, a: a};
 };
-var $author$project$Main$Tick = {$: 'Tick'};
+var $author$project$Main$Tick = {$: 29};
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$time$Time$Every = F2(
 	function (a, b) {
-		return {$: 'Every', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $elm$time$Time$State = F2(
 	function (taggers, processes) {
-		return {processes: processes, taggers: taggers};
+		return {f0: processes, gm: taggers};
 	});
 var $elm$time$Time$init = $elm$core$Task$succeed(
 	A2($elm$time$Time$State, $elm$core$Dict$empty, $elm$core$Dict$empty));
@@ -6301,7 +6295,7 @@ var $elm$time$Time$addMySub = F2(
 		var interval = _v0.a;
 		var tagger = _v0.b;
 		var _v1 = A2($elm$core$Dict$get, interval, state);
-		if (_v1.$ === 'Nothing') {
+		if (_v1.$ === 1) {
 			return A3(
 				$elm$core$Dict$insert,
 				interval,
@@ -6321,7 +6315,7 @@ var $elm$core$Dict$foldl = F3(
 	function (func, acc, dict) {
 		foldl:
 		while (true) {
-			if (dict.$ === 'RBEmpty_elm_builtin') {
+			if (dict.$ === -2) {
 				return acc;
 			} else {
 				var key = dict.b;
@@ -6404,14 +6398,14 @@ var $elm$core$Dict$merge = F6(
 			leftovers);
 	});
 var $elm$time$Time$Name = function (a) {
-	return {$: 'Name', a: a};
+	return {$: 0, a: a};
 };
 var $elm$time$Time$Offset = function (a) {
-	return {$: 'Offset', a: a};
+	return {$: 1, a: a};
 };
 var $elm$time$Time$Zone = F2(
 	function (a, b) {
-		return {$: 'Zone', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $elm$time$Time$customZone = $elm$time$Time$Zone;
 var $elm$time$Time$setInterval = _Time_setInterval;
@@ -6439,7 +6433,7 @@ var $elm$time$Time$spawnHelp = F3(
 	});
 var $elm$time$Time$onEffects = F3(
 	function (router, subs, _v0) {
-		var processes = _v0.processes;
+		var processes = _v0.f0;
 		var rightStep = F3(
 			function (_v6, id, _v7) {
 				var spawns = _v7.a;
@@ -6486,7 +6480,7 @@ var $elm$time$Time$onEffects = F3(
 			_Utils_Tuple3(
 				_List_Nil,
 				$elm$core$Dict$empty,
-				$elm$core$Task$succeed(_Utils_Tuple0)));
+				$elm$core$Task$succeed(0)));
 		var spawnList = _v1.a;
 		var existingDict = _v1.b;
 		var killTask = _v1.c;
@@ -6503,15 +6497,13 @@ var $elm$time$Time$onEffects = F3(
 				},
 				killTask));
 	});
-var $elm$time$Time$Posix = function (a) {
-	return {$: 'Posix', a: a};
-};
-var $elm$time$Time$millisToPosix = $elm$time$Time$Posix;
+var $elm$time$Time$Posix = $elm$core$Basics$identity;
+var $elm$time$Time$millisToPosix = $elm$core$Basics$identity;
 var $elm$time$Time$now = _Time_now($elm$time$Time$millisToPosix);
 var $elm$time$Time$onSelfMsg = F3(
 	function (router, interval, state) {
-		var _v0 = A2($elm$core$Dict$get, interval, state.taggers);
-		if (_v0.$ === 'Nothing') {
+		var _v0 = A2($elm$core$Dict$get, interval, state.gm);
+		if (_v0.$ === 1) {
 			return $elm$core$Task$succeed(state);
 		} else {
 			var taggers = _v0.a;
@@ -6558,11 +6550,11 @@ var $elm$time$Time$every = F2(
 	});
 var $author$project$Main$isBusy = function (status) {
 	switch (status.$) {
-		case 'Connecting':
+		case 1:
 			return true;
-		case 'LoadingBounds':
+		case 2:
 			return true;
-		case 'LoadingRows':
+		case 3:
 			return true;
 		default:
 			return false;
@@ -6575,7 +6567,7 @@ var $author$project$Main$subscriptions = function (model) {
 		_List_fromArray(
 			[
 				$author$project$Main$onScroll($author$project$Main$Scrolled),
-				$author$project$Main$isBusy(model.status) ? A2(
+				$author$project$Main$isBusy(model.o) ? A2(
 				$elm$time$Time$every,
 				100,
 				function (_v0) {
@@ -6584,30 +6576,30 @@ var $author$project$Main$subscriptions = function (model) {
 			]));
 };
 var $author$project$Main$Failed = function (a) {
-	return {$: 'Failed', a: a};
+	return {$: 5, a: a};
 };
 var $author$project$Main$GotRecent = function (a) {
-	return {$: 'GotRecent', a: a};
+	return {$: 3, a: a};
 };
-var $author$project$Energy$Irradiance = {$: 'Irradiance'};
-var $author$project$Main$LoadingBounds = {$: 'LoadingBounds'};
-var $author$project$Main$Ready = {$: 'Ready'};
+var $author$project$Energy$Irradiance = 3;
+var $author$project$Main$LoadingBounds = {$: 2};
+var $author$project$Main$Ready = {$: 4};
 var $elm$core$Dict$member = F2(
 	function (key, dict) {
 		var _v0 = A2($elm$core$Dict$get, key, dict);
-		if (_v0.$ === 'Just') {
+		if (!_v0.$) {
 			return true;
 		} else {
 			return false;
 		}
 	});
 var $author$project$Main$activeCountry = function (model) {
-	var _v0 = model.previewCountry;
-	if (_v0.$ === 'Just') {
+	var _v0 = model.bi;
+	if (!_v0.$) {
 		var p = _v0.a;
-		return A2($elm$core$Dict$member, p, model.rowsByCountry) ? p : model.country;
+		return A2($elm$core$Dict$member, p, model.a_) ? p : model.U;
 	} else {
-		return model.country;
+		return model.U;
 	}
 };
 var $elm$core$List$any = F2(
@@ -6639,7 +6631,7 @@ var $elm$core$Basics$clamp = F3(
 var $elm$core$Basics$ge = _Utils_ge;
 var $elm$core$Maybe$withDefault = F2(
 	function (_default, maybe) {
-		if (maybe.$ === 'Just') {
+		if (!maybe.$) {
 			var value = maybe.a;
 			return value;
 		} else {
@@ -6652,14 +6644,14 @@ var $author$project$Main$hasEnough = F2(
 			A2(
 				$elm$core$Maybe$withDefault,
 				0,
-				A2($elm$core$Dict$get, code, model.loadedDays)),
-			model.windowDays) > -1;
+				A2($elm$core$Dict$get, code, model.bG)),
+			model.m) > -1;
 	});
-var $author$project$Main$LoadingRows = {$: 'LoadingRows'};
+var $author$project$Main$LoadingRows = {$: 3};
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$GotCountryRows = F5(
 	function (a, b, c, d, e) {
-		return {$: 'GotCountryRows', a: a, b: b, c: c, d: d, e: e};
+		return {$: 4, a: a, b: b, c: c, d: d, e: e};
 	});
 var $elm$core$List$filter = F2(
 	function (isGood, list) {
@@ -6695,7 +6687,7 @@ var $elm$core$Dict$values = function (dict) {
 var $author$project$Main$boundsFor = F2(
 	function (ceilings, code) {
 		var _v0 = A2($elm$core$Dict$get, code, ceilings);
-		if (_v0.$ === 'Just') {
+		if (!_v0.$) {
 			var hi = _v0.a;
 			var lo = A2(
 				$elm$core$Maybe$withDefault,
@@ -6722,17 +6714,17 @@ var $author$project$Api$get = F5(
 	function (token, profile, url, decoder, toMsg) {
 		return $elm$http$Http$request(
 			{
-				body: $elm$http$Http$emptyBody,
-				expect: A2($elm$http$Http$expectJson, toMsg, decoder),
-				headers: _List_fromArray(
+				eS: $elm$http$Http$emptyBody,
+				e5: A2($elm$http$Http$expectJson, toMsg, decoder),
+				ff: _List_fromArray(
 					[
 						A2($elm$http$Http$header, 'Authorization', 'Bearer ' + token),
 						A2($elm$http$Http$header, 'Accept-Profile', profile)
 					]),
-				method: 'GET',
-				timeout: $elm$core$Maybe$Nothing,
-				tracker: $elm$core$Maybe$Nothing,
-				url: url
+				fB: 'GET',
+				gp: $elm$core$Maybe$Nothing,
+				gr: $elm$core$Maybe$Nothing,
+				gx: url
 			});
 	});
 var $author$project$Api$limit = 5000;
@@ -6772,7 +6764,7 @@ var $author$project$Energy$Row = function (unixSeconds) {
 																return function (coalDerivedGas) {
 																	return function (waste) {
 																		return function (others) {
-																			return {biomass: biomass, brownCoal: brownCoal, coalDerivedGas: coalDerivedGas, countryId: countryId, gas: gas, geothermal: geothermal, hardCoal: hardCoal, hydroPumped: hydroPumped, hydroReservoir: hydroReservoir, hydroRor: hydroRor, load: load, nuclear: nuclear, oil: oil, others: others, solar: solar, unixSeconds: unixSeconds, waste: waste, windOffshore: windOffshore, windOnshore: windOnshore};
+																			return {eR: biomass, eU: brownCoal, eX: coalDerivedGas, gV: countryId, fc: gas, fd: geothermal, fe: hardCoal, fj: hydroPumped, fk: hydroReservoir, fl: hydroRor, hg: load, fL: nuclear, fN: oil, fQ: others, en: solar, gw: unixSeconds, gA: waste, eG: windOffshore, eH: windOnshore};
 																		};
 																	};
 																};
@@ -6822,13 +6814,13 @@ var $NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$optionalDecoder = F3
 				$elm$json$Json$Decode$decodeValue,
 				A2($elm$json$Json$Decode$at, path, $elm$json$Json$Decode$value),
 				input);
-			if (_v0.$ === 'Ok') {
+			if (!_v0.$) {
 				var rawValue = _v0.a;
 				var _v1 = A2(
 					$elm$json$Json$Decode$decodeValue,
 					nullOr(valDecoder),
 					rawValue);
-				if (_v1.$ === 'Ok') {
+				if (!_v1.$) {
 					var finalResult = _v1.a;
 					return $elm$json$Json$Decode$succeed(finalResult);
 				} else {
@@ -6994,27 +6986,27 @@ var $author$project$Api$scaleTotal = F2(
 		var s = function (v) {
 			return v / 1000;
 		};
-		var loadMw = ((residualMw + r.solar) + r.windOnshore) + r.windOffshore;
+		var loadMw = ((residualMw + r.en) + r.eH) + r.eG;
 		return _Utils_update(
 			r,
 			{
-				biomass: s(r.biomass),
-				brownCoal: s(r.brownCoal),
-				coalDerivedGas: s(r.coalDerivedGas),
-				gas: s(r.gas),
-				geothermal: s(r.geothermal),
-				hardCoal: s(r.hardCoal),
-				hydroPumped: s(r.hydroPumped),
-				hydroReservoir: s(r.hydroReservoir),
-				hydroRor: s(r.hydroRor),
-				load: s(loadMw),
-				nuclear: s(r.nuclear),
-				oil: s(r.oil),
-				others: s(r.others),
-				solar: s(r.solar),
-				waste: s(r.waste),
-				windOffshore: s(r.windOffshore),
-				windOnshore: s(r.windOnshore)
+				eR: s(r.eR),
+				eU: s(r.eU),
+				eX: s(r.eX),
+				fc: s(r.fc),
+				fd: s(r.fd),
+				fe: s(r.fe),
+				fj: s(r.fj),
+				fk: s(r.fk),
+				fl: s(r.fl),
+				hg: s(loadMw),
+				fL: s(r.fL),
+				fN: s(r.fN),
+				fQ: s(r.fQ),
+				en: s(r.en),
+				gA: s(r.gA),
+				eG: s(r.eG),
+				eH: s(r.eH)
 			});
 	});
 var $author$project$Api$totalRowDecoder = A3(
@@ -7057,15 +7049,15 @@ var $author$project$Api$loadCountryRows = F5(
 	});
 var $author$project$Main$pageCmd = F5(
 	function (model, code, days, offset, viaIdBlock) {
-		var _v0 = _Utils_Tuple2(model.token, model.latest);
-		if ((_v0.a.$ === 'Just') && (_v0.b.$ === 'Just')) {
+		var _v0 = _Utils_Tuple2(model.bl, model.bd);
+		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var token = _v0.a.a;
 			var tmax = _v0.b.a;
 			var tmin = tmax - (days * 86400);
 			return viaIdBlock ? A5(
 				$author$project$Api$loadCountryByIdBlock,
 				token,
-				A2($author$project$Main$boundsFor, model.ceilings, code),
+				A2($author$project$Main$boundsFor, model.cD, code),
 				tmin,
 				offset,
 				A4($author$project$Main$GotCountryRows, code, days, offset, true)) : A5(
@@ -7081,14 +7073,14 @@ var $author$project$Main$pageCmd = F5(
 	});
 var $author$project$Main$loadCountry = F4(
 	function (isPrimary, days, code, model) {
-		var _v0 = _Utils_Tuple2(model.token, model.latest);
-		if ((_v0.a.$ === 'Just') && (_v0.b.$ === 'Just')) {
+		var _v0 = _Utils_Tuple2(model.bl, model.bd);
+		if ((!_v0.a.$) && (!_v0.b.$)) {
 			var token = _v0.a.a;
 			var tmax = _v0.b.a;
 			return _Utils_Tuple2(
 				isPrimary ? _Utils_update(
 					model,
-					{elapsed: 0, focusedDay: $elm$core$Maybe$Nothing, status: $author$project$Main$LoadingRows}) : model,
+					{az: 0, e9: $elm$core$Maybe$Nothing, o: $author$project$Main$LoadingRows}) : model,
 				A5($author$project$Main$pageCmd, model, code, days, 0, false));
 		} else {
 			return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
@@ -7096,10 +7088,10 @@ var $author$project$Main$loadCountry = F4(
 	});
 var $author$project$Main$ensureCountry = F2(
 	function (code, model) {
-		return A2($author$project$Main$hasEnough, code, model) ? _Utils_Tuple2(model, $elm$core$Platform$Cmd$none) : A4($author$project$Main$loadCountry, false, model.windowDays, code, model);
+		return A2($author$project$Main$hasEnough, code, model) ? _Utils_Tuple2(model, $elm$core$Platform$Cmd$none) : A4($author$project$Main$loadCountry, false, model.m, code, model);
 	});
 var $author$project$Main$GotSolar = function (a) {
-	return {$: 'GotSolar', a: a};
+	return {$: 5, a: a};
 };
 var $author$project$Api$daysFromCivil = F3(
 	function (y0, m, d) {
@@ -7122,7 +7114,7 @@ var $elm$core$List$head = function (list) {
 };
 var $elm$core$Maybe$map = F2(
 	function (f, maybe) {
-		if (maybe.$ === 'Just') {
+		if (!maybe.$) {
 			var value = maybe.a;
 			return $elm$core$Maybe$Just(
 				f(value));
@@ -7219,7 +7211,7 @@ var $elm$time$Time$flooredDiv = F2(
 		return $elm$core$Basics$floor(numerator / denominator);
 	});
 var $elm$time$Time$posixToMillis = function (_v0) {
-	var millis = _v0.a;
+	var millis = _v0;
 	return millis;
 };
 var $elm$time$Time$toAdjustedMinutesHelp = F3(
@@ -7231,8 +7223,8 @@ var $elm$time$Time$toAdjustedMinutesHelp = F3(
 			} else {
 				var era = eras.a;
 				var olderEras = eras.b;
-				if (_Utils_cmp(era.start, posixMinutes) < 0) {
-					return posixMinutes + era.offset;
+				if (_Utils_cmp(era.eu, posixMinutes) < 0) {
+					return posixMinutes + era.hr;
 				} else {
 					var $temp$defaultOffset = defaultOffset,
 						$temp$posixMinutes = posixMinutes,
@@ -7271,15 +7263,15 @@ var $elm$time$Time$toCivil = function (minutes) {
 	var month = mp + ((mp < 10) ? 3 : (-9));
 	var year = yearOfEra + (era * 400);
 	return {
-		day: (dayOfYear - ((((153 * mp) + 2) / 5) | 0)) + 1,
-		month: month,
-		year: year + ((month <= 2) ? 1 : 0)
+		dk: (dayOfYear - ((((153 * mp) + 2) / 5) | 0)) + 1,
+		fE: month,
+		gD: year + ((month <= 2) ? 1 : 0)
 	};
 };
 var $elm$time$Time$toDay = F2(
 	function (zone, time) {
 		return $elm$time$Time$toCivil(
-			A2($elm$time$Time$toAdjustedMinutes, zone, time)).day;
+			A2($elm$time$Time$toAdjustedMinutes, zone, time)).dk;
 	});
 var $elm$core$Basics$modBy = _Basics_modBy;
 var $elm$time$Time$toHour = F2(
@@ -7299,47 +7291,47 @@ var $elm$time$Time$toMinute = F2(
 			60,
 			A2($elm$time$Time$toAdjustedMinutes, zone, time));
 	});
-var $elm$time$Time$Apr = {$: 'Apr'};
-var $elm$time$Time$Aug = {$: 'Aug'};
-var $elm$time$Time$Dec = {$: 'Dec'};
-var $elm$time$Time$Feb = {$: 'Feb'};
-var $elm$time$Time$Jan = {$: 'Jan'};
-var $elm$time$Time$Jul = {$: 'Jul'};
-var $elm$time$Time$Jun = {$: 'Jun'};
-var $elm$time$Time$Mar = {$: 'Mar'};
-var $elm$time$Time$May = {$: 'May'};
-var $elm$time$Time$Nov = {$: 'Nov'};
-var $elm$time$Time$Oct = {$: 'Oct'};
-var $elm$time$Time$Sep = {$: 'Sep'};
+var $elm$time$Time$Apr = 3;
+var $elm$time$Time$Aug = 7;
+var $elm$time$Time$Dec = 11;
+var $elm$time$Time$Feb = 1;
+var $elm$time$Time$Jan = 0;
+var $elm$time$Time$Jul = 6;
+var $elm$time$Time$Jun = 5;
+var $elm$time$Time$Mar = 2;
+var $elm$time$Time$May = 4;
+var $elm$time$Time$Nov = 10;
+var $elm$time$Time$Oct = 9;
+var $elm$time$Time$Sep = 8;
 var $elm$time$Time$toMonth = F2(
 	function (zone, time) {
 		var _v0 = $elm$time$Time$toCivil(
-			A2($elm$time$Time$toAdjustedMinutes, zone, time)).month;
+			A2($elm$time$Time$toAdjustedMinutes, zone, time)).fE;
 		switch (_v0) {
 			case 1:
-				return $elm$time$Time$Jan;
+				return 0;
 			case 2:
-				return $elm$time$Time$Feb;
+				return 1;
 			case 3:
-				return $elm$time$Time$Mar;
+				return 2;
 			case 4:
-				return $elm$time$Time$Apr;
+				return 3;
 			case 5:
-				return $elm$time$Time$May;
+				return 4;
 			case 6:
-				return $elm$time$Time$Jun;
+				return 5;
 			case 7:
-				return $elm$time$Time$Jul;
+				return 6;
 			case 8:
-				return $elm$time$Time$Aug;
+				return 7;
 			case 9:
-				return $elm$time$Time$Sep;
+				return 8;
 			case 10:
-				return $elm$time$Time$Oct;
+				return 9;
 			case 11:
-				return $elm$time$Time$Nov;
+				return 10;
 			default:
-				return $elm$time$Time$Dec;
+				return 11;
 		}
 	});
 var $elm$time$Time$toSecond = F2(
@@ -7355,7 +7347,7 @@ var $elm$time$Time$toSecond = F2(
 var $elm$time$Time$toYear = F2(
 	function (zone, time) {
 		return $elm$time$Time$toCivil(
-			A2($elm$time$Time$toAdjustedMinutes, zone, time)).year;
+			A2($elm$time$Time$toAdjustedMinutes, zone, time)).gD;
 	});
 var $elm$time$Time$utc = A2($elm$time$Time$Zone, 0, _List_Nil);
 var $author$project$Api$unixToIso = function (unix) {
@@ -7363,33 +7355,33 @@ var $author$project$Api$unixToIso = function (unix) {
 		return A3(
 			$elm$core$String$padLeft,
 			2,
-			_Utils_chr('0'),
+			'0',
 			$elm$core$String$fromInt(n));
 	};
 	var p = $elm$time$Time$millisToPosix(unix * 1000);
 	var monthNum = function (m) {
-		switch (m.$) {
-			case 'Jan':
+		switch (m) {
+			case 0:
 				return 1;
-			case 'Feb':
+			case 1:
 				return 2;
-			case 'Mar':
+			case 2:
 				return 3;
-			case 'Apr':
+			case 3:
 				return 4;
-			case 'May':
+			case 4:
 				return 5;
-			case 'Jun':
+			case 5:
 				return 6;
-			case 'Jul':
+			case 6:
 				return 7;
-			case 'Aug':
+			case 7:
 				return 8;
-			case 'Sep':
+			case 8:
 				return 9;
-			case 'Oct':
+			case 9:
 				return 10;
-			case 'Nov':
+			case 10:
 				return 11;
 			default:
 				return 12;
@@ -7438,11 +7430,11 @@ var $elm$core$Basics$min = F2(
 		return (_Utils_cmp(x, y) < 0) ? x : y;
 	});
 var $author$project$Main$ensureSolar = function (model) {
-	var _v0 = _Utils_Tuple2(model.token, model.latest);
-	if ((_v0.a.$ === 'Just') && (_v0.b.$ === 'Just')) {
+	var _v0 = _Utils_Tuple2(model.bl, model.bd);
+	if ((!_v0.a.$) && (!_v0.b.$)) {
 		var token = _v0.a.a;
 		var tmax = _v0.b.a;
-		var days = A2($elm$core$Basics$min, 30, model.windowDays);
+		var days = A2($elm$core$Basics$min, 30, model.m);
 		return _Utils_Tuple2(
 			model,
 			A4($author$project$Api$loadSolar, token, tmax - (days * 86400), tmax, $author$project$Main$GotSolar));
@@ -7457,7 +7449,7 @@ var $author$project$Main$activeRows = function (model) {
 		A2(
 			$elm$core$Dict$get,
 			$author$project$Main$activeCountry(model),
-			model.rowsByCountry));
+			model.a_));
 };
 var $elm$core$List$minimum = function (list) {
 	if (list.b) {
@@ -7472,12 +7464,12 @@ var $elm$core$List$minimum = function (list) {
 var $elm$core$List$sortBy = _List_sortBy;
 var $author$project$Energy$Band = F4(
 	function (name, group, color, value) {
-		return {color: color, group: group, name: name, value: value};
+		return {gR: color, g6: group, cZ: name, hY: value};
 	});
-var $author$project$Energy$Renewable = {$: 'Renewable'};
+var $author$project$Energy$Renewable = 0;
 var $avh4$elm_color$Color$RgbaSpace = F4(
 	function (a, b, c, d) {
-		return {$: 'RgbaSpace', a: a, b: b, c: c, d: d};
+		return {$: 0, a: a, b: b, c: c, d: d};
 	});
 var $avh4$elm_color$Color$scaleFrom255 = function (c) {
 	return c / 255;
@@ -7495,67 +7487,67 @@ var $author$project$Energy$rgb = $avh4$elm_color$Color$rgb255;
 var $author$project$Energy$biomassBand = A4(
 	$author$project$Energy$Band,
 	'Biomasse',
-	$author$project$Energy$Renewable,
+	0,
 	A3($author$project$Energy$rgb, 91, 168, 91),
 	function (r) {
-		return r.biomass + r.geothermal;
+		return r.eR + r.fd;
 	});
-var $author$project$Energy$Conventional = {$: 'Conventional'};
+var $author$project$Energy$Conventional = 1;
 var $author$project$Energy$coalBand = A4(
 	$author$project$Energy$Band,
 	'Kohle',
-	$author$project$Energy$Conventional,
+	1,
 	A3($author$project$Energy$rgb, 74, 74, 74),
 	function (r) {
-		return (r.brownCoal + r.hardCoal) + r.coalDerivedGas;
+		return (r.eU + r.fe) + r.eX;
 	});
 var $author$project$Energy$gasBand = A4(
 	$author$project$Energy$Band,
 	'Gas/Öl',
-	$author$project$Energy$Conventional,
+	1,
 	A3($author$project$Energy$rgb, 156, 122, 91),
 	function (r) {
-		return r.gas + r.oil;
+		return r.fc + r.fN;
 	});
 var $author$project$Energy$hydroBand = A4(
 	$author$project$Energy$Band,
 	'Wasserkraft',
-	$author$project$Energy$Renewable,
+	0,
 	A3($author$project$Energy$rgb, 46, 111, 149),
 	function (r) {
-		return (r.hydroRor + r.hydroReservoir) + r.hydroPumped;
+		return (r.fl + r.fk) + r.fj;
 	});
 var $author$project$Energy$nuclearBand = A4(
 	$author$project$Energy$Band,
 	'Kernkraft',
-	$author$project$Energy$Conventional,
+	1,
 	A3($author$project$Energy$rgb, 184, 111, 184),
 	function ($) {
-		return $.nuclear;
+		return $.fL;
 	});
 var $author$project$Energy$otherBand = A4(
 	$author$project$Energy$Band,
 	'Sonstige',
-	$author$project$Energy$Conventional,
+	1,
 	A3($author$project$Energy$rgb, 176, 176, 176),
 	function (r) {
-		return r.waste + r.others;
+		return r.gA + r.fQ;
 	});
 var $author$project$Energy$solarBand = A4(
 	$author$project$Energy$Band,
 	'Solar',
-	$author$project$Energy$Renewable,
+	0,
 	A3($author$project$Energy$rgb, 255, 209, 59),
 	function ($) {
-		return $.solar;
+		return $.en;
 	});
 var $author$project$Energy$windBand = A4(
 	$author$project$Energy$Band,
 	'Wind',
-	$author$project$Energy$Renewable,
+	0,
 	A3($author$project$Energy$rgb, 79, 163, 209),
 	function (r) {
-		return r.windOnshore + r.windOffshore;
+		return r.eH + r.eG;
 	});
 var $author$project$Energy$bands = _List_fromArray(
 	[$author$project$Energy$solarBand, $author$project$Energy$windBand, $author$project$Energy$hydroBand, $author$project$Energy$biomassBand, $author$project$Energy$nuclearBand, $author$project$Energy$coalBand, $author$project$Energy$gasBand, $author$project$Energy$otherBand]);
@@ -7567,7 +7559,7 @@ var $author$project$Energy$totalGeneration = function (r) {
 		A2(
 			$elm$core$List$map,
 			function (b) {
-				return b.value(r);
+				return b.hY(r);
 			},
 			$author$project$Energy$bands));
 };
@@ -7576,12 +7568,12 @@ var $author$project$Main$windowRows = F2(
 		var allSorted = A2(
 			$elm$core$List$sortBy,
 			function ($) {
-				return $.unixSeconds;
+				return $.gw;
 			},
 			A2(
 				$elm$core$List$filter,
 				function (r) {
-					return ($author$project$Energy$totalGeneration(r) > 0) || (r.load > 0);
+					return ($author$project$Energy$totalGeneration(r) > 0) || (r.hg > 0);
 				},
 				rows));
 		var tmax = A2(
@@ -7591,13 +7583,13 @@ var $author$project$Main$windowRows = F2(
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.unixSeconds;
+						return $.gw;
 					},
 					allSorted)));
 		return A2(
 			$elm$core$List$filter,
 			function (r) {
-				return _Utils_cmp(r.unixSeconds, tmax - (windowDays * 86400)) > -1;
+				return _Utils_cmp(r.gw, tmax - (windowDays * 86400)) > -1;
 			},
 			allSorted);
 	});
@@ -7609,11 +7601,11 @@ var $author$project$Main$firstLoadedStamp = function (model) {
 			A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.unixSeconds;
+					return $.gw;
 				},
 				A2(
 					$author$project$Main$windowRows,
-					model.windowDays,
+					model.m,
 					$author$project$Main$activeRows(model)))));
 };
 var $author$project$Main$dayPosix = function (d) {
@@ -7647,8 +7639,8 @@ var $author$project$Api$recentDecoder = A4(
 	A2($elm$json$Json$Decode$field, 'country_id', $elm$json$Json$Decode$string),
 	A2($elm$json$Json$Decode$field, 'id', $elm$json$Json$Decode$int),
 	A2($elm$json$Json$Decode$field, 'unix_seconds', $elm$json$Json$Decode$int));
-var $author$project$Api$getRecent = F3(
-	function (token, lbUnix, toMsg) {
+var $author$project$Api$getRecent = F2(
+	function (token, toMsg) {
 		return A5(
 			$author$project$Api$get,
 			token,
@@ -7657,9 +7649,6 @@ var $author$project$Api$getRecent = F3(
 				$author$project$Api$params(
 					_List_fromArray(
 						[
-							_Utils_Tuple2(
-							'unix_seconds',
-							'gte.' + $elm$core$String$fromInt(lbUnix)),
 							_Utils_Tuple2('order', 'unix_seconds.desc'),
 							_Utils_Tuple2('select', 'country_id,id,unix_seconds'),
 							_Utils_Tuple2(
@@ -7671,14 +7660,14 @@ var $author$project$Api$getRecent = F3(
 	});
 var $author$project$Main$httpErr = function (err) {
 	switch (err.$) {
-		case 'BadUrl':
+		case 0:
 			var u = err.a;
 			return 'BadUrl ' + u;
-		case 'Timeout':
+		case 1:
 			return 'Timeout';
-		case 'NetworkError':
+		case 2:
 			return 'Netzwerkfehler (läuft der Proxy auf Port 3001?)';
-		case 'BadStatus':
+		case 3:
 			var s = err.a;
 			return 'Status ' + $elm$core$String$fromInt(s);
 		default:
@@ -7700,7 +7689,7 @@ var $author$project$Energy$localDayOf = F2(
 var $author$project$Main$lastLoadedDay = function (model) {
 	return A2(
 		$author$project$Energy$localDayOf,
-		model.tz,
+		model.c9,
 		A2(
 			$elm$core$Maybe$withDefault,
 			0,
@@ -7708,15 +7697,12 @@ var $author$project$Main$lastLoadedDay = function (model) {
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.unixSeconds;
+						return $.gw;
 					},
 					A2(
 						$author$project$Main$windowRows,
-						model.windowDays,
+						model.m,
 						$author$project$Main$activeRows(model))))));
-};
-var $author$project$Main$lbOf = function (model) {
-	return model.nowSeconds - (90 * 86400);
 };
 var $author$project$Main$countries = _List_fromArray(
 	[
@@ -7734,11 +7720,11 @@ var $author$project$Main$countries = _List_fromArray(
 	]);
 var $author$project$Main$prefetchDays = 30;
 var $author$project$Main$loadAllCountries = function (model) {
-	var days = A2($elm$core$Basics$max, $author$project$Main$prefetchDays, model.windowDays);
+	var days = A2($elm$core$Basics$max, $author$project$Main$prefetchDays, model.m);
 	return _Utils_Tuple2(
 		_Utils_update(
 			model,
-			{elapsed: 0, focusedDay: $elm$core$Maybe$Nothing, status: $author$project$Main$LoadingRows}),
+			{az: 0, e9: $elm$core$Maybe$Nothing, o: $author$project$Main$LoadingRows}),
 		$elm$core$Platform$Cmd$batch(
 			A2(
 				$elm$core$List$map,
@@ -7764,60 +7750,52 @@ var $elm$core$String$trim = _String_trim;
 var $author$project$Main$update = F2(
 	function (msg, model) {
 		switch (msg.$) {
-			case 'TokenInput':
+			case 0:
 				var s = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{tokenInput: s}),
+						{c7: s}),
 					$elm$core$Platform$Cmd$none);
-			case 'Connect':
-				var manual = $elm$core$String$trim(model.tokenInput);
+			case 1:
+				var manual = $elm$core$String$trim(model.c7);
 				return (manual !== '') ? _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							elapsed: 0,
-							status: $author$project$Main$LoadingBounds,
-							token: $elm$core$Maybe$Just(manual)
+							az: 0,
+							o: $author$project$Main$LoadingBounds,
+							bl: $elm$core$Maybe$Just(manual)
 						}),
-					A3(
-						$author$project$Api$getRecent,
-						manual,
-						$author$project$Main$lbOf(model),
-						$author$project$Main$GotRecent)) : _Utils_Tuple2(
+					A2($author$project$Api$getRecent, manual, $author$project$Main$GotRecent)) : _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{elapsed: 0, status: $author$project$Main$Connecting}),
+						{az: 0, o: $author$project$Main$Connecting}),
 					$author$project$Api$getToken($author$project$Main$GotToken));
-			case 'GotToken':
-				if (msg.a.$ === 'Ok') {
+			case 2:
+				if (!msg.a.$) {
 					var t = msg.a.a;
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
 							{
-								status: $author$project$Main$LoadingBounds,
-								token: $elm$core$Maybe$Just(t)
+								o: $author$project$Main$LoadingBounds,
+								bl: $elm$core$Maybe$Just(t)
 							}),
-						A3(
-							$author$project$Api$getRecent,
-							t,
-							$author$project$Main$lbOf(model),
-							$author$project$Main$GotRecent));
+						A2($author$project$Api$getRecent, t, $author$project$Main$GotRecent));
 				} else {
 					var e = msg.a.a;
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
 							{
-								status: $author$project$Main$Failed(
+								o: $author$project$Main$Failed(
 									'Token konnte nicht geholt werden – läuft der Proxy? (' + ($author$project$Main$httpErr(e) + ')'))
 							}),
 						$elm$core$Platform$Cmd$none);
 				}
-			case 'GotRecent':
-				if (msg.a.$ === 'Ok') {
+			case 3:
+				if (!msg.a.$) {
 					var triples = msg.a.a;
 					var tmax = $elm$core$List$maximum(
 						A2(
@@ -7847,21 +7825,21 @@ var $author$project$Main$update = F2(
 							}),
 						$elm$core$Dict$empty,
 						triples);
-					if (tmax.$ === 'Just') {
+					if (!tmax.$) {
 						var t = tmax.a;
 						return $author$project$Main$loadAllCountries(
 							_Utils_update(
 								model,
 								{
-									ceilings: ceilings,
-									latest: $elm$core$Maybe$Just(t)
+									cD: ceilings,
+									bd: $elm$core$Maybe$Just(t)
 								}));
 					} else {
 						return _Utils_Tuple2(
 							_Utils_update(
 								model,
 								{
-									status: $author$project$Main$Failed('Keine aktuellen Daten gefunden (Zeitfenster zu eng?).')
+									o: $author$project$Main$Failed('Keine aktuellen Daten gefunden (Zeitfenster zu eng?).')
 								}),
 							$elm$core$Platform$Cmd$none);
 					}
@@ -7871,13 +7849,13 @@ var $author$project$Main$update = F2(
 						_Utils_update(
 							model,
 							{
-								status: $author$project$Main$Failed(
+								o: $author$project$Main$Failed(
 									$author$project$Main$httpErr(e))
 							}),
 						$elm$core$Platform$Cmd$none);
 				}
-			case 'GotCountryRows':
-				if (msg.e.$ === 'Ok') {
+			case 4:
+				if (!msg.e.$) {
 					var code = msg.a;
 					var days = msg.b;
 					var offset = msg.c;
@@ -7890,26 +7868,26 @@ var $author$project$Main$update = F2(
 					var fresh = A2(
 						$elm$core$List$filter,
 						function (r) {
-							return _Utils_eq(r.countryId, code);
+							return _Utils_eq(r.gV, code);
 						},
 						rows);
 					var merged = (!offset) ? fresh : _Utils_ap(
 						A2(
 							$elm$core$Maybe$withDefault,
 							_List_Nil,
-							A2($elm$core$Dict$get, code, model.rowsByCountry)),
+							A2($elm$core$Dict$get, code, model.a_)),
 						fresh);
 					var m2 = _Utils_update(
 						model,
 						{
-							loadedDays: morePages ? model.loadedDays : A3($elm$core$Dict$insert, code, days, model.loadedDays),
-							rowsByCountry: A3($elm$core$Dict$insert, code, merged, model.rowsByCountry),
-							status: (_Utils_eq(code, model.country) && (!morePages)) ? $author$project$Main$Ready : model.status
+							bG: morePages ? model.bG : A3($elm$core$Dict$insert, code, days, model.bG),
+							a_: A3($elm$core$Dict$insert, code, merged, model.a_),
+							o: (_Utils_eq(code, model.U) && (!morePages)) ? $author$project$Main$Ready : model.o
 						});
 					var filterIgnored = (!viaIdBlock) && A2(
 						$elm$core$List$any,
 						function (r) {
-							return !_Utils_eq(r.countryId, code);
+							return !_Utils_eq(r.gV, code);
 						},
 						rows);
 					return filterIgnored ? _Utils_Tuple2(
@@ -7924,39 +7902,39 @@ var $author$project$Main$update = F2(
 						_Utils_update(
 							model,
 							{
-								status: _Utils_eq(code, model.country) ? $author$project$Main$Failed(
-									$author$project$Main$httpErr(e)) : model.status
+								o: _Utils_eq(code, model.U) ? $author$project$Main$Failed(
+									$author$project$Main$httpErr(e)) : model.o
 							}),
 						$elm$core$Platform$Cmd$none);
 				}
-			case 'GotSolar':
-				if (msg.a.$ === 'Ok') {
+			case 5:
+				if (!msg.a.$) {
 					var pairs = msg.a.a;
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{solar: pairs}),
+							{en: pairs}),
 						$elm$core$Platform$Cmd$none);
 				} else {
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{solar: _List_Nil}),
+							{en: _List_Nil}),
 						$elm$core$Platform$Cmd$none);
 				}
-			case 'SelectCountry':
+			case 6:
 				var c = msg.a;
 				var m2 = _Utils_update(
 					model,
-					{country: c, previewCountry: $elm$core$Maybe$Nothing});
+					{U: c, bi: $elm$core$Maybe$Nothing});
 				return A2($author$project$Main$hasEnough, c, m2) ? _Utils_Tuple2(
 					_Utils_update(
 						m2,
-						{status: $author$project$Main$Ready}),
-					$elm$core$Platform$Cmd$none) : A4($author$project$Main$loadCountry, true, m2.windowDays, c, m2);
-			case 'HoverCountry':
+						{o: $author$project$Main$Ready}),
+					$elm$core$Platform$Cmd$none) : A4($author$project$Main$loadCountry, true, m2.m, c, m2);
+			case 16:
 				var mc = msg.a;
-				if (mc.$ === 'Just') {
+				if (!mc.$) {
 					var code = mc.a;
 					return A2(
 						$author$project$Main$ensureCountry,
@@ -7964,25 +7942,25 @@ var $author$project$Main$update = F2(
 						_Utils_update(
 							model,
 							{
-								previewCountry: $elm$core$Maybe$Just(code)
+								bi: $elm$core$Maybe$Just(code)
 							}));
 				} else {
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{previewCountry: $elm$core$Maybe$Nothing}),
+							{bi: $elm$core$Maybe$Nothing}),
 						$elm$core$Platform$Cmd$none);
 				}
-			case 'SelectWindow':
+			case 7:
 				var d = msg.a;
 				var m2 = _Utils_update(
 					model,
-					{areaOffset: 0, areaSpan: d * 24, heatOffset: 0, heatSpan: 0, windowDays: d});
+					{as: 0, aL: d * 24, aP: 0, bB: 0, m: d});
 				var code = $author$project$Main$activeCountry(m2);
 				var _v5 = A2($author$project$Main$hasEnough, code, m2) ? _Utils_Tuple2(m2, $elm$core$Platform$Cmd$none) : A4($author$project$Main$loadCountry, true, d, code, m2);
 				var m3 = _v5.a;
 				var cmd1 = _v5.b;
-				if (_Utils_eq(m3.metric, $author$project$Energy$Irradiance)) {
+				if (m3.aS === 3) {
 					var _v6 = $author$project$Main$ensureSolar(m3);
 					var m4 = _v6.a;
 					var cmd2 = _v6.b;
@@ -7994,194 +7972,194 @@ var $author$project$Main$update = F2(
 				} else {
 					return _Utils_Tuple2(m3, cmd1);
 				}
-			case 'SelectMetric':
+			case 8:
 				var m = msg.a;
 				var m2 = _Utils_update(
 					model,
-					{metric: m, previewMetric: $elm$core$Maybe$Nothing});
-				return _Utils_eq(m, $author$project$Energy$Irradiance) ? $author$project$Main$ensureSolar(m2) : _Utils_Tuple2(m2, $elm$core$Platform$Cmd$none);
-			case 'HoverMetric':
+					{aS: m, bM: $elm$core$Maybe$Nothing});
+				return (m === 3) ? $author$project$Main$ensureSolar(m2) : _Utils_Tuple2(m2, $elm$core$Platform$Cmd$none);
+			case 15:
 				var mm = msg.a;
 				var m2 = _Utils_update(
 					model,
-					{previewMetric: mm});
+					{bM: mm});
 				return (_Utils_eq(
 					mm,
-					$elm$core$Maybe$Just($author$project$Energy$Irradiance)) && $elm$core$List$isEmpty(model.solar)) ? $author$project$Main$ensureSolar(m2) : _Utils_Tuple2(m2, $elm$core$Platform$Cmd$none);
-			case 'SetHeatSpan':
+					$elm$core$Maybe$Just(3)) && $elm$core$List$isEmpty(model.en)) ? $author$project$Main$ensureSolar(m2) : _Utils_Tuple2(m2, $elm$core$Platform$Cmd$none);
+			case 17:
 				var d = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							heatOffset: 0,
-							heatSpan: A2($elm$core$Basics$max, 1, d)
+							aP: 0,
+							bB: A2($elm$core$Basics$max, 1, d)
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'SetHeatOffset':
+			case 18:
 				var o = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							heatOffset: A2($elm$core$Basics$max, 0, o)
+							aP: A2($elm$core$Basics$max, 0, o)
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'HoverInfo':
+			case 19:
 				var t = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{infoTip: t}),
+						{bC: t}),
 					$elm$core$Platform$Cmd$none);
-			case 'ResetFilters':
+			case 20:
 				var m2 = _Utils_update(
 					model,
-					{areaOffset: 0, areaSpan: 7 * 24, calAnchor: $elm$core$Maybe$Nothing, calOpen: false, country: 'all', focusedDay: $elm$core$Maybe$Nothing, heatOffset: 0, heatSpan: 0, hovered: $elm$core$Maybe$Nothing, infoTip: $elm$core$Maybe$Nothing, metric: $author$project$Energy$SolarShare, pinned: _List_Nil, previewCountry: $elm$core$Maybe$Nothing, previewMetric: $elm$core$Maybe$Nothing, treemapFull: false, windowDays: 7});
+					{as: 0, aL: 7 * 24, bu: $elm$core$Maybe$Nothing, au: false, U: 'all', e9: $elm$core$Maybe$Nothing, aP: 0, bB: 0, aQ: $elm$core$Maybe$Nothing, bC: $elm$core$Maybe$Nothing, aS: 0, ae: _List_Nil, bi: $elm$core$Maybe$Nothing, bM: $elm$core$Maybe$Nothing, bY: false, m: 7});
 				return A2($author$project$Main$hasEnough, 'all', m2) ? _Utils_Tuple2(
 					_Utils_update(
 						m2,
-						{status: $author$project$Main$Ready}),
-					$elm$core$Platform$Cmd$none) : A4($author$project$Main$loadCountry, true, m2.windowDays, 'all', m2);
-			case 'ToggleCalendar':
+						{o: $author$project$Main$Ready}),
+					$elm$core$Platform$Cmd$none) : A4($author$project$Main$loadCountry, true, m2.m, 'all', m2);
+			case 21:
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{calOpen: !model.calOpen}),
+						{au: !model.au}),
 					$elm$core$Platform$Cmd$none);
-			case 'SetCalendar':
+			case 22:
 				var open = msg.a;
-				return _Utils_eq(model.calOpen, open) ? _Utils_Tuple2(model, $elm$core$Platform$Cmd$none) : _Utils_Tuple2(
+				return _Utils_eq(model.au, open) ? _Utils_Tuple2(model, $elm$core$Platform$Cmd$none) : _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{calOpen: open}),
+						{au: open}),
 					$elm$core$Platform$Cmd$none);
-			case 'CalShift':
+			case 23:
 				var months = msg.a;
 				var anchor = A2(
 					$elm$core$Maybe$withDefault,
 					$author$project$Main$lastLoadedDay(model),
-					model.calAnchor);
+					model.bu);
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							calAnchor: $elm$core$Maybe$Just(
+							bu: $elm$core$Maybe$Just(
 								$author$project$Main$firstOfMonth(anchor + (months * 31)))
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'PickDay':
+			case 24:
 				var d = msg.a;
 				var tmin = $author$project$Main$firstLoadedStamp(model);
-				var offH = A2($elm$core$Basics$max, 0, ((((d * 86400) - model.tz) - tmin) / 3600) | 0);
-				var dmin = A2($author$project$Energy$localDayOf, model.tz, tmin);
+				var offH = A2($elm$core$Basics$max, 0, ((((d * 86400) - model.c9) - tmin) / 3600) | 0);
+				var dmin = A2($author$project$Energy$localDayOf, model.c9, tmin);
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							areaOffset: A3(
+							as: A3(
 								$elm$core$Basics$clamp,
 								0,
-								A2($elm$core$Basics$max, 0, (model.windowDays * 24) - model.areaSpan),
+								A2($elm$core$Basics$max, 0, (model.m * 24) - model.aL),
 								offH),
-							focusedDay: $elm$core$Maybe$Just(d),
-							heatOffset: A2($elm$core$Basics$max, 0, d - dmin)
+							e9: $elm$core$Maybe$Just(d),
+							aP: A2($elm$core$Basics$max, 0, d - dmin)
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'SetAreaSpan':
+			case 25:
 				var h = msg.a;
-				var span = A3($elm$core$Basics$clamp, 3, model.windowDays * 24, h);
+				var span = A3($elm$core$Basics$clamp, 3, model.m * 24, h);
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							areaOffset: A3(
+							as: A3(
 								$elm$core$Basics$clamp,
 								0,
-								A2($elm$core$Basics$max, 0, (model.windowDays * 24) - span),
-								model.areaOffset),
-							areaSpan: span
+								A2($elm$core$Basics$max, 0, (model.m * 24) - span),
+								model.as),
+							aL: span
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'SetAreaOffset':
+			case 26:
 				var h = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							areaOffset: A3(
+							as: A3(
 								$elm$core$Basics$clamp,
 								0,
-								A2($elm$core$Basics$max, 0, (model.windowDays * 24) - model.areaSpan),
+								A2($elm$core$Basics$max, 0, (model.m * 24) - model.aL),
 								h)
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'ToggleTreemapFull':
+			case 27:
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{treemapFull: !model.treemapFull}),
+						{bY: !model.bY}),
 					$elm$core$Platform$Cmd$none);
-			case 'NoOp':
+			case 28:
 				return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
-			case 'Tick':
+			case 29:
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{elapsed: model.elapsed + 0.1}),
+						{az: model.az + 0.1}),
 					$elm$core$Platform$Cmd$none);
-			case 'HoverSource':
+			case 9:
 				var ms = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{hovered: ms}),
+						{aQ: ms}),
 					$elm$core$Platform$Cmd$none);
-			case 'PinSource':
+			case 10:
 				var name = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							pinned: A2($elm$core$List$member, name, model.pinned) ? A2(
+							ae: A2($elm$core$List$member, name, model.ae) ? A2(
 								$elm$core$List$filter,
 								$elm$core$Basics$neq(name),
-								model.pinned) : A2($elm$core$List$cons, name, model.pinned)
+								model.ae) : A2($elm$core$List$cons, name, model.ae)
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'MouseMove':
+			case 11:
 				var x = msg.a;
 				var y = msg.b;
-				return (_Utils_eq(model.hovered, $elm$core$Maybe$Nothing) && _Utils_eq(model.infoTip, $elm$core$Maybe$Nothing)) ? _Utils_Tuple2(model, $elm$core$Platform$Cmd$none) : _Utils_Tuple2(
+				return (_Utils_eq(model.aQ, $elm$core$Maybe$Nothing) && _Utils_eq(model.bC, $elm$core$Maybe$Nothing)) ? _Utils_Tuple2(model, $elm$core$Platform$Cmd$none) : _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							mouse: _Utils_Tuple2(x, y)
+							ci: _Utils_Tuple2(x, y)
 						}),
 					$elm$core$Platform$Cmd$none);
-			case 'Scrolled':
+			case 13:
 				var y = msg.a;
-				var delta = y - model.lastScroll;
-				var hidden = (y < 90) ? false : ((delta > 6) ? true : ((_Utils_cmp(delta, -6) < 0) ? false : model.navHidden));
+				var delta = y - model.cO;
+				var hidden = (y < 90) ? false : ((delta > 6) ? true : ((_Utils_cmp(delta, -6) < 0) ? false : model.cj));
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{lastScroll: y, navHidden: hidden}),
+						{cO: y, cj: hidden}),
 					$elm$core$Platform$Cmd$none);
-			case 'ToggleNavPin':
+			case 14:
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{navPinned: !model.navPinned}),
+						{bf: !model.bf}),
 					$elm$core$Platform$Cmd$none);
-			case 'ClickDay':
+			case 12:
 				var d = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							focusedDay: _Utils_eq(
-								model.focusedDay,
+							e9: _Utils_eq(
+								model.e9,
 								$elm$core$Maybe$Just(d)) ? $elm$core$Maybe$Nothing : $elm$core$Maybe$Just(d)
 						}),
 					$elm$core$Platform$Cmd$none);
@@ -8191,22 +8169,22 @@ var $author$project$Main$update = F2(
 	});
 var $author$project$Main$MouseMove = F2(
 	function (a, b) {
-		return {$: 'MouseMove', a: a, b: b};
+		return {$: 11, a: a, b: b};
 	});
 var $author$project$Main$HoverInfo = function (a) {
-	return {$: 'HoverInfo', a: a};
+	return {$: 19, a: a};
 };
 var $author$project$Main$HoverSource = function (a) {
-	return {$: 'HoverSource', a: a};
+	return {$: 9, a: a};
 };
 var $author$project$Main$PinSource = function (a) {
-	return {$: 'PinSource', a: a};
+	return {$: 10, a: a};
 };
 var $author$project$Main$SetAreaOffset = function (a) {
-	return {$: 'SetAreaOffset', a: a};
+	return {$: 26, a: a};
 };
 var $author$project$Main$SetAreaSpan = function (a) {
-	return {$: 'SetAreaSpan', a: a};
+	return {$: 25, a: a};
 };
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
@@ -8233,7 +8211,7 @@ var $elm$html$Html$Events$alwaysStop = function (x) {
 	return _Utils_Tuple2(x, true);
 };
 var $elm$virtual_dom$VirtualDom$MayStopPropagation = function (a) {
-	return {$: 'MayStopPropagation', a: a};
+	return {$: 1, a: a};
 };
 var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
 var $elm$html$Html$Events$stopPropagationOn = F2(
@@ -8410,7 +8388,7 @@ var $author$project$Main$chartCard = F5(
 					_Utils_ap(
 						sub,
 						function () {
-							if (focusNote.$ === 'Just') {
+							if (!focusNote.$) {
 								var n = focusNote.a;
 								return _List_fromArray(
 									[
@@ -8466,28 +8444,28 @@ var $author$project$Energy$decimateTo = F2(
 				A2($elm$core$List$indexedMap, $elm$core$Tuple$pair, rows)));
 	});
 var $author$project$Energy$monthNum = function (m) {
-	switch (m.$) {
-		case 'Jan':
+	switch (m) {
+		case 0:
 			return 1;
-		case 'Feb':
+		case 1:
 			return 2;
-		case 'Mar':
+		case 2:
 			return 3;
-		case 'Apr':
+		case 3:
 			return 4;
-		case 'May':
+		case 4:
 			return 5;
-		case 'Jun':
+		case 5:
 			return 6;
-		case 'Jul':
+		case 6:
 			return 7;
-		case 'Aug':
+		case 7:
 			return 8;
-		case 'Sep':
+		case 8:
 			return 9;
-		case 'Oct':
+		case 9:
 			return 10;
-		case 'Nov':
+		case 10:
 			return 11;
 		default:
 			return 12;
@@ -8504,7 +8482,7 @@ var $author$project$Energy$dayLabel = function (dayIndex) {
 	return pad(d) + ('.' + (pad(mon) + '.'));
 };
 var $author$project$Main$focusNoteOf = function (focusedDay) {
-	if (focusedDay.$ === 'Just') {
+	if (!focusedDay.$) {
 		var d = focusedDay.a;
 		return $elm$core$Maybe$Just(
 			' · Fokus auf ' + ($author$project$Energy$dayLabel(d) + ' (erneut klicken zum Aufheben)'));
@@ -8518,7 +8496,7 @@ var $author$project$Energy$stampLabel = F2(
 			return A3(
 				$elm$core$String$padLeft,
 				2,
-				_Utils_chr('0'),
+				'0',
 				$elm$core$String$fromInt(n));
 		};
 		var local = unix + tz;
@@ -8551,43 +8529,43 @@ var $author$project$Main$rangeBadge = F3(
 					A2($author$project$Energy$stampLabel, tz, from) + ('  –  ' + A2($author$project$Energy$stampLabel, tz, to)))
 				]));
 	});
-var $elm_community$typed_svg$TypedSvg$Types$AnchorMiddle = {$: 'AnchorMiddle'};
+var $elm_community$typed_svg$TypedSvg$Types$AnchorMiddle = 2;
 var $elm_community$typed_svg$TypedSvg$Types$Opacity = function (a) {
-	return {$: 'Opacity', a: a};
+	return {$: 0, a: a};
 };
 var $elm_community$typed_svg$TypedSvg$Types$Paint = function (a) {
-	return {$: 'Paint', a: a};
+	return {$: 0, a: a};
 };
-var $elm_community$typed_svg$TypedSvg$Types$PaintNone = {$: 'PaintNone'};
+var $elm_community$typed_svg$TypedSvg$Types$PaintNone = {$: 5};
 var $elm_community$typed_svg$TypedSvg$Types$Percent = function (a) {
-	return {$: 'Percent', a: a};
+	return {$: 7, a: a};
 };
 var $elm_community$typed_svg$TypedSvg$Types$Rotate = F3(
 	function (a, b, c) {
-		return {$: 'Rotate', a: a, b: b, c: c};
+		return {$: 1, a: a, b: b, c: c};
 	});
 var $elm_community$typed_svg$TypedSvg$Types$Translate = F2(
 	function (a, b) {
-		return {$: 'Translate', a: a, b: b};
+		return {$: 5, a: a, b: b};
 	});
 var $folkertdev$one_true_path_experiment$SubPath$SubPath = function (a) {
-	return {$: 'SubPath', a: a};
+	return {$: 0, a: a};
 };
 var $folkertdev$one_true_path_experiment$SubPath$firstPoint = function (_v0) {
-	var moveto = _v0.moveto;
-	var p = moveto.a;
+	var moveto = _v0.fG;
+	var p = moveto;
 	return p;
 };
 var $folkertdev$one_true_path_experiment$LowLevel$Command$LineTo = function (a) {
-	return {$: 'LineTo', a: a};
+	return {$: 0, a: a};
 };
 var $folkertdev$one_true_path_experiment$LowLevel$Command$lineTo = $folkertdev$one_true_path_experiment$LowLevel$Command$LineTo;
-var $folkertdev$one_true_path_experiment$SubPath$Empty = {$: 'Empty'};
+var $folkertdev$one_true_path_experiment$SubPath$Empty = {$: 1};
 var $folkertdev$one_true_path_experiment$SubPath$map2 = F3(
 	function (f, sub1, sub2) {
 		var _v0 = _Utils_Tuple2(sub1, sub2);
-		if (_v0.a.$ === 'Empty') {
-			if (_v0.b.$ === 'Empty') {
+		if (_v0.a.$ === 1) {
+			if (_v0.b.$ === 1) {
 				var _v1 = _v0.a;
 				var _v2 = _v0.b;
 				return $folkertdev$one_true_path_experiment$SubPath$Empty;
@@ -8597,7 +8575,7 @@ var $folkertdev$one_true_path_experiment$SubPath$map2 = F3(
 				return subpath;
 			}
 		} else {
-			if (_v0.b.$ === 'Empty') {
+			if (_v0.b.$ === 1) {
 				var subpath = _v0.a;
 				var _v4 = _v0.b;
 				return subpath;
@@ -8608,14 +8586,11 @@ var $folkertdev$one_true_path_experiment$SubPath$map2 = F3(
 			}
 		}
 	});
-var $folkertdev$elm_deque$Deque$Deque = function (a) {
-	return {$: 'Deque', a: a};
-};
+var $folkertdev$elm_deque$Deque$Deque = $elm$core$Basics$identity;
 var $folkertdev$elm_deque$Deque$mapAbstract = F2(
 	function (f, _v0) {
-		var _abstract = _v0.a;
-		return $folkertdev$elm_deque$Deque$Deque(
-			f(_abstract));
+		var _abstract = _v0;
+		return f(_abstract);
 	});
 var $elm$core$List$drop = F2(
 	function (n, list) {
@@ -8765,10 +8740,10 @@ var $elm$core$List$take = F2(
 		return A3($elm$core$List$takeFast, 0, n, list);
 	});
 var $folkertdev$elm_deque$Internal$rebalance = function (deque) {
-	var rear = deque.rear;
-	var front = deque.front;
-	var sizeR = deque.sizeR;
-	var sizeF = deque.sizeF;
+	var rear = deque.aa;
+	var front = deque.Y;
+	var sizeR = deque.Q;
+	var sizeF = deque.P;
 	var size1 = ((sizeF + sizeR) / 2) | 0;
 	var size2 = (sizeF + sizeR) - size1;
 	var balanceConstant = 4;
@@ -8781,7 +8756,7 @@ var $folkertdev$elm_deque$Internal$rebalance = function (deque) {
 				$elm$core$List$reverse(
 					A2($elm$core$List$drop, size1, front)));
 			var newFront = A2($elm$core$List$take, size1, front);
-			return {front: newFront, rear: newRear, sizeF: size1, sizeR: size2};
+			return {Y: newFront, aa: newRear, P: size1, Q: size2};
 		} else {
 			if (_Utils_cmp(sizeR, (balanceConstant * sizeF) + 1) > 0) {
 				var newRear = A2($elm$core$List$take, size1, rear);
@@ -8789,7 +8764,7 @@ var $folkertdev$elm_deque$Internal$rebalance = function (deque) {
 					front,
 					$elm$core$List$reverse(
 						A2($elm$core$List$drop, size1, rear)));
-				return {front: newFront, rear: newRear, sizeF: size1, sizeR: size2};
+				return {Y: newFront, aa: newRear, P: size1, Q: size2};
 			} else {
 				return deque;
 			}
@@ -8798,60 +8773,58 @@ var $folkertdev$elm_deque$Internal$rebalance = function (deque) {
 };
 var $folkertdev$elm_deque$Deque$pushBack = F2(
 	function (elem, _v0) {
-		var deque = _v0.a;
+		var deque = _v0;
 		return A2(
 			$folkertdev$elm_deque$Deque$mapAbstract,
 			$folkertdev$elm_deque$Internal$rebalance,
-			$folkertdev$elm_deque$Deque$Deque(
-				{
-					front: deque.front,
-					rear: A2($elm$core$List$cons, elem, deque.rear),
-					sizeF: deque.sizeF,
-					sizeR: deque.sizeR + 1
-				}));
+			{
+				Y: deque.Y,
+				aa: A2($elm$core$List$cons, elem, deque.aa),
+				P: deque.P,
+				Q: deque.Q + 1
+			});
 	});
 var $folkertdev$one_true_path_experiment$SubPath$pushBack = F2(
 	function (drawto, data) {
 		return _Utils_update(
 			data,
 			{
-				drawtos: A2($folkertdev$elm_deque$Deque$pushBack, drawto, data.drawtos)
+				e0: A2($folkertdev$elm_deque$Deque$pushBack, drawto, data.e0)
 			});
 	});
 var $folkertdev$elm_deque$Internal$length = function (deque) {
-	return deque.sizeF + deque.sizeR;
+	return deque.P + deque.Q;
 };
 var $folkertdev$elm_deque$Internal$isEmpty = function (deque) {
 	return !$folkertdev$elm_deque$Internal$length(deque);
 };
 var $folkertdev$elm_deque$Deque$unwrap = function (_v0) {
-	var boundedDeque = _v0.a;
+	var boundedDeque = _v0;
 	return boundedDeque;
 };
 var $folkertdev$elm_deque$Deque$isEmpty = A2($elm$core$Basics$composeL, $folkertdev$elm_deque$Internal$isEmpty, $folkertdev$elm_deque$Deque$unwrap);
 var $folkertdev$elm_deque$Deque$append = F2(
 	function (p, q) {
-		var x = p.a;
-		var y = q.a;
-		return $folkertdev$elm_deque$Deque$isEmpty(p) ? q : ($folkertdev$elm_deque$Deque$isEmpty(q) ? p : $folkertdev$elm_deque$Deque$Deque(
-			{
-				front: _Utils_ap(
-					x.front,
-					$elm$core$List$reverse(x.rear)),
-				rear: $elm$core$List$reverse(
-					_Utils_ap(
-						y.front,
-						$elm$core$List$reverse(y.rear))),
-				sizeF: x.sizeF + x.sizeR,
-				sizeR: y.sizeF + y.sizeR
-			}));
+		var x = p;
+		var y = q;
+		return $folkertdev$elm_deque$Deque$isEmpty(p) ? q : ($folkertdev$elm_deque$Deque$isEmpty(q) ? p : {
+			Y: _Utils_ap(
+				x.Y,
+				$elm$core$List$reverse(x.aa)),
+			aa: $elm$core$List$reverse(
+				_Utils_ap(
+					y.Y,
+					$elm$core$List$reverse(y.aa))),
+			P: x.P + x.Q,
+			Q: y.P + y.Q
+		});
 	});
 var $folkertdev$one_true_path_experiment$SubPath$unsafeConcatenate = F2(
 	function (a, b) {
 		return _Utils_update(
 			a,
 			{
-				drawtos: A2($folkertdev$elm_deque$Deque$append, a.drawtos, b.drawtos)
+				e0: A2($folkertdev$elm_deque$Deque$append, a.e0, b.e0)
 			});
 	});
 var $folkertdev$one_true_path_experiment$SubPath$connect = function () {
@@ -8886,7 +8859,7 @@ var $gampleman$elm_visualization$Shape$Generators$area = F2(
 				var prev = _v3.a;
 				var list = _v3.b;
 				var _v0 = _Utils_Tuple3(prev, datum, list);
-				if (_v0.b.$ === 'Nothing') {
+				if (_v0.b.$ === 1) {
 					var _v1 = _v0.b;
 					var l = _v0.c;
 					return _Utils_Tuple2(false, l);
@@ -8977,13 +8950,13 @@ var $author$project$Energy$bandsStacked = _List_fromArray(
 var $avh4$elm_color$Color$black = A4($avh4$elm_color$Color$RgbaSpace, 0 / 255, 0 / 255, 0 / 255, 1.0);
 var $elm$svg$Svg$Attributes$class = _VirtualDom_attribute('class');
 var $gampleman$elm_visualization$Scale$tickFormat = function (_v0) {
-	var opts = _v0.a;
-	return opts.tickFormat(opts.domain);
+	var opts = _v0;
+	return opts.ew(opts.dn);
 };
 var $gampleman$elm_visualization$Scale$ticks = F2(
 	function (_v0, count) {
-		var scale = _v0.a;
-		return A2(scale.ticks, scale.domain, count);
+		var scale = _v0;
+		return A2(scale.ex, scale.dn, count);
 	});
 var $gampleman$elm_visualization$Axis$computeOptions = F2(
 	function (attrs, scale) {
@@ -8994,33 +8967,33 @@ var $gampleman$elm_visualization$Axis$computeOptions = F2(
 					var babyOpts = _v1.a;
 					var post = _v1.b;
 					switch (attr.$) {
-						case 'TickCount':
+						case 2:
 							var val = attr.a;
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{tickCount: val}),
+									{bT: val}),
 								post);
-						case 'TickSizeInner':
+						case 3:
 							var val = attr.a;
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{tickSizeInner: val}),
+									{bU: val}),
 								post);
-						case 'TickSizeOuter':
+						case 4:
 							var val = attr.a;
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{tickSizeOuter: val}),
+									{a0: val}),
 								post);
-						case 'TickPadding':
+						case 5:
 							var val = attr.a;
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{tickPadding: val}),
+									{cr: val}),
 								post);
 						default:
 							return _Utils_Tuple2(
@@ -9029,7 +9002,7 @@ var $gampleman$elm_visualization$Axis$computeOptions = F2(
 					}
 				}),
 			_Utils_Tuple2(
-				{tickCount: 10, tickPadding: 3, tickSizeInner: 6, tickSizeOuter: 6},
+				{bT: 10, cr: 3, bU: 6, a0: 6},
 				_List_Nil),
 			attrs);
 		var opts = _v0.a;
@@ -9039,34 +9012,34 @@ var $gampleman$elm_visualization$Axis$computeOptions = F2(
 			F2(
 				function (attr, options) {
 					switch (attr.$) {
-						case 'Ticks':
+						case 0:
 							var val = attr.a;
 							return _Utils_update(
 								options,
-								{ticks: val});
-						case 'TickFormat':
+								{ex: val});
+						case 1:
 							var val = attr.a;
 							return _Utils_update(
 								options,
-								{tickFormat: val});
+								{ew: val});
 						default:
 							return options;
 					}
 				}),
 			{
-				tickCount: opts.tickCount,
-				tickFormat: A2($gampleman$elm_visualization$Scale$tickFormat, scale, opts.tickCount),
-				tickPadding: opts.tickPadding,
-				tickSizeInner: opts.tickSizeInner,
-				tickSizeOuter: opts.tickSizeOuter,
-				ticks: A2($gampleman$elm_visualization$Scale$ticks, scale, opts.tickCount)
+				bT: opts.bT,
+				ew: A2($gampleman$elm_visualization$Scale$tickFormat, scale, opts.bT),
+				cr: opts.cr,
+				bU: opts.bU,
+				a0: opts.a0,
+				ex: A2($gampleman$elm_visualization$Scale$ticks, scale, opts.bT)
 			},
 			postList);
 	});
 var $gampleman$elm_visualization$Scale$convert = F2(
 	function (_v0, value) {
-		var scale = _v0.a;
-		return A3(scale.convert, scale.domain, scale.range, value);
+		var scale = _v0;
+		return A3(scale.ax, scale.dn, scale.af, value);
 	});
 var $elm$svg$Svg$Attributes$d = _VirtualDom_attribute('d');
 var $elm$svg$Svg$Attributes$dy = _VirtualDom_attribute('dy');
@@ -9079,8 +9052,8 @@ var $elm$svg$Svg$g = $elm$svg$Svg$trustedNode('g');
 var $elm$svg$Svg$line = $elm$svg$Svg$trustedNode('line');
 var $elm$svg$Svg$path = $elm$svg$Svg$trustedNode('path');
 var $gampleman$elm_visualization$Scale$rangeExtent = function (_v0) {
-	var options = _v0.a;
-	return A2(options.rangeExtent, options.domain, options.range);
+	var options = _v0;
+	return A2(options.ef, options.dn, options.af);
 };
 var $elm$svg$Svg$Attributes$stroke = _VirtualDom_attribute('stroke');
 var $elm$svg$Svg$text = $elm$virtual_dom$VirtualDom$text;
@@ -9089,13 +9062,13 @@ var $elm$svg$Svg$text_ = $elm$svg$Svg$trustedNode('text');
 var $elm$svg$Svg$Attributes$transform = _VirtualDom_attribute('transform');
 var $gampleman$elm_visualization$Axis$element = F4(
 	function (_v0, k, displacement, textAnchorPosition) {
-		var horizontal = _v0.horizontal;
-		var translate = _v0.translate;
-		var y2 = _v0.y2;
-		var y1 = _v0.y1;
-		var x2 = _v0.x2;
-		var y = _v0.y;
-		var x = _v0.x;
+		var horizontal = _v0.dr;
+		var translate = _v0.eB;
+		var y2 = _v0.h7;
+		var y1 = _v0.h6;
+		var x2 = _v0.h3;
+		var y = _v0.eK;
+		var x = _v0.eJ;
 		return F2(
 			function (attrs, scale) {
 				var rangeExtent = $gampleman$elm_visualization$Scale$rangeExtent(scale);
@@ -9103,7 +9076,7 @@ var $gampleman$elm_visualization$Axis$element = F4(
 				var range0 = rangeExtent.a + 0.5;
 				var position = $gampleman$elm_visualization$Scale$convert(scale);
 				var opts = A2($gampleman$elm_visualization$Axis$computeOptions, attrs, scale);
-				var spacing = A2($elm$core$Basics$max, opts.tickSizeInner, 0) + opts.tickPadding;
+				var spacing = A2($elm$core$Basics$max, opts.bU, 0) + opts.cr;
 				var drawTick = function (tick) {
 					return A2(
 						$elm$svg$Svg$g,
@@ -9121,7 +9094,7 @@ var $gampleman$elm_visualization$Axis$element = F4(
 								_List_fromArray(
 									[
 										$elm$svg$Svg$Attributes$stroke('#000'),
-										x2(k * opts.tickSizeInner),
+										x2(k * opts.bU),
 										y1(0.5),
 										y2(0.5)
 									]),
@@ -9138,11 +9111,11 @@ var $gampleman$elm_visualization$Axis$element = F4(
 								_List_fromArray(
 									[
 										$elm$svg$Svg$text(
-										opts.tickFormat(tick))
+										opts.ew(tick))
 									]))
 							]));
 				};
-				var domainLine = horizontal ? ('M' + ($elm$core$String$fromFloat(k * opts.tickSizeOuter) + (',' + ($elm$core$String$fromFloat(range0) + ('H0.5V' + ($elm$core$String$fromFloat(range1) + ('H' + $elm$core$String$fromFloat(k * opts.tickSizeOuter)))))))) : ('M' + ($elm$core$String$fromFloat(range0) + (',' + ($elm$core$String$fromFloat(k * opts.tickSizeOuter) + ('V0.5H' + ($elm$core$String$fromFloat(range1) + ('V' + $elm$core$String$fromFloat(k * opts.tickSizeOuter))))))));
+				var domainLine = horizontal ? ('M' + ($elm$core$String$fromFloat(k * opts.a0) + (',' + ($elm$core$String$fromFloat(range0) + ('H0.5V' + ($elm$core$String$fromFloat(range1) + ('H' + $elm$core$String$fromFloat(k * opts.a0)))))))) : ('M' + ($elm$core$String$fromFloat(range0) + (',' + ($elm$core$String$fromFloat(k * opts.a0) + ('V0.5H' + ($elm$core$String$fromFloat(range1) + ('V' + $elm$core$String$fromFloat(k * opts.a0))))))));
 				return A2(
 					$elm$svg$Svg$g,
 					_List_fromArray(
@@ -9163,7 +9136,7 @@ var $gampleman$elm_visualization$Axis$element = F4(
 									$elm$svg$Svg$Attributes$d(domainLine)
 								]),
 							_List_Nil),
-						A2($elm$core$List$map, drawTick, opts.ticks)));
+						A2($elm$core$List$map, drawTick, opts.ex)));
 			});
 	});
 var $elm$svg$Svg$Attributes$x = _VirtualDom_attribute('x');
@@ -9173,16 +9146,16 @@ var $elm$svg$Svg$Attributes$y = _VirtualDom_attribute('y');
 var $elm$svg$Svg$Attributes$y1 = _VirtualDom_attribute('y1');
 var $elm$svg$Svg$Attributes$y2 = _VirtualDom_attribute('y2');
 var $gampleman$elm_visualization$Axis$verticalAttrs = {
-	horizontal: false,
-	translate: function (x) {
+	dr: false,
+	eB: function (x) {
 		return 'translate(' + ($elm$core$String$fromFloat(x) + ', 0)');
 	},
-	x: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
-	x1: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
-	x2: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat),
-	y: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
-	y1: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
-	y2: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat)
+	eJ: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
+	h2: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
+	h3: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat),
+	eK: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
+	h6: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
+	h7: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat)
 };
 var $gampleman$elm_visualization$Axis$bottom = A4($gampleman$elm_visualization$Axis$element, $gampleman$elm_visualization$Axis$verticalAttrs, 1, '0.71em', 'middle');
 var $elm$virtual_dom$VirtualDom$attribute = F2(
@@ -9199,27 +9172,27 @@ var $elm_community$typed_svg$TypedSvg$Attributes$class = function (names) {
 		'class',
 		A2($elm$core$String$join, ' ', names));
 };
-var $folkertdev$elm_deque$Internal$empty = {front: _List_Nil, rear: _List_Nil, sizeF: 0, sizeR: 0};
-var $folkertdev$elm_deque$Deque$empty = $folkertdev$elm_deque$Deque$Deque($folkertdev$elm_deque$Internal$empty);
+var $folkertdev$elm_deque$Internal$empty = {Y: _List_Nil, aa: _List_Nil, P: 0, Q: 0};
+var $folkertdev$elm_deque$Deque$empty = $folkertdev$elm_deque$Internal$empty;
 var $folkertdev$elm_deque$Internal$fromList = function (list) {
 	return $folkertdev$elm_deque$Internal$rebalance(
 		{
-			front: list,
-			rear: _List_Nil,
-			sizeF: $elm$core$List$length(list),
-			sizeR: 0
+			Y: list,
+			aa: _List_Nil,
+			P: $elm$core$List$length(list),
+			Q: 0
 		});
 };
-var $folkertdev$elm_deque$Deque$fromList = A2($elm$core$Basics$composeL, $folkertdev$elm_deque$Deque$Deque, $folkertdev$elm_deque$Internal$fromList);
-var $folkertdev$one_true_path_experiment$LowLevel$Command$ClosePath = {$: 'ClosePath'};
+var $folkertdev$elm_deque$Deque$fromList = A2($elm$core$Basics$composeL, $elm$core$Basics$identity, $folkertdev$elm_deque$Internal$fromList);
+var $folkertdev$one_true_path_experiment$LowLevel$Command$ClosePath = {$: 4};
 var $folkertdev$one_true_path_experiment$LowLevel$Command$CurveTo = function (a) {
-	return {$: 'CurveTo', a: a};
+	return {$: 1, a: a};
 };
 var $folkertdev$one_true_path_experiment$LowLevel$Command$EllipticalArc = function (a) {
-	return {$: 'EllipticalArc', a: a};
+	return {$: 3, a: a};
 };
 var $folkertdev$one_true_path_experiment$LowLevel$Command$QuadraticBezierCurveTo = function (a) {
-	return {$: 'QuadraticBezierCurveTo', a: a};
+	return {$: 2, a: a};
 };
 var $folkertdev$one_true_path_experiment$LowLevel$Command$merge = F2(
 	function (instruction1, instruction2) {
@@ -9227,8 +9200,8 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$merge = F2(
 		_v0$5:
 		while (true) {
 			switch (_v0.a.$) {
-				case 'LineTo':
-					if (_v0.b.$ === 'LineTo') {
+				case 0:
+					if (!_v0.b.$) {
 						var p1 = _v0.a.a;
 						var p2 = _v0.b.a;
 						return $elm$core$Result$Ok(
@@ -9237,8 +9210,8 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$merge = F2(
 					} else {
 						break _v0$5;
 					}
-				case 'CurveTo':
-					if (_v0.b.$ === 'CurveTo') {
+				case 1:
+					if (_v0.b.$ === 1) {
 						var p1 = _v0.a.a;
 						var p2 = _v0.b.a;
 						return $elm$core$Result$Ok(
@@ -9247,8 +9220,8 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$merge = F2(
 					} else {
 						break _v0$5;
 					}
-				case 'QuadraticBezierCurveTo':
-					if (_v0.b.$ === 'QuadraticBezierCurveTo') {
+				case 2:
+					if (_v0.b.$ === 2) {
 						var p1 = _v0.a.a;
 						var p2 = _v0.b.a;
 						return $elm$core$Result$Ok(
@@ -9257,8 +9230,8 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$merge = F2(
 					} else {
 						break _v0$5;
 					}
-				case 'EllipticalArc':
-					if (_v0.b.$ === 'EllipticalArc') {
+				case 3:
+					if (_v0.b.$ === 3) {
 						var p1 = _v0.a.a;
 						var p2 = _v0.b.a;
 						return $elm$core$Result$Ok(
@@ -9268,7 +9241,7 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$merge = F2(
 						break _v0$5;
 					}
 				default:
-					if (_v0.b.$ === 'ClosePath') {
+					if (_v0.b.$ === 4) {
 						var _v1 = _v0.a;
 						var _v2 = _v0.b;
 						return $elm$core$Result$Ok($folkertdev$one_true_path_experiment$LowLevel$Command$ClosePath);
@@ -9282,8 +9255,8 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$merge = F2(
 	});
 var $folkertdev$elm_deque$Internal$toList = function (deque) {
 	return _Utils_ap(
-		deque.front,
-		$elm$core$List$reverse(deque.rear));
+		deque.Y,
+		$elm$core$List$reverse(deque.aa));
 };
 var $folkertdev$elm_deque$Deque$toList = A2($elm$core$Basics$composeL, $folkertdev$elm_deque$Internal$toList, $folkertdev$elm_deque$Deque$unwrap);
 var $folkertdev$one_true_path_experiment$SubPath$compressHelper = function (drawtos) {
@@ -9292,7 +9265,7 @@ var $folkertdev$one_true_path_experiment$SubPath$compressHelper = function (draw
 			var previous = _v3.a;
 			var accum = _v3.b;
 			var _v2 = A2($folkertdev$one_true_path_experiment$LowLevel$Command$merge, previous, instruction);
-			if (_v2.$ === 'Ok') {
+			if (!_v2.$) {
 				var merged = _v2.a;
 				return _Utils_Tuple2(merged, accum);
 			} else {
@@ -9322,7 +9295,7 @@ var $folkertdev$one_true_path_experiment$SubPath$compressHelper = function (draw
 	}
 };
 var $folkertdev$one_true_path_experiment$SubPath$compress = function (subpath) {
-	if (subpath.$ === 'Empty') {
+	if (subpath.$ === 1) {
 		return $folkertdev$one_true_path_experiment$SubPath$Empty;
 	} else {
 		var data = subpath.a;
@@ -9330,95 +9303,93 @@ var $folkertdev$one_true_path_experiment$SubPath$compress = function (subpath) {
 			_Utils_update(
 				data,
 				{
-					drawtos: $folkertdev$one_true_path_experiment$SubPath$compressHelper(data.drawtos)
+					e0: $folkertdev$one_true_path_experiment$SubPath$compressHelper(data.e0)
 				}));
 	}
 };
-var $folkertdev$svg_path_lowlevel$Path$LowLevel$DecimalPlaces = function (a) {
-	return {$: 'DecimalPlaces', a: a};
-};
-var $folkertdev$svg_path_lowlevel$Path$LowLevel$decimalPlaces = $folkertdev$svg_path_lowlevel$Path$LowLevel$DecimalPlaces;
-var $folkertdev$one_true_path_experiment$SubPath$defaultConfig = {decimalPlaces: $elm$core$Maybe$Nothing, mergeAdjacent: false};
+var $folkertdev$svg_path_lowlevel$Path$LowLevel$DecimalPlaces = $elm$core$Basics$identity;
+var $folkertdev$svg_path_lowlevel$Path$LowLevel$decimalPlaces = $elm$core$Basics$identity;
+var $folkertdev$one_true_path_experiment$SubPath$defaultConfig = {cJ: $elm$core$Maybe$Nothing, cV: false};
 var $folkertdev$one_true_path_experiment$SubPath$optionFolder = F2(
 	function (option, config) {
-		if (option.$ === 'DecimalPlaces') {
+		if (!option.$) {
 			var n = option.a;
 			return _Utils_update(
 				config,
 				{
-					decimalPlaces: $elm$core$Maybe$Just(n)
+					cJ: $elm$core$Maybe$Just(n)
 				});
 		} else {
 			return _Utils_update(
 				config,
-				{mergeAdjacent: true});
+				{cV: true});
 		}
 	});
 var $elm$core$List$singleton = function (value) {
 	return _List_fromArray(
 		[value]);
 };
-var $folkertdev$svg_path_lowlevel$Path$LowLevel$Absolute = {$: 'Absolute'};
-var $folkertdev$svg_path_lowlevel$Path$LowLevel$ClosePath = {$: 'ClosePath'};
+var $folkertdev$svg_path_lowlevel$Path$LowLevel$Absolute = 1;
+var $folkertdev$svg_path_lowlevel$Path$LowLevel$ClosePath = {$: 8};
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$CurveTo = F2(
 	function (a, b) {
-		return {$: 'CurveTo', a: a, b: b};
+		return {$: 3, a: a, b: b};
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$EllipticalArc = F2(
 	function (a, b) {
-		return {$: 'EllipticalArc', a: a, b: b};
+		return {$: 7, a: a, b: b};
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$LineTo = F2(
 	function (a, b) {
-		return {$: 'LineTo', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$QuadraticBezierCurveTo = F2(
 	function (a, b) {
-		return {$: 'QuadraticBezierCurveTo', a: a, b: b};
+		return {$: 5, a: a, b: b};
 	});
 var $folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelDrawTo = function (drawto) {
 	switch (drawto.$) {
-		case 'LineTo':
+		case 0:
 			var coordinates = drawto.a;
-			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$LineTo, $folkertdev$svg_path_lowlevel$Path$LowLevel$Absolute, coordinates);
-		case 'CurveTo':
+			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$LineTo, 1, coordinates);
+		case 1:
 			var coordinates = drawto.a;
-			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$CurveTo, $folkertdev$svg_path_lowlevel$Path$LowLevel$Absolute, coordinates);
-		case 'QuadraticBezierCurveTo':
+			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$CurveTo, 1, coordinates);
+		case 2:
 			var coordinates = drawto.a;
-			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$QuadraticBezierCurveTo, $folkertdev$svg_path_lowlevel$Path$LowLevel$Absolute, coordinates);
-		case 'EllipticalArc':
+			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$QuadraticBezierCurveTo, 1, coordinates);
+		case 3:
 			var _arguments = drawto.a;
-			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$EllipticalArc, $folkertdev$svg_path_lowlevel$Path$LowLevel$Absolute, _arguments);
+			return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$EllipticalArc, 1, _arguments);
 		default:
 			return $folkertdev$svg_path_lowlevel$Path$LowLevel$ClosePath;
 	}
 };
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$MoveTo = F2(
 	function (a, b) {
-		return {$: 'MoveTo', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelMoveTo = function (_v0) {
-	var target = _v0.a;
-	return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$MoveTo, $folkertdev$svg_path_lowlevel$Path$LowLevel$Absolute, target);
+	var target = _v0;
+	return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$MoveTo, 1, target);
 };
 var $folkertdev$one_true_path_experiment$SubPath$toLowLevel = function (subpath) {
-	if (subpath.$ === 'Empty') {
+	if (subpath.$ === 1) {
 		return $elm$core$Maybe$Nothing;
 	} else {
-		var drawtos = subpath.a.drawtos;
-		var moveto = subpath.a.moveto;
+		var drawtos = subpath.a.e0;
+		var moveto = subpath.a.fG;
 		return $elm$core$Maybe$Just(
 			{
-				drawtos: A2(
+				e0: A2(
 					$elm$core$List$map,
 					$folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelDrawTo,
 					$folkertdev$elm_deque$Deque$toList(drawtos)),
-				moveto: $folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelMoveTo(moveto)
+				fG: $folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelMoveTo(moveto)
 			});
 	}
 };
-var $folkertdev$svg_path_lowlevel$Path$LowLevel$defaultConfig = {floatFormatter: $elm$core$String$fromFloat};
+var $folkertdev$svg_path_lowlevel$Path$LowLevel$defaultConfig = {b9: $elm$core$String$fromFloat};
 var $elm$core$Basics$abs = function (n) {
 	return (n < 0) ? (-n) : n;
 };
@@ -9441,45 +9412,45 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$roundTo = F2(
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$optionFolder = F2(
 	function (option, config) {
-		var n = option.a;
+		var n = option;
 		return _Utils_update(
 			config,
 			{
-				floatFormatter: $folkertdev$svg_path_lowlevel$Path$LowLevel$roundTo(n)
+				b9: $folkertdev$svg_path_lowlevel$Path$LowLevel$roundTo(n)
 			});
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$accumulateOptions = A2($elm$core$List$foldl, $folkertdev$svg_path_lowlevel$Path$LowLevel$optionFolder, $folkertdev$svg_path_lowlevel$Path$LowLevel$defaultConfig);
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$isEmpty = function (command) {
 	switch (command.$) {
-		case 'LineTo':
+		case 0:
 			var mode = command.a;
 			var coordinates = command.b;
 			return $elm$core$List$isEmpty(coordinates);
-		case 'Horizontal':
+		case 1:
 			var mode = command.a;
 			var coordinates = command.b;
 			return $elm$core$List$isEmpty(coordinates);
-		case 'Vertical':
+		case 2:
 			var mode = command.a;
 			var coordinates = command.b;
 			return $elm$core$List$isEmpty(coordinates);
-		case 'CurveTo':
+		case 3:
 			var mode = command.a;
 			var coordinates = command.b;
 			return $elm$core$List$isEmpty(coordinates);
-		case 'SmoothCurveTo':
+		case 4:
 			var mode = command.a;
 			var coordinates = command.b;
 			return $elm$core$List$isEmpty(coordinates);
-		case 'QuadraticBezierCurveTo':
+		case 5:
 			var mode = command.a;
 			var coordinates = command.b;
 			return $elm$core$List$isEmpty(coordinates);
-		case 'SmoothQuadraticBezierCurveTo':
+		case 6:
 			var mode = command.a;
 			var coordinates = command.b;
 			return $elm$core$List$isEmpty(coordinates);
-		case 'EllipticalArc':
+		case 7:
 			var mode = command.a;
 			var _arguments = command.b;
 			return $elm$core$List$isEmpty(_arguments);
@@ -9491,7 +9462,7 @@ var $elm$core$Char$toLower = _Char_toLower;
 var $elm$core$Char$toUpper = _Char_toUpper;
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter = F2(
 	function (mode, character) {
-		if (mode.$ === 'Absolute') {
+		if (mode === 1) {
 			return $elm$core$String$fromChar(
 				$elm$core$Char$toUpper(character));
 		} else {
@@ -9503,7 +9474,7 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate = F2(
 	function (config, _v0) {
 		var x = _v0.a;
 		var y = _v0.b;
-		return config.floatFormatter(x) + (',' + config.floatFormatter(y));
+		return config.b9(x) + (',' + config.b9(y));
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate2 = F2(
 	function (config, _v0) {
@@ -9522,8 +9493,8 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$encodeFlags = function (_v0) {
 	var arcFlag = _v0.a;
 	var direction = _v0.b;
 	var _v1 = _Utils_Tuple2(arcFlag, direction);
-	if (_v1.a.$ === 'LargestArc') {
-		if (_v1.b.$ === 'Clockwise') {
+	if (_v1.a === 1) {
+		if (!_v1.b) {
 			var _v2 = _v1.a;
 			var _v3 = _v1.b;
 			return _Utils_Tuple2(1, 0);
@@ -9533,7 +9504,7 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$encodeFlags = function (_v0) {
 			return _Utils_Tuple2(1, 1);
 		}
 	} else {
-		if (_v1.b.$ === 'Clockwise') {
+		if (!_v1.b) {
 			var _v4 = _v1.a;
 			var _v5 = _v1.b;
 			return _Utils_Tuple2(0, 0);
@@ -9546,11 +9517,11 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$encodeFlags = function (_v0) {
 };
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyEllipticalArcArgument = F2(
 	function (config, _v0) {
-		var target = _v0.target;
-		var direction = _v0.direction;
-		var arcFlag = _v0.arcFlag;
-		var xAxisRotate = _v0.xAxisRotate;
-		var radii = _v0.radii;
+		var target = _v0.ao;
+		var direction = _v0.dm;
+		var arcFlag = _v0.dc;
+		var xAxisRotate = _v0.aJ;
+		var radii = _v0.aY;
 		var _v1 = $folkertdev$svg_path_lowlevel$Path$LowLevel$encodeFlags(
 			_Utils_Tuple2(arcFlag, direction));
 		var arc = _v1.a;
@@ -9573,14 +9544,11 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyDrawTo = F2(
 			return '';
 		} else {
 			switch (command.$) {
-				case 'LineTo':
+				case 0:
 					var mode = command.a;
 					var coordinates = command.b;
 					return _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('L')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'L'),
 						A2(
 							$elm$core$String$join,
 							' ',
@@ -9588,38 +9556,29 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyDrawTo = F2(
 								$elm$core$List$map,
 								$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate(config),
 								coordinates)));
-				case 'Horizontal':
+				case 1:
 					var mode = command.a;
 					var coordinates = command.b;
 					return $elm$core$List$isEmpty(coordinates) ? '' : _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('H')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'H'),
 						A2(
 							$elm$core$String$join,
 							' ',
 							A2($elm$core$List$map, $elm$core$String$fromFloat, coordinates)));
-				case 'Vertical':
+				case 2:
 					var mode = command.a;
 					var coordinates = command.b;
 					return _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('V')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'V'),
 						A2(
 							$elm$core$String$join,
 							' ',
 							A2($elm$core$List$map, $elm$core$String$fromFloat, coordinates)));
-				case 'CurveTo':
+				case 3:
 					var mode = command.a;
 					var coordinates = command.b;
 					return _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('C')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'C'),
 						A2(
 							$elm$core$String$join,
 							' ',
@@ -9627,14 +9586,11 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyDrawTo = F2(
 								$elm$core$List$map,
 								$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate3(config),
 								coordinates)));
-				case 'SmoothCurveTo':
+				case 4:
 					var mode = command.a;
 					var coordinates = command.b;
 					return _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('S')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'S'),
 						A2(
 							$elm$core$String$join,
 							' ',
@@ -9642,14 +9598,11 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyDrawTo = F2(
 								$elm$core$List$map,
 								$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate2(config),
 								coordinates)));
-				case 'QuadraticBezierCurveTo':
+				case 5:
 					var mode = command.a;
 					var coordinates = command.b;
 					return _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('Q')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'Q'),
 						A2(
 							$elm$core$String$join,
 							' ',
@@ -9657,14 +9610,11 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyDrawTo = F2(
 								$elm$core$List$map,
 								$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate2(config),
 								coordinates)));
-				case 'SmoothQuadraticBezierCurveTo':
+				case 6:
 					var mode = command.a;
 					var coordinates = command.b;
 					return _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('T')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'T'),
 						A2(
 							$elm$core$String$join,
 							' ',
@@ -9672,14 +9622,11 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyDrawTo = F2(
 								$elm$core$List$map,
 								$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate(config),
 								coordinates)));
-				case 'EllipticalArc':
+				case 7:
 					var mode = command.a;
 					var _arguments = command.b;
 					return _Utils_ap(
-						A2(
-							$folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter,
-							mode,
-							_Utils_chr('A')),
+						A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCharacter, mode, 'A'),
 						A2(
 							$elm$core$String$join,
 							' ',
@@ -9696,7 +9643,7 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyMoveTo = F2(
 	function (config, _v0) {
 		var mode = _v0.a;
 		var coordinate = _v0.b;
-		if (mode.$ === 'Absolute') {
+		if (mode === 1) {
 			return 'M' + A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate, config, coordinate);
 		} else {
 			return 'm' + A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate, config, coordinate);
@@ -9704,8 +9651,8 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyMoveTo = F2(
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$toStringSubPath = F2(
 	function (config, _v0) {
-		var drawtos = _v0.drawtos;
-		var moveto = _v0.moveto;
+		var drawtos = _v0.e0;
+		var moveto = _v0.fG;
 		return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyMoveTo, config, moveto) + (' ' + A2(
 			$elm$core$String$join,
 			' ',
@@ -9729,8 +9676,8 @@ var $folkertdev$one_true_path_experiment$SubPath$toStringWith = F2(
 	function (options, subpath) {
 		var config = A3($elm$core$List$foldl, $folkertdev$one_true_path_experiment$SubPath$optionFolder, $folkertdev$one_true_path_experiment$SubPath$defaultConfig, options);
 		var lowLevelOptions = function () {
-			var _v0 = config.decimalPlaces;
-			if (_v0.$ === 'Nothing') {
+			var _v0 = config.cJ;
+			if (_v0.$ === 1) {
 				return _List_Nil;
 			} else {
 				var n = _v0.a;
@@ -9750,7 +9697,7 @@ var $folkertdev$one_true_path_experiment$SubPath$toStringWith = F2(
 					$folkertdev$svg_path_lowlevel$Path$LowLevel$toStringWith(lowLevelOptions),
 					$elm$core$List$singleton),
 				$folkertdev$one_true_path_experiment$SubPath$toLowLevel(
-					(config.mergeAdjacent ? $folkertdev$one_true_path_experiment$SubPath$compress : $elm$core$Basics$identity)(subpath))));
+					(config.cV ? $folkertdev$one_true_path_experiment$SubPath$compress : $elm$core$Basics$identity)(subpath))));
 	});
 var $folkertdev$one_true_path_experiment$SubPath$toString = function (subpath) {
 	return A2($folkertdev$one_true_path_experiment$SubPath$toStringWith, _List_Nil, subpath);
@@ -9804,22 +9751,22 @@ var $avh4$elm_color$Color$toCssString = function (_v0) {
 };
 var $elm_community$typed_svg$TypedSvg$TypesToStrings$paintToString = function (paint) {
 	switch (paint.$) {
-		case 'Paint':
+		case 0:
 			var color = paint.a;
 			return $avh4$elm_color$Color$toCssString(color);
-		case 'CSSVariable':
+		case 1:
 			var string = paint.a;
 			return $elm$core$String$concat(
 				_List_fromArray(
 					['var(' + (string + ')')]));
-		case 'Reference':
+		case 2:
 			var string = paint.a;
 			return $elm$core$String$concat(
 				_List_fromArray(
 					['url(#', string, ')']));
-		case 'ContextFill':
+		case 3:
 			return 'context-fill';
-		case 'ContextStroke':
+		case 4:
 			return 'context-stroke';
 		default:
 			return 'none';
@@ -9830,7 +9777,7 @@ var $elm_community$typed_svg$TypedSvg$Attributes$fill = A2(
 	$elm_community$typed_svg$TypedSvg$Core$attribute('fill'),
 	$elm_community$typed_svg$TypedSvg$TypesToStrings$paintToString);
 var $elm_community$typed_svg$TypedSvg$TypesToStrings$opacityToString = function (opacity) {
-	if (opacity.$ === 'Opacity') {
+	if (!opacity.$) {
 		var n = opacity.a;
 		return $elm$core$String$fromFloat(n);
 	} else {
@@ -9845,34 +9792,34 @@ var $elm_community$typed_svg$TypedSvg$Attributes$fillOpacity = function (opa) {
 };
 var $elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString = function (length) {
 	switch (length.$) {
-		case 'Cm':
+		case 0:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'cm';
-		case 'Em':
+		case 1:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'em';
-		case 'Ex':
+		case 2:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'ex';
-		case 'In':
+		case 3:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'in';
-		case 'Mm':
+		case 4:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'mm';
-		case 'Num':
+		case 5:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x);
-		case 'Pc':
+		case 6:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'pc';
-		case 'Percent':
+		case 7:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + '%';
-		case 'Pt':
+		case 8:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'pt';
-		case 'Px':
+		case 9:
 			var x = length.a;
 			return $elm$core$String$fromFloat(x) + 'px';
 		default:
@@ -9887,7 +9834,7 @@ var $elm_community$typed_svg$TypedSvg$Attributes$fontSize = function (length) {
 		$elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
 };
 var $elm_community$typed_svg$TypedSvg$Types$Px = function (a) {
-	return {$: 'Px', a: a};
+	return {$: 9, a: a};
 };
 var $elm_community$typed_svg$TypedSvg$Types$px = $elm_community$typed_svg$TypedSvg$Types$Px;
 var $elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize = function (value) {
@@ -9914,16 +9861,16 @@ var $elm_community$typed_svg$TypedSvg$Attributes$InPx$height = function (value) 
 		$elm_community$typed_svg$TypedSvg$Types$px(value));
 };
 var $gampleman$elm_visualization$Axis$horizontalAttrs = {
-	horizontal: true,
-	translate: function (y) {
+	dr: true,
+	eB: function (y) {
 		return 'translate(0, ' + ($elm$core$String$fromFloat(y) + ')');
 	},
-	x: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
-	x1: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
-	x2: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat),
-	y: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
-	y1: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
-	y2: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat)
+	eJ: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
+	h2: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
+	h3: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat),
+	eK: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
+	h6: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
+	h7: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat)
 };
 var $gampleman$elm_visualization$Axis$left = A4($gampleman$elm_visualization$Axis$element, $gampleman$elm_visualization$Axis$horizontalAttrs, -1, '0.32em', 'end');
 var $gampleman$elm_visualization$Shape$Generators$line = F2(
@@ -9933,7 +9880,7 @@ var $gampleman$elm_visualization$Shape$Generators$line = F2(
 				var prev = _v3.a;
 				var list = _v3.b;
 				var _v0 = _Utils_Tuple3(prev, datum, list);
-				if (_v0.b.$ === 'Nothing') {
+				if (_v0.b.$ === 1) {
 					var _v1 = _v0.b;
 					var l = _v0.c;
 					return _Utils_Tuple2(false, l);
@@ -9984,9 +9931,7 @@ var $gampleman$elm_visualization$Shape$Generators$line = F2(
 				data).b);
 	});
 var $gampleman$elm_visualization$Shape$line = $gampleman$elm_visualization$Shape$Generators$line;
-var $gampleman$elm_visualization$Scale$Scale = function (a) {
-	return {$: 'Scale', a: a};
-};
+var $gampleman$elm_visualization$Scale$Scale = $elm$core$Basics$identity;
 var $elm$core$Basics$always = F2(
 	function (a, _v0) {
 		return a;
@@ -10208,11 +10153,7 @@ var $gampleman$elm_visualization$Scale$Continuous$toFixed = F2(
 							return _List_fromArray(
 								[
 									x,
-									A3(
-									$elm$core$String$padRight,
-									precision,
-									_Utils_chr('0'),
-									y)
+									A3($elm$core$String$padRight, precision, '0', y)
 								]);
 						} else {
 							break _v0$2;
@@ -10222,11 +10163,7 @@ var $gampleman$elm_visualization$Scale$Continuous$toFixed = F2(
 						return (precision > 0) ? _List_fromArray(
 							[
 								val,
-								A3(
-								$elm$core$String$padRight,
-								precision,
-								_Utils_chr('0'),
-								'')
+								A3($elm$core$String$padRight, precision, '0', '')
 							]) : _List_fromArray(
 							[val]);
 					}
@@ -10299,36 +10236,33 @@ var $gampleman$elm_visualization$Scale$Continuous$ticks = F2(
 var $gampleman$elm_visualization$Scale$Continuous$scaleWithTransform = F4(
 	function (transform, untransform, range_, domain_) {
 		return {
-			convert: A2($gampleman$elm_visualization$Scale$Continuous$convertTransform, transform, $gampleman$elm_visualization$Interpolation$float),
-			domain: domain_,
-			invert: A2($gampleman$elm_visualization$Scale$Continuous$invertTransform, transform, untransform),
-			nice: $gampleman$elm_visualization$Scale$Continuous$nice,
-			range: range_,
-			rangeExtent: F2(
+			ax: A2($gampleman$elm_visualization$Scale$Continuous$convertTransform, transform, $gampleman$elm_visualization$Interpolation$float),
+			dn: domain_,
+			hd: A2($gampleman$elm_visualization$Scale$Continuous$invertTransform, transform, untransform),
+			fH: $gampleman$elm_visualization$Scale$Continuous$nice,
+			af: range_,
+			ef: F2(
 				function (_v0, r) {
 					return r;
 				}),
-			tickFormat: $gampleman$elm_visualization$Scale$Continuous$tickFormat,
-			ticks: $gampleman$elm_visualization$Scale$Continuous$ticks
+			ew: $gampleman$elm_visualization$Scale$Continuous$tickFormat,
+			ex: $gampleman$elm_visualization$Scale$Continuous$ticks
 		};
 	});
 var $gampleman$elm_visualization$Scale$Continuous$linear = A2($gampleman$elm_visualization$Scale$Continuous$scaleWithTransform, $elm$core$Basics$identity, $elm$core$Basics$identity);
 var $gampleman$elm_visualization$Scale$linear = F2(
 	function (range_, domain_) {
-		return $gampleman$elm_visualization$Scale$Scale(
-			A2($gampleman$elm_visualization$Scale$Continuous$linear, range_, domain_));
+		return A2($gampleman$elm_visualization$Scale$Continuous$linear, range_, domain_);
 	});
 var $folkertdev$one_true_path_experiment$SubPath$empty = $folkertdev$one_true_path_experiment$SubPath$Empty;
-var $folkertdev$one_true_path_experiment$LowLevel$Command$MoveTo = function (a) {
-	return {$: 'MoveTo', a: a};
-};
-var $folkertdev$one_true_path_experiment$LowLevel$Command$moveTo = $folkertdev$one_true_path_experiment$LowLevel$Command$MoveTo;
+var $folkertdev$one_true_path_experiment$LowLevel$Command$MoveTo = $elm$core$Basics$identity;
+var $folkertdev$one_true_path_experiment$LowLevel$Command$moveTo = $elm$core$Basics$identity;
 var $folkertdev$one_true_path_experiment$SubPath$with = F2(
 	function (moveto, drawtos) {
 		return $folkertdev$one_true_path_experiment$SubPath$SubPath(
 			{
-				drawtos: $folkertdev$elm_deque$Deque$fromList(drawtos),
-				moveto: moveto
+				e0: $folkertdev$elm_deque$Deque$fromList(drawtos),
+				fG: moveto
 			});
 	});
 var $folkertdev$one_true_path_experiment$Curve$linear = function (points) {
@@ -10348,35 +10282,35 @@ var $folkertdev$one_true_path_experiment$Curve$linear = function (points) {
 };
 var $gampleman$elm_visualization$Shape$linearCurve = $folkertdev$one_true_path_experiment$Curve$linear;
 var $author$project$Chart$StackedArea$monthNo = function (m) {
-	switch (m.$) {
-		case 'Jan':
+	switch (m) {
+		case 0:
 			return 1;
-		case 'Feb':
+		case 1:
 			return 2;
-		case 'Mar':
+		case 2:
 			return 3;
-		case 'Apr':
+		case 3:
 			return 4;
-		case 'May':
+		case 4:
 			return 5;
-		case 'Jun':
+		case 5:
 			return 6;
-		case 'Jul':
+		case 6:
 			return 7;
-		case 'Aug':
+		case 7:
 			return 8;
-		case 'Sep':
+		case 8:
 			return 9;
-		case 'Oct':
+		case 9:
 			return 10;
-		case 'Nov':
+		case 10:
 			return 11;
 		default:
 			return 12;
 	}
 };
 var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 'Normal', a: a};
+	return {$: 0, a: a};
 };
 var $elm_community$typed_svg$TypedSvg$Events$on = $elm$virtual_dom$VirtualDom$on;
 var $elm_community$typed_svg$TypedSvg$Events$simpleOn = function (name) {
@@ -10391,7 +10325,7 @@ var $elm_community$typed_svg$TypedSvg$Events$simpleOn = function (name) {
 var $elm_community$typed_svg$TypedSvg$Events$onClick = $elm_community$typed_svg$TypedSvg$Events$simpleOn('click');
 var $elm_community$typed_svg$TypedSvg$Events$onMouseOut = $elm_community$typed_svg$TypedSvg$Events$simpleOn('mouseout');
 var $elm_community$typed_svg$TypedSvg$Events$onMouseOver = $elm_community$typed_svg$TypedSvg$Events$simpleOn('mouseover');
-var $author$project$Chart$StackedArea$pad = {bottom: 40, left: 56, right: 14, top: 12};
+var $author$project$Chart$StackedArea$pad = {eT: 40, cQ: 56, ga: 14, cw: 12};
 var $author$project$Chart$StackedArea$posix = function (unix) {
 	return $elm$time$Time$millisToPosix(unix * 1000);
 };
@@ -10452,9 +10386,9 @@ var $elm$core$List$unzip = function (pairs) {
 		pairs);
 };
 var $gampleman$elm_visualization$Shape$Stack$computeStack = function (_v0) {
-	var data = _v0.data;
-	var order = _v0.order;
-	var offset = _v0.offset;
+	var data = _v0.gX;
+	var order = _v0.hv;
+	var offset = _v0.hr;
 	var _v1 = $elm$core$List$unzip(
 		order(data));
 	var labels = _v1.a;
@@ -10468,9 +10402,9 @@ var $gampleman$elm_visualization$Shape$Stack$computeStack = function (_v0) {
 				}),
 			values));
 	return {
-		extent: $gampleman$elm_visualization$Shape$Stack$calculateExtremes(stacked),
-		labels: labels,
-		values: stacked
+		e7: $gampleman$elm_visualization$Shape$Stack$calculateExtremes(stacked),
+		hf: labels,
+		hZ: stacked
 	};
 };
 var $gampleman$elm_visualization$Shape$stack = $gampleman$elm_visualization$Shape$Stack$computeStack;
@@ -10527,12 +10461,12 @@ var $elm_community$typed_svg$TypedSvg$Attributes$InPx$strokeWidth = function (va
 var $elm_community$typed_svg$TypedSvg$svg = $elm_community$typed_svg$TypedSvg$Core$node('svg');
 var $elm_community$typed_svg$TypedSvg$Core$text = $elm$virtual_dom$VirtualDom$text;
 var $elm_community$typed_svg$TypedSvg$TypesToStrings$anchorAlignmentToString = function (anchorAlignment) {
-	switch (anchorAlignment.$) {
-		case 'AnchorInherit':
+	switch (anchorAlignment) {
+		case 0:
 			return 'inherit';
-		case 'AnchorStart':
+		case 1:
 			return 'start';
-		case 'AnchorMiddle':
+		case 2:
 			return 'middle';
 		default:
 			return 'end';
@@ -10546,49 +10480,47 @@ var $elm_community$typed_svg$TypedSvg$Attributes$textAnchor = function (anchorAl
 };
 var $elm_community$typed_svg$TypedSvg$text_ = $elm_community$typed_svg$TypedSvg$Core$node('text');
 var $gampleman$elm_visualization$Axis$TickCount = function (a) {
-	return {$: 'TickCount', a: a};
+	return {$: 2, a: a};
 };
 var $gampleman$elm_visualization$Axis$tickCount = $gampleman$elm_visualization$Axis$TickCount;
 var $gampleman$elm_visualization$Axis$TickFormat = function (a) {
-	return {$: 'TickFormat', a: a};
+	return {$: 1, a: a};
 };
 var $gampleman$elm_visualization$Axis$tickFormat = $gampleman$elm_visualization$Axis$TickFormat;
-var $justinmimbs$time_extra$Time$Extra$Day = {$: 'Day'};
-var $justinmimbs$date$Date$Days = {$: 'Days'};
-var $justinmimbs$time_extra$Time$Extra$Millisecond = {$: 'Millisecond'};
-var $justinmimbs$time_extra$Time$Extra$Month = {$: 'Month'};
-var $justinmimbs$date$Date$Months = {$: 'Months'};
-var $justinmimbs$date$Date$RD = function (a) {
-	return {$: 'RD', a: a};
-};
+var $justinmimbs$time_extra$Time$Extra$Day = 11;
+var $justinmimbs$date$Date$Days = 3;
+var $justinmimbs$time_extra$Time$Extra$Millisecond = 15;
+var $justinmimbs$time_extra$Time$Extra$Month = 2;
+var $justinmimbs$date$Date$Months = 1;
+var $justinmimbs$date$Date$RD = $elm$core$Basics$identity;
 var $justinmimbs$date$Date$isLeapYear = function (y) {
 	return ((!A2($elm$core$Basics$modBy, 4, y)) && (!(!A2($elm$core$Basics$modBy, 100, y)))) || (!A2($elm$core$Basics$modBy, 400, y));
 };
 var $justinmimbs$date$Date$daysBeforeMonth = F2(
 	function (y, m) {
 		var leapDays = $justinmimbs$date$Date$isLeapYear(y) ? 1 : 0;
-		switch (m.$) {
-			case 'Jan':
+		switch (m) {
+			case 0:
 				return 0;
-			case 'Feb':
+			case 1:
 				return 31;
-			case 'Mar':
+			case 2:
 				return 59 + leapDays;
-			case 'Apr':
+			case 3:
 				return 90 + leapDays;
-			case 'May':
+			case 4:
 				return 120 + leapDays;
-			case 'Jun':
+			case 5:
 				return 151 + leapDays;
-			case 'Jul':
+			case 6:
 				return 181 + leapDays;
-			case 'Aug':
+			case 7:
 				return 212 + leapDays;
-			case 'Sep':
+			case 8:
 				return 243 + leapDays;
-			case 'Oct':
+			case 9:
 				return 273 + leapDays;
-			case 'Nov':
+			case 10:
 				return 304 + leapDays;
 			default:
 				return 334 + leapDays;
@@ -10605,56 +10537,56 @@ var $justinmimbs$date$Date$daysBeforeYear = function (y1) {
 };
 var $justinmimbs$date$Date$daysInMonth = F2(
 	function (y, m) {
-		switch (m.$) {
-			case 'Jan':
+		switch (m) {
+			case 0:
 				return 31;
-			case 'Feb':
+			case 1:
 				return $justinmimbs$date$Date$isLeapYear(y) ? 29 : 28;
-			case 'Mar':
+			case 2:
 				return 31;
-			case 'Apr':
+			case 3:
 				return 30;
-			case 'May':
+			case 4:
 				return 31;
-			case 'Jun':
+			case 5:
 				return 30;
-			case 'Jul':
+			case 6:
 				return 31;
-			case 'Aug':
+			case 7:
 				return 31;
-			case 'Sep':
+			case 8:
 				return 30;
-			case 'Oct':
+			case 9:
 				return 31;
-			case 'Nov':
+			case 10:
 				return 30;
 			default:
 				return 31;
 		}
 	});
 var $justinmimbs$date$Date$monthToNumber = function (m) {
-	switch (m.$) {
-		case 'Jan':
+	switch (m) {
+		case 0:
 			return 1;
-		case 'Feb':
+		case 1:
 			return 2;
-		case 'Mar':
+		case 2:
 			return 3;
-		case 'Apr':
+		case 3:
 			return 4;
-		case 'May':
+		case 4:
 			return 5;
-		case 'Jun':
+		case 5:
 			return 6;
-		case 'Jul':
+		case 6:
 			return 7;
-		case 'Aug':
+		case 7:
 			return 8;
-		case 'Sep':
+		case 8:
 			return 9;
-		case 'Oct':
+		case 9:
 			return 10;
-		case 'Nov':
+		case 10:
 			return 11;
 		default:
 			return 12;
@@ -10664,29 +10596,29 @@ var $justinmimbs$date$Date$numberToMonth = function (mn) {
 	var _v0 = A2($elm$core$Basics$max, 1, mn);
 	switch (_v0) {
 		case 1:
-			return $elm$time$Time$Jan;
+			return 0;
 		case 2:
-			return $elm$time$Time$Feb;
+			return 1;
 		case 3:
-			return $elm$time$Time$Mar;
+			return 2;
 		case 4:
-			return $elm$time$Time$Apr;
+			return 3;
 		case 5:
-			return $elm$time$Time$May;
+			return 4;
 		case 6:
-			return $elm$time$Time$Jun;
+			return 5;
 		case 7:
-			return $elm$time$Time$Jul;
+			return 6;
 		case 8:
-			return $elm$time$Time$Aug;
+			return 7;
 		case 9:
-			return $elm$time$Time$Sep;
+			return 8;
 		case 10:
-			return $elm$time$Time$Oct;
+			return 9;
 		case 11:
-			return $elm$time$Time$Nov;
+			return 10;
 		default:
-			return $elm$time$Time$Dec;
+			return 11;
 	}
 };
 var $justinmimbs$date$Date$toCalendarDateHelp = F3(
@@ -10704,7 +10636,7 @@ var $justinmimbs$date$Date$toCalendarDateHelp = F3(
 				d = $temp$d;
 				continue toCalendarDateHelp;
 			} else {
-				return {day: d, month: m, year: y};
+				return {dk: d, fE: m, gD: y};
 			}
 		}
 	});
@@ -10715,7 +10647,7 @@ var $justinmimbs$date$Date$divWithRemainder = F2(
 			A2($elm$core$Basics$modBy, b, a));
 	});
 var $justinmimbs$date$Date$year = function (_v0) {
-	var rd = _v0.a;
+	var rd = _v0;
 	var _v1 = A2($justinmimbs$date$Date$divWithRemainder, rd, 146097);
 	var n400 = _v1.a;
 	var r400 = _v1.b;
@@ -10732,56 +10664,47 @@ var $justinmimbs$date$Date$year = function (_v0) {
 	return ((((n400 * 400) + (n100 * 100)) + (n4 * 4)) + n1) + n;
 };
 var $justinmimbs$date$Date$toOrdinalDate = function (_v0) {
-	var rd = _v0.a;
-	var y = $justinmimbs$date$Date$year(
-		$justinmimbs$date$Date$RD(rd));
+	var rd = _v0;
+	var y = $justinmimbs$date$Date$year(rd);
 	return {
-		ordinalDay: rd - $justinmimbs$date$Date$daysBeforeYear(y),
-		year: y
+		dX: rd - $justinmimbs$date$Date$daysBeforeYear(y),
+		gD: y
 	};
 };
 var $justinmimbs$date$Date$toCalendarDate = function (_v0) {
-	var rd = _v0.a;
-	var date = $justinmimbs$date$Date$toOrdinalDate(
-		$justinmimbs$date$Date$RD(rd));
-	return A3($justinmimbs$date$Date$toCalendarDateHelp, date.year, $elm$time$Time$Jan, date.ordinalDay);
+	var rd = _v0;
+	var date = $justinmimbs$date$Date$toOrdinalDate(rd);
+	return A3($justinmimbs$date$Date$toCalendarDateHelp, date.gD, 0, date.dX);
 };
 var $justinmimbs$date$Date$add = F3(
 	function (unit, n, _v0) {
-		var rd = _v0.a;
-		switch (unit.$) {
-			case 'Years':
-				return A3(
-					$justinmimbs$date$Date$add,
-					$justinmimbs$date$Date$Months,
-					12 * n,
-					$justinmimbs$date$Date$RD(rd));
-			case 'Months':
-				var date = $justinmimbs$date$Date$toCalendarDate(
-					$justinmimbs$date$Date$RD(rd));
-				var wholeMonths = ((12 * (date.year - 1)) + ($justinmimbs$date$Date$monthToNumber(date.month) - 1)) + n;
+		var rd = _v0;
+		switch (unit) {
+			case 0:
+				return A3($justinmimbs$date$Date$add, 1, 12 * n, rd);
+			case 1:
+				var date = $justinmimbs$date$Date$toCalendarDate(rd);
+				var wholeMonths = ((12 * (date.gD - 1)) + ($justinmimbs$date$Date$monthToNumber(date.fE) - 1)) + n;
 				var m = $justinmimbs$date$Date$numberToMonth(
 					A2($elm$core$Basics$modBy, 12, wholeMonths) + 1);
 				var y = A2($justinmimbs$date$Date$floorDiv, wholeMonths, 12) + 1;
-				return $justinmimbs$date$Date$RD(
-					($justinmimbs$date$Date$daysBeforeYear(y) + A2($justinmimbs$date$Date$daysBeforeMonth, y, m)) + A2(
-						$elm$core$Basics$min,
-						date.day,
-						A2($justinmimbs$date$Date$daysInMonth, y, m)));
-			case 'Weeks':
-				return $justinmimbs$date$Date$RD(rd + (7 * n));
+				return ($justinmimbs$date$Date$daysBeforeYear(y) + A2($justinmimbs$date$Date$daysBeforeMonth, y, m)) + A2(
+					$elm$core$Basics$min,
+					date.dk,
+					A2($justinmimbs$date$Date$daysInMonth, y, m));
+			case 2:
+				return rd + (7 * n);
 			default:
-				return $justinmimbs$date$Date$RD(rd + n);
+				return rd + n;
 		}
 	});
 var $justinmimbs$date$Date$fromCalendarDate = F3(
 	function (y, m, d) {
-		return $justinmimbs$date$Date$RD(
-			($justinmimbs$date$Date$daysBeforeYear(y) + A2($justinmimbs$date$Date$daysBeforeMonth, y, m)) + A3(
-				$elm$core$Basics$clamp,
-				1,
-				A2($justinmimbs$date$Date$daysInMonth, y, m),
-				d));
+		return ($justinmimbs$date$Date$daysBeforeYear(y) + A2($justinmimbs$date$Date$daysBeforeMonth, y, m)) + A3(
+			$elm$core$Basics$clamp,
+			1,
+			A2($justinmimbs$date$Date$daysInMonth, y, m),
+			d);
 	});
 var $justinmimbs$date$Date$fromPosix = F2(
 	function (zone, posix) {
@@ -10792,7 +10715,7 @@ var $justinmimbs$date$Date$fromPosix = F2(
 			A2($elm$time$Time$toDay, zone, posix));
 	});
 var $justinmimbs$date$Date$toRataDie = function (_v0) {
-	var rd = _v0.a;
+	var rd = _v0;
 	return rd;
 };
 var $justinmimbs$time_extra$Time$Extra$dateToMillis = function (date) {
@@ -10847,12 +10770,12 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 	function (interval, n, zone, posix) {
 		add:
 		while (true) {
-			switch (interval.$) {
-				case 'Millisecond':
+			switch (interval) {
+				case 15:
 					return $elm$time$Time$millisToPosix(
 						$elm$time$Time$posixToMillis(posix) + n);
-				case 'Second':
-					var $temp$interval = $justinmimbs$time_extra$Time$Extra$Millisecond,
+				case 14:
+					var $temp$interval = 15,
 						$temp$n = n * 1000,
 						$temp$zone = zone,
 						$temp$posix = posix;
@@ -10861,8 +10784,8 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 					zone = $temp$zone;
 					posix = $temp$posix;
 					continue add;
-				case 'Minute':
-					var $temp$interval = $justinmimbs$time_extra$Time$Extra$Millisecond,
+				case 13:
+					var $temp$interval = 15,
 						$temp$n = n * 60000,
 						$temp$zone = zone,
 						$temp$posix = posix;
@@ -10871,8 +10794,8 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 					zone = $temp$zone;
 					posix = $temp$posix;
 					continue add;
-				case 'Hour':
-					var $temp$interval = $justinmimbs$time_extra$Time$Extra$Millisecond,
+				case 12:
+					var $temp$interval = 15,
 						$temp$n = n * 3600000,
 						$temp$zone = zone,
 						$temp$posix = posix;
@@ -10881,28 +10804,28 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 					zone = $temp$zone;
 					posix = $temp$posix;
 					continue add;
-				case 'Day':
+				case 11:
 					return A3(
 						$justinmimbs$time_extra$Time$Extra$posixFromDateTime,
 						zone,
 						A3(
 							$justinmimbs$date$Date$add,
-							$justinmimbs$date$Date$Days,
+							3,
 							n,
 							A2($justinmimbs$date$Date$fromPosix, zone, posix)),
 						A2($justinmimbs$time_extra$Time$Extra$timeFromPosix, zone, posix));
-				case 'Month':
+				case 2:
 					return A3(
 						$justinmimbs$time_extra$Time$Extra$posixFromDateTime,
 						zone,
 						A3(
 							$justinmimbs$date$Date$add,
-							$justinmimbs$date$Date$Months,
+							1,
 							n,
 							A2($justinmimbs$date$Date$fromPosix, zone, posix)),
 						A2($justinmimbs$time_extra$Time$Extra$timeFromPosix, zone, posix));
-				case 'Year':
-					var $temp$interval = $justinmimbs$time_extra$Time$Extra$Month,
+				case 0:
+					var $temp$interval = 2,
 						$temp$n = n * 12,
 						$temp$zone = zone,
 						$temp$posix = posix;
@@ -10911,8 +10834,8 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 					zone = $temp$zone;
 					posix = $temp$posix;
 					continue add;
-				case 'Quarter':
-					var $temp$interval = $justinmimbs$time_extra$Time$Extra$Month,
+				case 1:
+					var $temp$interval = 2,
 						$temp$n = n * 3,
 						$temp$zone = zone,
 						$temp$posix = posix;
@@ -10921,8 +10844,8 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 					zone = $temp$zone;
 					posix = $temp$posix;
 					continue add;
-				case 'Week':
-					var $temp$interval = $justinmimbs$time_extra$Time$Extra$Day,
+				case 3:
+					var $temp$interval = 11,
 						$temp$n = n * 7,
 						$temp$zone = zone,
 						$temp$posix = posix;
@@ -10933,7 +10856,7 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 					continue add;
 				default:
 					var weekday = interval;
-					var $temp$interval = $justinmimbs$time_extra$Time$Extra$Day,
+					var $temp$interval = 11,
 						$temp$n = n * 7,
 						$temp$zone = zone,
 						$temp$posix = posix;
@@ -10945,27 +10868,27 @@ var $justinmimbs$time_extra$Time$Extra$add = F4(
 			}
 		}
 	});
-var $justinmimbs$date$Date$Day = {$: 'Day'};
-var $justinmimbs$date$Date$Friday = {$: 'Friday'};
-var $justinmimbs$date$Date$Monday = {$: 'Monday'};
-var $justinmimbs$date$Date$Month = {$: 'Month'};
-var $justinmimbs$date$Date$Quarter = {$: 'Quarter'};
-var $justinmimbs$date$Date$Saturday = {$: 'Saturday'};
-var $justinmimbs$date$Date$Sunday = {$: 'Sunday'};
-var $justinmimbs$date$Date$Thursday = {$: 'Thursday'};
-var $justinmimbs$date$Date$Tuesday = {$: 'Tuesday'};
-var $justinmimbs$date$Date$Wednesday = {$: 'Wednesday'};
-var $justinmimbs$date$Date$Week = {$: 'Week'};
-var $justinmimbs$date$Date$Year = {$: 'Year'};
-var $elm$time$Time$Fri = {$: 'Fri'};
-var $elm$time$Time$Mon = {$: 'Mon'};
-var $elm$time$Time$Sat = {$: 'Sat'};
-var $elm$time$Time$Sun = {$: 'Sun'};
-var $elm$time$Time$Thu = {$: 'Thu'};
-var $elm$time$Time$Tue = {$: 'Tue'};
-var $elm$time$Time$Wed = {$: 'Wed'};
+var $justinmimbs$date$Date$Day = 11;
+var $justinmimbs$date$Date$Friday = 8;
+var $justinmimbs$date$Date$Monday = 4;
+var $justinmimbs$date$Date$Month = 2;
+var $justinmimbs$date$Date$Quarter = 1;
+var $justinmimbs$date$Date$Saturday = 9;
+var $justinmimbs$date$Date$Sunday = 10;
+var $justinmimbs$date$Date$Thursday = 7;
+var $justinmimbs$date$Date$Tuesday = 5;
+var $justinmimbs$date$Date$Wednesday = 6;
+var $justinmimbs$date$Date$Week = 3;
+var $justinmimbs$date$Date$Year = 0;
+var $elm$time$Time$Fri = 4;
+var $elm$time$Time$Mon = 0;
+var $elm$time$Time$Sat = 5;
+var $elm$time$Time$Sun = 6;
+var $elm$time$Time$Thu = 3;
+var $elm$time$Time$Tue = 1;
+var $elm$time$Time$Wed = 2;
 var $justinmimbs$date$Date$weekdayNumber = function (_v0) {
-	var rd = _v0.a;
+	var rd = _v0;
 	var _v1 = A2($elm$core$Basics$modBy, 7, rd);
 	if (!_v1) {
 		return 7;
@@ -10975,18 +10898,18 @@ var $justinmimbs$date$Date$weekdayNumber = function (_v0) {
 	}
 };
 var $justinmimbs$date$Date$weekdayToNumber = function (wd) {
-	switch (wd.$) {
-		case 'Mon':
+	switch (wd) {
+		case 0:
 			return 1;
-		case 'Tue':
+		case 1:
 			return 2;
-		case 'Wed':
+		case 2:
 			return 3;
-		case 'Thu':
+		case 3:
 			return 4;
-		case 'Fri':
+		case 4:
 			return 5;
-		case 'Sat':
+		case 5:
 			return 6;
 		default:
 			return 7;
@@ -11001,18 +10924,16 @@ var $justinmimbs$date$Date$daysSincePreviousWeekday = F2(
 	});
 var $justinmimbs$date$Date$firstOfMonth = F2(
 	function (y, m) {
-		return $justinmimbs$date$Date$RD(
-			($justinmimbs$date$Date$daysBeforeYear(y) + A2($justinmimbs$date$Date$daysBeforeMonth, y, m)) + 1);
+		return ($justinmimbs$date$Date$daysBeforeYear(y) + A2($justinmimbs$date$Date$daysBeforeMonth, y, m)) + 1;
 	});
 var $justinmimbs$date$Date$firstOfYear = function (y) {
-	return $justinmimbs$date$Date$RD(
-		$justinmimbs$date$Date$daysBeforeYear(y) + 1);
+	return $justinmimbs$date$Date$daysBeforeYear(y) + 1;
 };
 var $justinmimbs$date$Date$month = A2(
 	$elm$core$Basics$composeR,
 	$justinmimbs$date$Date$toCalendarDate,
 	function ($) {
-		return $.month;
+		return $.fE;
 	});
 var $justinmimbs$date$Date$monthToQuarter = function (m) {
 	return (($justinmimbs$date$Date$monthToNumber(m) + 2) / 3) | 0;
@@ -11023,46 +10944,38 @@ var $justinmimbs$date$Date$quarterToMonth = function (q) {
 };
 var $justinmimbs$date$Date$floor = F2(
 	function (interval, date) {
-		var rd = date.a;
-		switch (interval.$) {
-			case 'Year':
+		var rd = date;
+		switch (interval) {
+			case 0:
 				return $justinmimbs$date$Date$firstOfYear(
 					$justinmimbs$date$Date$year(date));
-			case 'Quarter':
+			case 1:
 				return A2(
 					$justinmimbs$date$Date$firstOfMonth,
 					$justinmimbs$date$Date$year(date),
 					$justinmimbs$date$Date$quarterToMonth(
 						$justinmimbs$date$Date$quarter(date)));
-			case 'Month':
+			case 2:
 				return A2(
 					$justinmimbs$date$Date$firstOfMonth,
 					$justinmimbs$date$Date$year(date),
 					$justinmimbs$date$Date$month(date));
-			case 'Week':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Mon, date));
-			case 'Monday':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Mon, date));
-			case 'Tuesday':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Tue, date));
-			case 'Wednesday':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Wed, date));
-			case 'Thursday':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Thu, date));
-			case 'Friday':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Fri, date));
-			case 'Saturday':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Sat, date));
-			case 'Sunday':
-				return $justinmimbs$date$Date$RD(
-					rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, $elm$time$Time$Sun, date));
+			case 3:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 0, date);
+			case 4:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 0, date);
+			case 5:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 1, date);
+			case 6:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 2, date);
+			case 7:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 3, date);
+			case 8:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 4, date);
+			case 9:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 5, date);
+			case 10:
+				return rd - A2($justinmimbs$date$Date$daysSincePreviousWeekday, 6, date);
 			default:
 				return date;
 		}
@@ -11080,10 +10993,10 @@ var $justinmimbs$time_extra$Time$Extra$floorDate = F3(
 	});
 var $justinmimbs$time_extra$Time$Extra$floor = F3(
 	function (interval, zone, posix) {
-		switch (interval.$) {
-			case 'Millisecond':
+		switch (interval) {
+			case 15:
 				return posix;
-			case 'Second':
+			case 14:
 				return A3(
 					$justinmimbs$time_extra$Time$Extra$posixFromDateTime,
 					zone,
@@ -11094,7 +11007,7 @@ var $justinmimbs$time_extra$Time$Extra$floor = F3(
 						A2($elm$time$Time$toMinute, zone, posix),
 						A2($elm$time$Time$toSecond, zone, posix),
 						0));
-			case 'Minute':
+			case 13:
 				return A3(
 					$justinmimbs$time_extra$Time$Extra$posixFromDateTime,
 					zone,
@@ -11105,7 +11018,7 @@ var $justinmimbs$time_extra$Time$Extra$floor = F3(
 						A2($elm$time$Time$toMinute, zone, posix),
 						0,
 						0));
-			case 'Hour':
+			case 12:
 				return A3(
 					$justinmimbs$time_extra$Time$Extra$posixFromDateTime,
 					zone,
@@ -11116,30 +11029,30 @@ var $justinmimbs$time_extra$Time$Extra$floor = F3(
 						0,
 						0,
 						0));
-			case 'Day':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Day, zone, posix);
-			case 'Month':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Month, zone, posix);
-			case 'Year':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Year, zone, posix);
-			case 'Quarter':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Quarter, zone, posix);
-			case 'Week':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Week, zone, posix);
-			case 'Monday':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Monday, zone, posix);
-			case 'Tuesday':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Tuesday, zone, posix);
-			case 'Wednesday':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Wednesday, zone, posix);
-			case 'Thursday':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Thursday, zone, posix);
-			case 'Friday':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Friday, zone, posix);
-			case 'Saturday':
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Saturday, zone, posix);
+			case 11:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 11, zone, posix);
+			case 2:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 2, zone, posix);
+			case 0:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 0, zone, posix);
+			case 1:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 1, zone, posix);
+			case 3:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 3, zone, posix);
+			case 4:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 4, zone, posix);
+			case 5:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 5, zone, posix);
+			case 6:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 6, zone, posix);
+			case 7:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 7, zone, posix);
+			case 8:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 8, zone, posix);
+			case 9:
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 9, zone, posix);
 			default:
-				return A3($justinmimbs$time_extra$Time$Extra$floorDate, $justinmimbs$date$Date$Sunday, zone, posix);
+				return A3($justinmimbs$time_extra$Time$Extra$floorDate, 10, zone, posix);
 		}
 	});
 var $justinmimbs$time_extra$Time$Extra$ceiling = F3(
@@ -11147,26 +11060,26 @@ var $justinmimbs$time_extra$Time$Extra$ceiling = F3(
 		var floored = A3($justinmimbs$time_extra$Time$Extra$floor, interval, zone, posix);
 		return _Utils_eq(floored, posix) ? posix : A4($justinmimbs$time_extra$Time$Extra$add, interval, 1, zone, floored);
 	});
-var $justinmimbs$time_extra$Time$Extra$Year = {$: 'Year'};
+var $justinmimbs$time_extra$Time$Extra$Year = 0;
 var $gampleman$elm_visualization$Scale$Time$timeLength = function (interval) {
-	switch (interval.$) {
-		case 'Millisecond':
+	switch (interval) {
+		case 15:
 			return 1;
-		case 'Second':
+		case 14:
 			return 1000;
-		case 'Minute':
+		case 13:
 			return 60 * 1000;
-		case 'Hour':
+		case 12:
 			return (60 * 60) * 1000;
-		case 'Day':
+		case 11:
 			return ((24 * 60) * 60) * 1000;
-		case 'Month':
+		case 2:
 			return (((30 * 24) * 60) * 60) * 1000;
-		case 'Year':
+		case 0:
 			return ((((365 * 30) * 24) * 60) * 60) * 1000;
-		case 'Quarter':
+		case 1:
 			return ((((4 * 30) * 24) * 60) * 60) * 1000;
-		case 'Week':
+		case 3:
 			return (((7 * 24) * 60) * 60) * 1000;
 		default:
 			return 0;
@@ -11177,7 +11090,7 @@ var $gampleman$elm_visualization$Scale$Time$findInterval = F2(
 		findInterval:
 		while (true) {
 			if (!intervals.b) {
-				return _Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Year, 1);
+				return _Utils_Tuple2(0, 1);
 			} else {
 				if (intervals.b.b) {
 					var _v1 = intervals.a;
@@ -11209,30 +11122,30 @@ var $gampleman$elm_visualization$Scale$Time$findInterval = F2(
 			}
 		}
 	});
-var $justinmimbs$time_extra$Time$Extra$Hour = {$: 'Hour'};
-var $justinmimbs$time_extra$Time$Extra$Minute = {$: 'Minute'};
-var $justinmimbs$time_extra$Time$Extra$Second = {$: 'Second'};
-var $justinmimbs$time_extra$Time$Extra$Week = {$: 'Week'};
+var $justinmimbs$time_extra$Time$Extra$Hour = 12;
+var $justinmimbs$time_extra$Time$Extra$Minute = 13;
+var $justinmimbs$time_extra$Time$Extra$Second = 14;
+var $justinmimbs$time_extra$Time$Extra$Week = 3;
 var $gampleman$elm_visualization$Scale$Time$tickIntervals = _List_fromArray(
 	[
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Second, 1),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Second, 5),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Second, 15),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Second, 30),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Minute, 1),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Minute, 5),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Minute, 15),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Minute, 30),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Hour, 1),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Hour, 3),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Hour, 6),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Hour, 12),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Day, 1),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Day, 2),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Week, 1),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Month, 1),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Month, 3),
-		_Utils_Tuple2($justinmimbs$time_extra$Time$Extra$Year, 1)
+		_Utils_Tuple2(14, 1),
+		_Utils_Tuple2(14, 5),
+		_Utils_Tuple2(14, 15),
+		_Utils_Tuple2(14, 30),
+		_Utils_Tuple2(13, 1),
+		_Utils_Tuple2(13, 5),
+		_Utils_Tuple2(13, 15),
+		_Utils_Tuple2(13, 30),
+		_Utils_Tuple2(12, 1),
+		_Utils_Tuple2(12, 3),
+		_Utils_Tuple2(12, 6),
+		_Utils_Tuple2(12, 12),
+		_Utils_Tuple2(11, 1),
+		_Utils_Tuple2(11, 2),
+		_Utils_Tuple2(3, 1),
+		_Utils_Tuple2(2, 1),
+		_Utils_Tuple2(2, 3),
+		_Utils_Tuple2(0, 1)
 	]);
 var $gampleman$elm_visualization$Scale$Time$toTime = function (_v0) {
 	var a = _v0.a;
@@ -11253,40 +11166,40 @@ var $gampleman$elm_visualization$Scale$Time$nice = F3(
 			A3($justinmimbs$time_extra$Time$Extra$floor, interval, zone, domain.a),
 			A3($justinmimbs$time_extra$Time$Extra$ceiling, interval, zone, domain.b));
 	});
-var $ryan_haskell$date_format$DateFormat$AmPmLowercase = {$: 'AmPmLowercase'};
+var $ryan_haskell$date_format$DateFormat$AmPmLowercase = {$: 23};
 var $ryan_haskell$date_format$DateFormat$amPmLowercase = $ryan_haskell$date_format$DateFormat$AmPmLowercase;
-var $ryan_haskell$date_format$DateFormat$DayOfMonthFixed = {$: 'DayOfMonthFixed'};
+var $ryan_haskell$date_format$DateFormat$DayOfMonthFixed = {$: 7};
 var $ryan_haskell$date_format$DateFormat$dayOfMonthFixed = $ryan_haskell$date_format$DateFormat$DayOfMonthFixed;
 var $ryan_haskell$date_format$DateFormat$Language$Language = F6(
 	function (toMonthName, toMonthAbbreviation, toWeekdayName, toWeekdayAbbreviation, toAmPm, toOrdinalSuffix) {
-		return {toAmPm: toAmPm, toMonthAbbreviation: toMonthAbbreviation, toMonthName: toMonthName, toOrdinalSuffix: toOrdinalSuffix, toWeekdayAbbreviation: toWeekdayAbbreviation, toWeekdayName: toWeekdayName};
+		return {hR: toAmPm, hS: toMonthAbbreviation, hT: toMonthName, bV: toOrdinalSuffix, hV: toWeekdayAbbreviation, hW: toWeekdayName};
 	});
 var $ryan_haskell$date_format$DateFormat$Language$toEnglishAmPm = function (hour) {
 	return (hour > 11) ? 'pm' : 'am';
 };
 var $ryan_haskell$date_format$DateFormat$Language$toEnglishMonthName = function (month) {
-	switch (month.$) {
-		case 'Jan':
+	switch (month) {
+		case 0:
 			return 'January';
-		case 'Feb':
+		case 1:
 			return 'February';
-		case 'Mar':
+		case 2:
 			return 'March';
-		case 'Apr':
+		case 3:
 			return 'April';
-		case 'May':
+		case 4:
 			return 'May';
-		case 'Jun':
+		case 5:
 			return 'June';
-		case 'Jul':
+		case 6:
 			return 'July';
-		case 'Aug':
+		case 7:
 			return 'August';
-		case 'Sep':
+		case 8:
 			return 'September';
-		case 'Oct':
+		case 9:
 			return 'October';
-		case 'Nov':
+		case 10:
 			return 'November';
 		default:
 			return 'December';
@@ -11316,18 +11229,18 @@ var $ryan_haskell$date_format$DateFormat$Language$toEnglishSuffix = function (nu
 	}
 };
 var $ryan_haskell$date_format$DateFormat$Language$toEnglishWeekdayName = function (weekday) {
-	switch (weekday.$) {
-		case 'Mon':
+	switch (weekday) {
+		case 0:
 			return 'Monday';
-		case 'Tue':
+		case 1:
 			return 'Tuesday';
-		case 'Wed':
+		case 2:
 			return 'Wednesday';
-		case 'Thu':
+		case 3:
 			return 'Thursday';
-		case 'Fri':
+		case 4:
 			return 'Friday';
-		case 'Sat':
+		case 5:
 			return 'Saturday';
 		default:
 			return 'Sunday';
@@ -11349,12 +11262,12 @@ var $ryan_haskell$date_format$DateFormat$Language$english = A6(
 	$ryan_haskell$date_format$DateFormat$Language$toEnglishSuffix);
 var $ryan_haskell$date_format$DateFormat$amPm = F3(
 	function (language, zone, posix) {
-		return language.toAmPm(
+		return language.hR(
 			A2($elm$time$Time$toHour, zone, posix));
 	});
 var $ryan_haskell$date_format$DateFormat$dayOfMonth = $elm$time$Time$toDay;
 var $ryan_haskell$date_format$DateFormat$days = _List_fromArray(
-	[$elm$time$Time$Sun, $elm$time$Time$Mon, $elm$time$Time$Tue, $elm$time$Time$Wed, $elm$time$Time$Thu, $elm$time$Time$Fri, $elm$time$Time$Sat]);
+	[6, 0, 1, 2, 3, 4, 5]);
 var $elm$time$Time$toWeekday = F2(
 	function (zone, time) {
 		var _v0 = A2(
@@ -11366,19 +11279,19 @@ var $elm$time$Time$toWeekday = F2(
 				60 * 24));
 		switch (_v0) {
 			case 0:
-				return $elm$time$Time$Thu;
+				return 3;
 			case 1:
-				return $elm$time$Time$Fri;
+				return 4;
 			case 2:
-				return $elm$time$Time$Sat;
+				return 5;
 			case 3:
-				return $elm$time$Time$Sun;
+				return 6;
 			case 4:
-				return $elm$time$Time$Mon;
+				return 0;
 			case 5:
-				return $elm$time$Time$Tue;
+				return 1;
 			default:
-				return $elm$time$Time$Wed;
+				return 2;
 		}
 	});
 var $ryan_haskell$date_format$DateFormat$dayOfWeek = F2(
@@ -11389,7 +11302,7 @@ var $ryan_haskell$date_format$DateFormat$dayOfWeek = F2(
 		}(
 			A2(
 				$elm$core$Maybe$withDefault,
-				_Utils_Tuple2(0, $elm$time$Time$Sun),
+				_Utils_Tuple2(0, 6),
 				$elm$core$List$head(
 					A2(
 						$elm$core$List$filter,
@@ -11412,40 +11325,40 @@ var $ryan_haskell$date_format$DateFormat$isLeapYear = function (year_) {
 };
 var $ryan_haskell$date_format$DateFormat$daysInMonth = F2(
 	function (year_, month) {
-		switch (month.$) {
-			case 'Jan':
+		switch (month) {
+			case 0:
 				return 31;
-			case 'Feb':
+			case 1:
 				return $ryan_haskell$date_format$DateFormat$isLeapYear(year_) ? 29 : 28;
-			case 'Mar':
+			case 2:
 				return 31;
-			case 'Apr':
+			case 3:
 				return 30;
-			case 'May':
+			case 4:
 				return 31;
-			case 'Jun':
+			case 5:
 				return 30;
-			case 'Jul':
+			case 6:
 				return 31;
-			case 'Aug':
+			case 7:
 				return 31;
-			case 'Sep':
+			case 8:
 				return 30;
-			case 'Oct':
+			case 9:
 				return 31;
-			case 'Nov':
+			case 10:
 				return 30;
 			default:
 				return 31;
 		}
 	});
 var $ryan_haskell$date_format$DateFormat$months = _List_fromArray(
-	[$elm$time$Time$Jan, $elm$time$Time$Feb, $elm$time$Time$Mar, $elm$time$Time$Apr, $elm$time$Time$May, $elm$time$Time$Jun, $elm$time$Time$Jul, $elm$time$Time$Aug, $elm$time$Time$Sep, $elm$time$Time$Oct, $elm$time$Time$Nov, $elm$time$Time$Dec]);
+	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
 var $ryan_haskell$date_format$DateFormat$monthPair = F2(
 	function (zone, posix) {
 		return A2(
 			$elm$core$Maybe$withDefault,
-			_Utils_Tuple2(0, $elm$time$Time$Jan),
+			_Utils_Tuple2(0, 0),
 			$elm$core$List$head(
 				A2(
 					$elm$core$List$filter,
@@ -11540,157 +11453,157 @@ var $ryan_haskell$date_format$DateFormat$year = F2(
 var $ryan_haskell$date_format$DateFormat$piece = F4(
 	function (language, zone, posix, token) {
 		switch (token.$) {
-			case 'MonthNumber':
+			case 0:
 				return $elm$core$String$fromInt(
 					A2($ryan_haskell$date_format$DateFormat$monthNumber_, zone, posix));
-			case 'MonthSuffix':
+			case 1:
 				return function (num) {
 					return _Utils_ap(
 						$elm$core$String$fromInt(num),
-						language.toOrdinalSuffix(num));
+						language.bV(num));
 				}(
 					A2($ryan_haskell$date_format$DateFormat$monthNumber_, zone, posix));
-			case 'MonthFixed':
+			case 2:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					A2($ryan_haskell$date_format$DateFormat$monthNumber_, zone, posix));
-			case 'MonthNameAbbreviated':
-				return language.toMonthAbbreviation(
+			case 3:
+				return language.hS(
 					A2($elm$time$Time$toMonth, zone, posix));
-			case 'MonthNameFull':
-				return language.toMonthName(
+			case 4:
+				return language.hT(
 					A2($elm$time$Time$toMonth, zone, posix));
-			case 'QuarterNumber':
+			case 17:
 				return $elm$core$String$fromInt(
 					1 + A2($ryan_haskell$date_format$DateFormat$quarter, zone, posix));
-			case 'QuarterSuffix':
+			case 18:
 				return function (num) {
 					return _Utils_ap(
 						$elm$core$String$fromInt(num),
-						language.toOrdinalSuffix(num));
+						language.bV(num));
 				}(
 					1 + A2($ryan_haskell$date_format$DateFormat$quarter, zone, posix));
-			case 'DayOfMonthNumber':
+			case 5:
 				return $elm$core$String$fromInt(
 					A2($ryan_haskell$date_format$DateFormat$dayOfMonth, zone, posix));
-			case 'DayOfMonthSuffix':
+			case 6:
 				return function (num) {
 					return _Utils_ap(
 						$elm$core$String$fromInt(num),
-						language.toOrdinalSuffix(num));
+						language.bV(num));
 				}(
 					A2($ryan_haskell$date_format$DateFormat$dayOfMonth, zone, posix));
-			case 'DayOfMonthFixed':
+			case 7:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					A2($ryan_haskell$date_format$DateFormat$dayOfMonth, zone, posix));
-			case 'DayOfYearNumber':
+			case 8:
 				return $elm$core$String$fromInt(
 					A2($ryan_haskell$date_format$DateFormat$dayOfYear, zone, posix));
-			case 'DayOfYearSuffix':
+			case 9:
 				return function (num) {
 					return _Utils_ap(
 						$elm$core$String$fromInt(num),
-						language.toOrdinalSuffix(num));
+						language.bV(num));
 				}(
 					A2($ryan_haskell$date_format$DateFormat$dayOfYear, zone, posix));
-			case 'DayOfYearFixed':
+			case 10:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					3,
 					A2($ryan_haskell$date_format$DateFormat$dayOfYear, zone, posix));
-			case 'DayOfWeekNumber':
+			case 11:
 				return $elm$core$String$fromInt(
 					A2($ryan_haskell$date_format$DateFormat$dayOfWeek, zone, posix));
-			case 'DayOfWeekSuffix':
+			case 12:
 				return function (num) {
 					return _Utils_ap(
 						$elm$core$String$fromInt(num),
-						language.toOrdinalSuffix(num));
+						language.bV(num));
 				}(
 					A2($ryan_haskell$date_format$DateFormat$dayOfWeek, zone, posix));
-			case 'DayOfWeekNameAbbreviated':
-				return language.toWeekdayAbbreviation(
+			case 13:
+				return language.hV(
 					A2($elm$time$Time$toWeekday, zone, posix));
-			case 'DayOfWeekNameFull':
-				return language.toWeekdayName(
+			case 14:
+				return language.hW(
 					A2($elm$time$Time$toWeekday, zone, posix));
-			case 'WeekOfYearNumber':
+			case 19:
 				return $elm$core$String$fromInt(
 					A2($ryan_haskell$date_format$DateFormat$weekOfYear, zone, posix));
-			case 'WeekOfYearSuffix':
+			case 20:
 				return function (num) {
 					return _Utils_ap(
 						$elm$core$String$fromInt(num),
-						language.toOrdinalSuffix(num));
+						language.bV(num));
 				}(
 					A2($ryan_haskell$date_format$DateFormat$weekOfYear, zone, posix));
-			case 'WeekOfYearFixed':
+			case 21:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					A2($ryan_haskell$date_format$DateFormat$weekOfYear, zone, posix));
-			case 'YearNumberLastTwo':
+			case 15:
 				return A2(
 					$elm$core$String$right,
 					2,
 					A2($ryan_haskell$date_format$DateFormat$year, zone, posix));
-			case 'YearNumber':
+			case 16:
 				return A2($ryan_haskell$date_format$DateFormat$year, zone, posix);
-			case 'AmPmUppercase':
+			case 22:
 				return $elm$core$String$toUpper(
 					A3($ryan_haskell$date_format$DateFormat$amPm, language, zone, posix));
-			case 'AmPmLowercase':
+			case 23:
 				return $elm$core$String$toLower(
 					A3($ryan_haskell$date_format$DateFormat$amPm, language, zone, posix));
-			case 'HourMilitaryNumber':
+			case 24:
 				return $elm$core$String$fromInt(
 					A2($elm$time$Time$toHour, zone, posix));
-			case 'HourMilitaryFixed':
+			case 25:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					A2($elm$time$Time$toHour, zone, posix));
-			case 'HourNumber':
+			case 26:
 				return $elm$core$String$fromInt(
 					$ryan_haskell$date_format$DateFormat$toNonMilitary(
 						A2($elm$time$Time$toHour, zone, posix)));
-			case 'HourFixed':
+			case 27:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					$ryan_haskell$date_format$DateFormat$toNonMilitary(
 						A2($elm$time$Time$toHour, zone, posix)));
-			case 'HourMilitaryFromOneNumber':
+			case 28:
 				return $elm$core$String$fromInt(
 					1 + A2($elm$time$Time$toHour, zone, posix));
-			case 'HourMilitaryFromOneFixed':
+			case 29:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					1 + A2($elm$time$Time$toHour, zone, posix));
-			case 'MinuteNumber':
+			case 30:
 				return $elm$core$String$fromInt(
 					A2($elm$time$Time$toMinute, zone, posix));
-			case 'MinuteFixed':
+			case 31:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					A2($elm$time$Time$toMinute, zone, posix));
-			case 'SecondNumber':
+			case 32:
 				return $elm$core$String$fromInt(
 					A2($elm$time$Time$toSecond, zone, posix));
-			case 'SecondFixed':
+			case 33:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					2,
 					A2($elm$time$Time$toSecond, zone, posix));
-			case 'MillisecondNumber':
+			case 34:
 				return $elm$core$String$fromInt(
 					A2($elm$time$Time$toMillis, zone, posix));
-			case 'MillisecondFixed':
+			case 35:
 				return A2(
 					$ryan_haskell$date_format$DateFormat$toFixedLength,
 					3,
@@ -11711,23 +11624,23 @@ var $ryan_haskell$date_format$DateFormat$formatWithLanguage = F4(
 				tokens));
 	});
 var $ryan_haskell$date_format$DateFormat$format = $ryan_haskell$date_format$DateFormat$formatWithLanguage($ryan_haskell$date_format$DateFormat$Language$english);
-var $ryan_haskell$date_format$DateFormat$HourFixed = {$: 'HourFixed'};
+var $ryan_haskell$date_format$DateFormat$HourFixed = {$: 27};
 var $ryan_haskell$date_format$DateFormat$hourFixed = $ryan_haskell$date_format$DateFormat$HourFixed;
-var $ryan_haskell$date_format$DateFormat$MillisecondFixed = {$: 'MillisecondFixed'};
+var $ryan_haskell$date_format$DateFormat$MillisecondFixed = {$: 35};
 var $ryan_haskell$date_format$DateFormat$millisecondFixed = $ryan_haskell$date_format$DateFormat$MillisecondFixed;
-var $ryan_haskell$date_format$DateFormat$MinuteFixed = {$: 'MinuteFixed'};
+var $ryan_haskell$date_format$DateFormat$MinuteFixed = {$: 31};
 var $ryan_haskell$date_format$DateFormat$minuteFixed = $ryan_haskell$date_format$DateFormat$MinuteFixed;
-var $ryan_haskell$date_format$DateFormat$MonthNameAbbreviated = {$: 'MonthNameAbbreviated'};
+var $ryan_haskell$date_format$DateFormat$MonthNameAbbreviated = {$: 3};
 var $ryan_haskell$date_format$DateFormat$monthNameAbbreviated = $ryan_haskell$date_format$DateFormat$MonthNameAbbreviated;
-var $ryan_haskell$date_format$DateFormat$MonthNameFull = {$: 'MonthNameFull'};
+var $ryan_haskell$date_format$DateFormat$MonthNameFull = {$: 4};
 var $ryan_haskell$date_format$DateFormat$monthNameFull = $ryan_haskell$date_format$DateFormat$MonthNameFull;
-var $ryan_haskell$date_format$DateFormat$SecondFixed = {$: 'SecondFixed'};
+var $ryan_haskell$date_format$DateFormat$SecondFixed = {$: 33};
 var $ryan_haskell$date_format$DateFormat$secondFixed = $ryan_haskell$date_format$DateFormat$SecondFixed;
 var $ryan_haskell$date_format$DateFormat$Text = function (a) {
-	return {$: 'Text', a: a};
+	return {$: 36, a: a};
 };
 var $ryan_haskell$date_format$DateFormat$text = $ryan_haskell$date_format$DateFormat$Text;
-var $ryan_haskell$date_format$DateFormat$YearNumber = {$: 'YearNumber'};
+var $ryan_haskell$date_format$DateFormat$YearNumber = {$: 16};
 var $ryan_haskell$date_format$DateFormat$yearNumber = $ryan_haskell$date_format$DateFormat$YearNumber;
 var $gampleman$elm_visualization$Scale$Time$tickFormat = F4(
 	function (zone, _v0, _v1, date) {
@@ -11738,30 +11651,30 @@ var $gampleman$elm_visualization$Scale$Time$tickFormat = F4(
 					A3($justinmimbs$time_extra$Time$Extra$floor, interval, zone, date)),
 				time) < 0;
 		};
-		var format = significant($justinmimbs$time_extra$Time$Extra$Second) ? _List_fromArray(
+		var format = significant(14) ? _List_fromArray(
 			[
 				$ryan_haskell$date_format$DateFormat$text('.'),
 				$ryan_haskell$date_format$DateFormat$millisecondFixed
-			]) : (significant($justinmimbs$time_extra$Time$Extra$Minute) ? _List_fromArray(
+			]) : (significant(13) ? _List_fromArray(
 			[
 				$ryan_haskell$date_format$DateFormat$text(':'),
 				$ryan_haskell$date_format$DateFormat$secondFixed
-			]) : (significant($justinmimbs$time_extra$Time$Extra$Hour) ? _List_fromArray(
+			]) : (significant(12) ? _List_fromArray(
 			[
 				$ryan_haskell$date_format$DateFormat$hourFixed,
 				$ryan_haskell$date_format$DateFormat$text(':'),
 				$ryan_haskell$date_format$DateFormat$minuteFixed
-			]) : (significant($justinmimbs$time_extra$Time$Extra$Day) ? _List_fromArray(
+			]) : (significant(11) ? _List_fromArray(
 			[
 				$ryan_haskell$date_format$DateFormat$hourFixed,
 				$ryan_haskell$date_format$DateFormat$text(' '),
 				$ryan_haskell$date_format$DateFormat$amPmLowercase
-			]) : (significant($justinmimbs$time_extra$Time$Extra$Month) ? _List_fromArray(
+			]) : (significant(2) ? _List_fromArray(
 			[
 				$ryan_haskell$date_format$DateFormat$dayOfMonthFixed,
 				$ryan_haskell$date_format$DateFormat$text(' '),
 				$ryan_haskell$date_format$DateFormat$monthNameAbbreviated
-			]) : (significant($justinmimbs$time_extra$Time$Extra$Year) ? _List_fromArray(
+			]) : (significant(0) ? _List_fromArray(
 			[$ryan_haskell$date_format$DateFormat$monthNameFull]) : _List_fromArray(
 			[$ryan_haskell$date_format$DateFormat$yearNumber]))))));
 		return A3($ryan_haskell$date_format$DateFormat$format, format, zone, date);
@@ -11822,29 +11735,28 @@ var $gampleman$elm_visualization$Scale$Time$ticks = F3(
 var $gampleman$elm_visualization$Scale$Time$scale = F3(
 	function (zone, range_, domain_) {
 		return {
-			convert: A2(
+			ax: A2(
 				$gampleman$elm_visualization$Scale$Continuous$convertTransform,
 				A2($elm$core$Basics$composeR, $elm$time$Time$posixToMillis, $elm$core$Basics$toFloat),
 				$gampleman$elm_visualization$Interpolation$float),
-			domain: domain_,
-			invert: A2(
+			dn: domain_,
+			hd: A2(
 				$gampleman$elm_visualization$Scale$Continuous$invertTransform,
 				A2($elm$core$Basics$composeR, $elm$time$Time$posixToMillis, $elm$core$Basics$toFloat),
 				A2($elm$core$Basics$composeR, $elm$core$Basics$round, $elm$time$Time$millisToPosix)),
-			nice: $gampleman$elm_visualization$Scale$Time$nice(zone),
-			range: range_,
-			rangeExtent: F2(
+			fH: $gampleman$elm_visualization$Scale$Time$nice(zone),
+			af: range_,
+			ef: F2(
 				function (_v0, r) {
 					return r;
 				}),
-			tickFormat: $gampleman$elm_visualization$Scale$Time$tickFormat(zone),
-			ticks: $gampleman$elm_visualization$Scale$Time$ticks(zone)
+			ew: $gampleman$elm_visualization$Scale$Time$tickFormat(zone),
+			ex: $gampleman$elm_visualization$Scale$Time$ticks(zone)
 		};
 	});
 var $gampleman$elm_visualization$Scale$time = F3(
 	function (zone, range_, domain_) {
-		return $gampleman$elm_visualization$Scale$Scale(
-			A3($gampleman$elm_visualization$Scale$Time$scale, zone, range_, domain_));
+		return A3($gampleman$elm_visualization$Scale$Time$scale, zone, range_, domain_);
 	});
 var $elm_community$typed_svg$TypedSvg$TypesToStrings$transformToString = function (xform) {
 	var tr = F2(
@@ -11862,7 +11774,7 @@ var $elm_community$typed_svg$TypedSvg$TypesToStrings$transformToString = functio
 					]));
 		});
 	switch (xform.$) {
-		case 'Matrix':
+		case 0:
 			var a = xform.a;
 			var b = xform.b;
 			var c = xform.c;
@@ -11874,7 +11786,7 @@ var $elm_community$typed_svg$TypedSvg$TypesToStrings$transformToString = functio
 				'matrix',
 				_List_fromArray(
 					[a, b, c, d, e, f]));
-		case 'Rotate':
+		case 1:
 			var a = xform.a;
 			var x = xform.b;
 			var y = xform.c;
@@ -11883,7 +11795,7 @@ var $elm_community$typed_svg$TypedSvg$TypesToStrings$transformToString = functio
 				'rotate',
 				_List_fromArray(
 					[a, x, y]));
-		case 'Scale':
+		case 2:
 			var x = xform.a;
 			var y = xform.b;
 			return A2(
@@ -11891,14 +11803,14 @@ var $elm_community$typed_svg$TypedSvg$TypesToStrings$transformToString = functio
 				'scale',
 				_List_fromArray(
 					[x, y]));
-		case 'SkewX':
+		case 3:
 			var x = xform.a;
 			return A2(
 				tr,
 				'skewX',
 				_List_fromArray(
 					[x]));
-		case 'SkewY':
+		case 4:
 			var y = xform.a;
 			return A2(
 				tr,
@@ -11969,13 +11881,13 @@ var $elm_community$typed_svg$TypedSvg$Attributes$InPx$y = function (value) {
 		$elm_community$typed_svg$TypedSvg$Types$px(value));
 };
 var $author$project$Chart$StackedArea$view = function (cfg) {
-	var zone = A2($elm$time$Time$customZone, (cfg.tz / 60) | 0, _List_Nil);
+	var zone = A2($elm$time$Time$customZone, (cfg.c9 / 60) | 0, _List_Nil);
 	var unixList = A2(
 		$elm$core$List$map,
 		function ($) {
-			return $.unixSeconds;
+			return $.gw;
 		},
-		cfg.rows);
+		cfg.bk);
 	var tMin = A2(
 		$elm$core$Maybe$withDefault,
 		0,
@@ -11988,13 +11900,13 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 		$elm$core$List$map,
 		function (b) {
 			return _Utils_Tuple2(
-				b.name,
-				A2($elm$core$List$map, b.value, cfg.rows));
+				b.cZ,
+				A2($elm$core$List$map, b.hY, cfg.bk));
 		},
 		$author$project$Energy$bandsStacked);
 	var stacked = $gampleman$elm_visualization$Shape$stack(
-		{data: seriesData, offset: $gampleman$elm_visualization$Shape$stackOffsetNone, order: $elm$core$Basics$identity});
-	var plotW = (cfg.width - $author$project$Chart$StackedArea$pad.left) - $author$project$Chart$StackedArea$pad.right;
+		{gX: seriesData, hr: $gampleman$elm_visualization$Shape$stackOffsetNone, hv: $elm$core$Basics$identity});
+	var plotW = (cfg.eF - $author$project$Chart$StackedArea$pad.cQ) - $author$project$Chart$StackedArea$pad.ga;
 	var xScale = A3(
 		$gampleman$elm_visualization$Scale$time,
 		zone,
@@ -12006,17 +11918,17 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 		return A2(
 			$gampleman$elm_visualization$Scale$convert,
 			xScale,
-			$author$project$Chart$StackedArea$posix(r.unixSeconds));
+			$author$project$Chart$StackedArea$posix(r.gw));
 	};
-	var plotH = (cfg.height - $author$project$Chart$StackedArea$pad.top) - $author$project$Chart$StackedArea$pad.bottom;
+	var plotH = (cfg.cM - $author$project$Chart$StackedArea$pad.cw) - $author$project$Chart$StackedArea$pad.eT;
 	var pad2 = function (n) {
 		return A3(
 			$elm$core$String$padLeft,
 			2,
-			_Utils_chr('0'),
+			'0',
 			$elm$core$String$fromInt(n));
 	};
-	var maxStack = stacked.extent.b;
+	var maxStack = stacked.e7.b;
 	var maxLoad = A2(
 		$elm$core$Maybe$withDefault,
 		0,
@@ -12024,9 +11936,9 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 			A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.load;
+					return $.hg;
 				},
-				cfg.rows)));
+				cfg.bk)));
 	var yMax = A2(
 		$elm$core$Basics$max,
 		1,
@@ -12047,9 +11959,9 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 					return $elm$core$Maybe$Just(
 						_Utils_Tuple2(
 							xOf(r),
-							A2($gampleman$elm_visualization$Scale$convert, yScale, r.load)));
+							A2($gampleman$elm_visualization$Scale$convert, yScale, r.hg)));
 				},
-				cfg.rows)),
+				cfg.bk)),
 		_List_fromArray(
 			[
 				$elm_community$typed_svg$TypedSvg$Attributes$class(
@@ -12068,8 +11980,8 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 			A2($elm$time$Time$toMinute, zone, t))));
 	};
 	var focusRect = function () {
-		var _v2 = cfg.focusedDay;
-		if (_v2.$ === 'Nothing') {
+		var _v2 = cfg.e9;
+		if (_v2.$ === 1) {
 			return _List_Nil;
 		} else {
 			var d = _v2.a;
@@ -12083,12 +11995,12 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 				A2(
 					$gampleman$elm_visualization$Scale$convert,
 					xScale,
-					$author$project$Chart$StackedArea$posix((d * 86400) - cfg.tz)));
+					$author$project$Chart$StackedArea$posix((d * 86400) - cfg.c9)));
 			var x1 = clampX(
 				A2(
 					$gampleman$elm_visualization$Scale$convert,
 					xScale,
-					$author$project$Chart$StackedArea$posix(((d + 1) * 86400) - cfg.tz)));
+					$author$project$Chart$StackedArea$posix(((d + 1) * 86400) - cfg.c9)));
 			return _List_fromArray(
 				[
 					A2(
@@ -12117,7 +12029,7 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 		var pts = A2(
 			$elm$core$List$map,
 			function (r) {
-				var load = r.load;
+				var load = r.hg;
 				var gen = $author$project$Energy$totalGeneration(r);
 				var _v1 = toImport ? _Utils_Tuple2(
 					A2($elm$core$Basics$min, load, gen),
@@ -12135,7 +12047,7 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 							xOf(r),
 							A2($gampleman$elm_visualization$Scale$convert, yScale, hi))));
 			},
-			cfg.rows);
+			cfg.bk);
 		var info = toImport ? _Utils_Tuple2('Defizit', 'Die Last liegt über der heimischen Erzeugung. Die Differenz wird durch Import oder Ausspeicherung von Speichern gedeckt.') : _Utils_Tuple2('Überschuss', 'Die Erzeugung liegt über der Last. Die Differenz wird exportiert oder eingespeichert.');
 		return A2(
 			$folkertdev$one_true_path_experiment$Path$element,
@@ -12149,10 +12061,10 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 						])),
 					$elm_community$typed_svg$TypedSvg$Attributes$stroke($elm_community$typed_svg$TypedSvg$Types$PaintNone),
 					$elm_community$typed_svg$TypedSvg$Events$onMouseOver(
-					cfg.onInfo(
+					cfg.dW(
 						$elm$core$Maybe$Just(info))),
 					$elm_community$typed_svg$TypedSvg$Events$onMouseOut(
-					cfg.onInfo($elm$core$Maybe$Nothing))
+					cfg.dW($elm$core$Maybe$Nothing))
 				]));
 	};
 	var areaFor = F2(
@@ -12172,7 +12084,7 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 									xOf(r),
 									A2($gampleman$elm_visualization$Scale$convert, yScale, hi))));
 					}),
-				cfg.rows,
+				cfg.bk,
 				pairs);
 			return A2(
 				$folkertdev$one_true_path_experiment$Path$element,
@@ -12180,29 +12092,29 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 				_List_fromArray(
 					[
 						$elm_community$typed_svg$TypedSvg$Attributes$fill(
-						$elm_community$typed_svg$TypedSvg$Types$Paint(band.color)),
+						$elm_community$typed_svg$TypedSvg$Types$Paint(band.gR)),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
 						_List_fromArray(
 							[
 								'series',
-								's-' + $author$project$Energy$bandKey(band.name)
+								's-' + $author$project$Energy$bandKey(band.cZ)
 							])),
 						$elm_community$typed_svg$TypedSvg$Attributes$stroke($elm_community$typed_svg$TypedSvg$Types$PaintNone),
 						$elm_community$typed_svg$TypedSvg$Events$onMouseOver(
-						cfg.onHover(
-							$elm$core$Maybe$Just(band.name))),
+						cfg.dV(
+							$elm$core$Maybe$Just(band.cZ))),
 						$elm_community$typed_svg$TypedSvg$Events$onMouseOut(
-						cfg.onHover($elm$core$Maybe$Nothing)),
+						cfg.dV($elm$core$Maybe$Nothing)),
 						$elm_community$typed_svg$TypedSvg$Events$onClick(
-						cfg.onPin(band.name))
+						cfg.fP(band.cZ))
 					]));
 		});
-	var areas = A3($elm$core$List$map2, areaFor, $author$project$Energy$bandsStacked, stacked.values);
+	var areas = A3($elm$core$List$map2, areaFor, $author$project$Energy$bandsStacked, stacked.hZ);
 	return A2(
 		$elm_community$typed_svg$TypedSvg$svg,
 		_List_fromArray(
 			[
-				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.width, cfg.height),
+				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.eF, cfg.cM),
 				$elm_community$typed_svg$TypedSvg$Attributes$width(
 				$elm_community$typed_svg$TypedSvg$Types$Percent(100))
 			]),
@@ -12215,7 +12127,7 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 						$elm_community$typed_svg$TypedSvg$Attributes$transform(
 						_List_fromArray(
 							[
-								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$StackedArea$pad.left, $author$project$Chart$StackedArea$pad.top)
+								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$StackedArea$pad.cQ, $author$project$Chart$StackedArea$pad.cw)
 							]))
 					]),
 				_Utils_ap(
@@ -12237,7 +12149,7 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 						$elm_community$typed_svg$TypedSvg$Attributes$transform(
 						_List_fromArray(
 							[
-								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$StackedArea$pad.left, $author$project$Chart$StackedArea$pad.top + plotH)
+								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$StackedArea$pad.cQ, $author$project$Chart$StackedArea$pad.cw + plotH)
 							])),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(11),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
@@ -12262,7 +12174,7 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 						$elm_community$typed_svg$TypedSvg$Attributes$transform(
 						_List_fromArray(
 							[
-								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$StackedArea$pad.left, $author$project$Chart$StackedArea$pad.top)
+								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$StackedArea$pad.cQ, $author$project$Chart$StackedArea$pad.cw)
 							])),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(11),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
@@ -12284,16 +12196,16 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 				_List_fromArray(
 					[
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(13),
-						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y($author$project$Chart$StackedArea$pad.top + (plotH / 2)),
+						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y($author$project$Chart$StackedArea$pad.cw + (plotH / 2)),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(11),
-						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor($elm_community$typed_svg$TypedSvg$Types$AnchorMiddle),
+						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor(2),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
 						_List_fromArray(
 							['axis-title'])),
 						$elm_community$typed_svg$TypedSvg$Attributes$transform(
 						_List_fromArray(
 							[
-								A3($elm_community$typed_svg$TypedSvg$Types$Rotate, -90, 13, $author$project$Chart$StackedArea$pad.top + (plotH / 2))
+								A3($elm_community$typed_svg$TypedSvg$Types$Rotate, -90, 13, $author$project$Chart$StackedArea$pad.cw + (plotH / 2))
 							]))
 					]),
 				_List_fromArray(
@@ -12304,10 +12216,10 @@ var $author$project$Chart$StackedArea$view = function (cfg) {
 				$elm_community$typed_svg$TypedSvg$text_,
 				_List_fromArray(
 					[
-						$elm_community$typed_svg$TypedSvg$Attributes$InPx$x($author$project$Chart$StackedArea$pad.left + (plotW / 2)),
-						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(cfg.height - 1),
+						$elm_community$typed_svg$TypedSvg$Attributes$InPx$x($author$project$Chart$StackedArea$pad.cQ + (plotW / 2)),
+						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(cfg.cM - 1),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(11),
-						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor($elm_community$typed_svg$TypedSvg$Types$AnchorMiddle),
+						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor(2),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
 						_List_fromArray(
 							['axis-title']))
@@ -12335,7 +12247,7 @@ var $author$project$Main$areaCard = F6(
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.unixSeconds;
+						return $.gw;
 					},
 					all)));
 		var from = tmin + (off * 3600);
@@ -12343,7 +12255,7 @@ var $author$project$Main$areaCard = F6(
 		var sliced = A2(
 			$elm$core$List$filter,
 			function (r) {
-				return (_Utils_cmp(r.unixSeconds, from) > -1) && (_Utils_cmp(r.unixSeconds, to) < 1);
+				return (_Utils_cmp(r.gw, from) > -1) && (_Utils_cmp(r.gw, to) < 1);
 			},
 			all);
 		var shown = $elm$core$List$isEmpty(sliced) ? all : sliced;
@@ -12360,14 +12272,14 @@ var $author$project$Main$areaCard = F6(
 			$author$project$Main$focusNoteOf(focusedDay),
 			$author$project$Chart$StackedArea$view(
 				{
-					focusedDay: focusedDay,
-					height: 450,
-					onHover: $author$project$Main$HoverSource,
-					onInfo: $author$project$Main$HoverInfo,
-					onPin: $author$project$Main$PinSource,
-					rows: A2($author$project$Energy$decimateTo, 1200, shown),
-					tz: tz,
-					width: 1120
+					e9: focusedDay,
+					cM: 450,
+					dV: $author$project$Main$HoverSource,
+					dW: $author$project$Main$HoverInfo,
+					fP: $author$project$Main$PinSource,
+					bk: A2($author$project$Energy$decimateTo, 1200, shown),
+					c9: tz,
+					eF: 1120
 				}));
 	});
 var $elm$html$Html$Attributes$classList = function (classes) {
@@ -12381,29 +12293,29 @@ var $elm$html$Html$Attributes$classList = function (classes) {
 				A2($elm$core$List$filter, $elm$core$Tuple$second, classes))));
 };
 var $author$project$Main$ClickDay = function (a) {
-	return {$: 'ClickDay', a: a};
+	return {$: 12, a: a};
 };
 var $author$project$Energy$metricValue = F2(
 	function (m, r) {
 		var total = $author$project$Energy$totalGeneration(r);
-		switch (m.$) {
-			case 'SolarShare':
-				return (total <= 0) ? 0 : ((100 * r.solar) / total);
-			case 'RenewableShare':
+		switch (m) {
+			case 0:
+				return (total <= 0) ? 0 : ((100 * r.en) / total);
+			case 1:
 				return (total <= 0) ? 0 : ((100 * $elm$core$List$sum(
 					A2(
 						$elm$core$List$map,
 						function (b) {
-							return b.value(r);
+							return b.hY(r);
 						},
 						A2(
 							$elm$core$List$filter,
 							function (b) {
-								return _Utils_eq(b.group, $author$project$Energy$Renewable);
+								return !b.g6;
 							},
 							$author$project$Energy$bands)))) / total);
-			case 'LoadMetric':
-				return r.load;
+			case 2:
+				return r.hg;
 			default:
 				return 0;
 		}
@@ -12418,13 +12330,13 @@ var $author$project$Energy$heatCells = F4(
 			function (r, acc) {
 				var v = A2($author$project$Energy$metricValue, metric, r);
 				var key = _Utils_Tuple2(
-					A2($author$project$Energy$localDayOf, tz, r.unixSeconds),
-					A3($author$project$Energy$slotOf, tz, slots, r.unixSeconds));
+					A2($author$project$Energy$localDayOf, tz, r.gw),
+					A3($author$project$Energy$slotOf, tz, slots, r.gw));
 				return A3(
 					$elm$core$Dict$update,
 					key,
 					function (existing) {
-						if (existing.$ === 'Just') {
+						if (!existing.$) {
 							var _v4 = existing.a;
 							var sum = _v4.a;
 							var n = _v4.b;
@@ -12447,9 +12359,9 @@ var $author$project$Energy$heatCells = F4(
 				var sum = _v2.a;
 				var n = _v2.b;
 				return {
-					day: day,
-					slot: slot,
-					value: sum / A2($elm$core$Basics$max, 1, n)
+					dk: day,
+					hH: slot,
+					hY: sum / A2($elm$core$Basics$max, 1, n)
 				};
 			},
 			$elm$core$Dict$toList(
@@ -12467,7 +12379,7 @@ var $author$project$Energy$heatCellsValues = F3(
 						A2($author$project$Energy$localDayOf, tz, unix),
 						A3($author$project$Energy$slotOf, tz, slots, unix)),
 					function (existing) {
-						if (existing.$ === 'Just') {
+						if (!existing.$) {
 							var _v4 = existing.a;
 							var sum = _v4.a;
 							var n = _v4.b;
@@ -12490,19 +12402,19 @@ var $author$project$Energy$heatCellsValues = F3(
 				var sum = _v2.a;
 				var n = _v2.b;
 				return {
-					day: day,
-					slot: slot,
-					value: sum / A2($elm$core$Basics$max, 1, n)
+					dk: day,
+					hH: slot,
+					hY: sum / A2($elm$core$Basics$max, 1, n)
 				};
 			},
 			$elm$core$Dict$toList(
 				A3($elm$core$List$foldl, step, $elm$core$Dict$empty, pairs)));
 	});
 var $author$project$Main$SetHeatOffset = function (a) {
-	return {$: 'SetHeatOffset', a: a};
+	return {$: 18, a: a};
 };
 var $author$project$Main$SetHeatSpan = function (a) {
-	return {$: 'SetHeatSpan', a: a};
+	return {$: 17, a: a};
 };
 var $author$project$Main$heatControls = F3(
 	function (totalDays, span, offset) {
@@ -12597,7 +12509,7 @@ var $author$project$Energy$heatExtent = function (cells) {
 	var vals = A2(
 		$elm$core$List$map,
 		function ($) {
-			return $.value;
+			return $.hY;
 		},
 		cells);
 	return _Utils_Tuple2(
@@ -12623,7 +12535,7 @@ var $elm$core$Array$fromListHelp = F3(
 				return A2(
 					$elm$core$Array$builderToArray,
 					true,
-					{nodeList: nodeList, nodeListSize: nodeListSize, tail: jsArray});
+					{y: nodeList, r: nodeListSize, u: jsArray});
 			} else {
 				var $temp$list = remainingItems,
 					$temp$nodeList = A2(
@@ -12654,7 +12566,7 @@ var $elm$core$Array$getHelp = F3(
 		while (true) {
 			var pos = $elm$core$Array$bitMask & (index >>> shift);
 			var _v0 = A2($elm$core$Elm$JsArray$unsafeGet, pos, tree);
-			if (_v0.$ === 'SubTree') {
+			if (!_v0.$) {
 				var subTree = _v0.a;
 				var $temp$shift = shift - $elm$core$Array$shiftStep,
 					$temp$index = index,
@@ -13752,34 +13664,34 @@ var $gampleman$elm_visualization$Scale$Color$viridisInterpolator = $gampleman$el
 				A3($avh4$elm_color$Color$rgb255, 253, 231, 37)
 			])));
 var $author$project$Energy$metricInterpolator = function (m) {
-	switch (m.$) {
-		case 'SolarShare':
+	switch (m) {
+		case 0:
 			return $gampleman$elm_visualization$Scale$Color$plasmaInterpolator;
-		case 'RenewableShare':
+		case 1:
 			return $gampleman$elm_visualization$Scale$Color$viridisInterpolator;
-		case 'LoadMetric':
+		case 2:
 			return $gampleman$elm_visualization$Scale$Color$infernoInterpolator;
 		default:
 			return $gampleman$elm_visualization$Scale$Color$magmaInterpolator;
 	}
 };
 var $author$project$Energy$metricLabel = function (m) {
-	switch (m.$) {
-		case 'SolarShare':
+	switch (m) {
+		case 0:
 			return 'Solar-Anteil';
-		case 'RenewableShare':
+		case 1:
 			return 'Erneuerbaren-Anteil';
-		case 'LoadMetric':
+		case 2:
 			return 'Last';
 		default:
 			return 'Globalstrahlung (DWD)';
 	}
 };
 var $author$project$Energy$metricUnit = function (m) {
-	switch (m.$) {
-		case 'LoadMetric':
+	switch (m) {
+		case 2:
 			return 'GW';
-		case 'Irradiance':
+		case 3:
 			return 'J/cm²';
 		default:
 			return '%';
@@ -13813,7 +13725,7 @@ var $author$project$Energy$slotsPerDayInts = function (stampsRaw) {
 				$elm$core$Basics$sub,
 				A2($elm$core$List$drop, 1, stamps),
 				stamps)));
-	if (smallestGap.$ === 'Just') {
+	if (!smallestGap.$) {
 		var gap = smallestGap.a;
 		return (gap <= 600) ? 144 : ((gap <= 900) ? 96 : ((gap <= 1800) ? 48 : 24));
 	} else {
@@ -13825,14 +13737,14 @@ var $author$project$Energy$slotsPerDay = function (rows) {
 		A2(
 			$elm$core$List$map,
 			function ($) {
-				return $.unixSeconds;
+				return $.gw;
 			},
 			rows));
 };
-var $elm_community$typed_svg$TypedSvg$Types$AnchorEnd = {$: 'AnchorEnd'};
+var $elm_community$typed_svg$TypedSvg$Types$AnchorEnd = 3;
 var $elm$core$Maybe$andThen = F2(
 	function (callback, maybeValue) {
-		if (maybeValue.$ === 'Just') {
+		if (!maybeValue.$) {
 			var value = maybeValue.a;
 			return callback(value);
 		} else {
@@ -13889,7 +13801,7 @@ var $elm$core$Dict$fromList = function (assocs) {
 		assocs);
 };
 var $elm_community$typed_svg$TypedSvg$line = $elm_community$typed_svg$TypedSvg$Core$node('line');
-var $author$project$Chart$Heatmap$pad = {bottom: 38, left: 56, right: 10, top: 8};
+var $author$project$Chart$Heatmap$pad = {eT: 38, cQ: 56, ga: 10, cw: 8};
 var $author$project$Energy$slotLabel = F2(
 	function (slots, slot) {
 		var pad = function (n) {
@@ -13983,14 +13895,14 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 			A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.day;
+					return $.dk;
 				},
-				cfg.cells)));
+				cfg.cE)));
 	var spanDays = function () {
 		var _v5 = _Utils_Tuple2(
 			$elm$core$List$minimum(presentDays),
 			$elm$core$List$maximum(presentDays));
-		if ((_v5.a.$ === 'Just') && (_v5.b.$ === 'Just')) {
+		if ((!_v5.a.$) && (!_v5.b.$)) {
 			var lo = _v5.a.a;
 			var hi = _v5.b.a;
 			return A2($elm$core$List$range, lo, hi);
@@ -13998,9 +13910,9 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 			return presentDays;
 		}
 	}();
-	var plotW = (cfg.width - $author$project$Chart$Heatmap$pad.left) - $author$project$Chart$Heatmap$pad.right;
-	var plotH = (cfg.height - $author$project$Chart$Heatmap$pad.top) - $author$project$Chart$Heatmap$pad.bottom;
-	var nSlots = A2($elm$core$Basics$max, 1, cfg.slotsPerDay);
+	var plotW = (cfg.eF - $author$project$Chart$Heatmap$pad.cQ) - $author$project$Chart$Heatmap$pad.ga;
+	var plotH = (cfg.cM - $author$project$Chart$Heatmap$pad.cw) - $author$project$Chart$Heatmap$pad.eT;
+	var nSlots = A2($elm$core$Basics$max, 1, cfg.em);
 	var hourLabels = A2(
 		$elm$core$List$map,
 		function (h) {
@@ -14010,7 +13922,7 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 					[
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-8),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(((h / 24) * plotH) + 4),
-						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor($elm_community$typed_svg$TypedSvg$Types$AnchorEnd),
+						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor(3),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(10.5),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
 						_List_fromArray(
@@ -14022,7 +13934,7 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 						A3(
 							$elm$core$String$padLeft,
 							2,
-							_Utils_chr('0'),
+							'0',
 							$elm$core$String$fromInt(h)) + ':00')
 					]));
 		},
@@ -14067,21 +13979,21 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 		function (c) {
 			return A2(
 				$elm$core$Dict$update,
-				c.day,
+				c.dk,
 				function (m) {
 					return $elm$core$Maybe$Just(
 						1 + A2($elm$core$Maybe$withDefault, 0, m));
 				});
 		},
 		$elm$core$Dict$empty,
-		cfg.cells);
+		cfg.cE);
 	var isComplete = function (d) {
 		return _Utils_cmp(
 			A2(
 				$elm$core$Maybe$withDefault,
 				0,
 				A2($elm$core$Dict$get, d, cellsPerDay)),
-			A2($elm$core$Basics$max, 1, cfg.slotsPerDay)) > -1;
+			A2($elm$core$Basics$max, 1, cfg.em)) > -1;
 	};
 	var days = $elm$core$List$reverse(
 		A2(
@@ -14115,7 +14027,7 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 						[
 							$elm_community$typed_svg$TypedSvg$Attributes$InPx$x((i * cellW) + (cellW / 2)),
 							$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(plotH + 14),
-							$elm_community$typed_svg$TypedSvg$Attributes$textAnchor($elm_community$typed_svg$TypedSvg$Types$AnchorMiddle),
+							$elm_community$typed_svg$TypedSvg$Attributes$textAnchor(2),
 							$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(11),
 							$elm_community$typed_svg$TypedSvg$Attributes$class(
 							_List_fromArray(
@@ -14134,8 +14046,8 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 			function (d) {
 				return A2($elm$core$Dict$get, d, dayCol);
 			},
-			cfg.focusedDay);
-		if (_v3.$ === 'Just') {
+			cfg.e9);
+		if (!_v3.$) {
 			var col = _v3.a;
 			return _List_fromArray(
 				[
@@ -14165,11 +14077,11 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 			$elm$core$List$map,
 			function (c) {
 				return _Utils_Tuple2(
-					_Utils_Tuple2(c.day, c.slot),
-					c.value);
+					_Utils_Tuple2(c.dk, c.hH),
+					c.hY);
 			},
-			cfg.cells));
-	var _v0 = cfg.extent;
+			cfg.cE));
+	var _v0 = cfg.e7;
 	var vmin = _v0.a;
 	var vmax = _v0.b;
 	var norm = function (v) {
@@ -14187,16 +14099,16 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 					$elm_community$typed_svg$TypedSvg$Attributes$InPx$width(cellW + 0.6),
 					$elm_community$typed_svg$TypedSvg$Attributes$InPx$height(cellH + 0.6),
 					$elm_community$typed_svg$TypedSvg$Events$onClick(
-					cfg.onClickDay(day))
+					cfg.fO(day))
 				]);
 			var _v2 = A2(
 				$elm$core$Dict$get,
 				_Utils_Tuple2(day, slot),
 				cellDict);
-			if (_v2.$ === 'Just') {
+			if (!_v2.$) {
 				var v = _v2.a;
 				var tip = $author$project$Energy$dayLabel(day) + ('  ' + (A2($author$project$Energy$slotLabel, nSlots, slot) + ('  ·  ' + ($elm$core$String$fromFloat(
-					$elm$core$Basics$round(v * 10) / 10) + (' ' + cfg.unit)))));
+					$elm$core$Basics$round(v * 10) / 10) + (' ' + cfg.gv)))));
 				return A2(
 					$elm_community$typed_svg$TypedSvg$rect,
 					A2(
@@ -14208,7 +14120,7 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 							$elm$core$List$cons,
 							$elm_community$typed_svg$TypedSvg$Attributes$fill(
 								$elm_community$typed_svg$TypedSvg$Types$Paint(
-									cfg.interpolator(
+									cfg.fq(
 										norm(v)))),
 							base)),
 					_List_fromArray(
@@ -14248,7 +14160,7 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 		$elm_community$typed_svg$TypedSvg$svg,
 		_List_fromArray(
 			[
-				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.width, cfg.height),
+				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.eF, cfg.cM),
 				$elm_community$typed_svg$TypedSvg$Attributes$width(
 				$elm_community$typed_svg$TypedSvg$Types$Percent(100))
 			]),
@@ -14261,7 +14173,7 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 						$elm_community$typed_svg$TypedSvg$Attributes$transform(
 						_List_fromArray(
 							[
-								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$Heatmap$pad.left, $author$project$Chart$Heatmap$pad.top)
+								A2($elm_community$typed_svg$TypedSvg$Types$Translate, $author$project$Chart$Heatmap$pad.cQ, $author$project$Chart$Heatmap$pad.cw)
 							]))
 					]),
 				_Utils_ap(
@@ -14279,16 +14191,16 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 				_List_fromArray(
 					[
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(11),
-						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y($author$project$Chart$Heatmap$pad.top + (plotH / 2)),
+						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y($author$project$Chart$Heatmap$pad.cw + (plotH / 2)),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(11),
-						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor($elm_community$typed_svg$TypedSvg$Types$AnchorMiddle),
+						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor(2),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
 						_List_fromArray(
 							['axis-title'])),
 						$elm_community$typed_svg$TypedSvg$Attributes$transform(
 						_List_fromArray(
 							[
-								A3($elm_community$typed_svg$TypedSvg$Types$Rotate, -90, 11, $author$project$Chart$Heatmap$pad.top + (plotH / 2))
+								A3($elm_community$typed_svg$TypedSvg$Types$Rotate, -90, 11, $author$project$Chart$Heatmap$pad.cw + (plotH / 2))
 							]))
 					]),
 				_List_fromArray(
@@ -14299,10 +14211,10 @@ var $author$project$Chart$Heatmap$view = function (cfg) {
 				$elm_community$typed_svg$TypedSvg$text_,
 				_List_fromArray(
 					[
-						$elm_community$typed_svg$TypedSvg$Attributes$InPx$x($author$project$Chart$Heatmap$pad.left + (plotW / 2)),
-						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(cfg.height - 2),
+						$elm_community$typed_svg$TypedSvg$Attributes$InPx$x($author$project$Chart$Heatmap$pad.cQ + (plotW / 2)),
+						$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(cfg.cM - 2),
 						$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(11),
-						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor($elm_community$typed_svg$TypedSvg$Types$AnchorMiddle),
+						$elm_community$typed_svg$TypedSvg$Attributes$textAnchor(2),
 						$elm_community$typed_svg$TypedSvg$Attributes$class(
 						_List_fromArray(
 							['axis-title']))
@@ -14323,11 +14235,11 @@ var $author$project$Main$heatCard = F8(
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.unixSeconds;
+						return $.gw;
 					},
 					sortedRows)));
 		var _v0 = function () {
-			if (_Utils_eq(metric, $author$project$Energy$Irradiance)) {
+			if (metric === 3) {
 				var windowed = A2(
 					$elm$core$List$filter,
 					function (_v1) {
@@ -14356,7 +14268,7 @@ var $author$project$Main$heatCard = F8(
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.day;
+						return $.dk;
 					},
 					allCells)));
 		var dmax = A2(
@@ -14366,7 +14278,7 @@ var $author$project$Main$heatCard = F8(
 				A2(
 					$elm$core$List$map,
 					function ($) {
-						return $.day;
+						return $.dk;
 					},
 					allCells)));
 		var totalDays = A2($elm$core$Basics$max, 1, (dmax - dmin) + 1);
@@ -14379,7 +14291,7 @@ var $author$project$Main$heatCard = F8(
 		var heatCells = A2(
 			$elm$core$List$filter,
 			function (c) {
-				return (_Utils_cmp(c.day, dmin + off) > -1) && (_Utils_cmp(c.day, (dmin + off) + spanD) < 0);
+				return (_Utils_cmp(c.dk, dmin + off) > -1) && (_Utils_cmp(c.dk, (dmin + off) + spanD) < 0);
 			},
 			allCells);
 		return A5(
@@ -14401,15 +14313,15 @@ var $author$project$Main$heatCard = F8(
 					[
 						$author$project$Chart$Heatmap$view(
 						{
-							cells: heatCells,
-							extent: $author$project$Energy$heatExtent(heatCells),
-							focusedDay: focusedDay,
-							height: 480,
-							interpolator: $author$project$Energy$metricInterpolator(metric),
-							onClickDay: $author$project$Main$ClickDay,
-							slotsPerDay: slots,
-							unit: $author$project$Energy$metricUnit(metric),
-							width: 660
+							cE: heatCells,
+							e7: $author$project$Energy$heatExtent(heatCells),
+							e9: focusedDay,
+							cM: 480,
+							fq: $author$project$Energy$metricInterpolator(metric),
+							fO: $author$project$Main$ClickDay,
+							em: slots,
+							gv: $author$project$Energy$metricUnit(metric),
+							eF: 660
 						})
 					])));
 	});
@@ -14418,7 +14330,7 @@ var $author$project$Main$activeOf = F2(
 		if (!$elm$core$List$isEmpty(pinned)) {
 			return pinned;
 		} else {
-			if (hovered.$ === 'Just') {
+			if (!hovered.$) {
 				var h = hovered.a;
 				return _List_fromArray(
 					[h]);
@@ -14428,7 +14340,7 @@ var $author$project$Main$activeOf = F2(
 		}
 	});
 var $author$project$Main$highlightClasses = function (model) {
-	var hl = A2($author$project$Main$activeOf, model.pinned, model.hovered);
+	var hl = A2($author$project$Main$activeOf, model.ae, model.aQ);
 	return A2(
 		$elm$core$List$cons,
 		_Utils_Tuple2(
@@ -14449,7 +14361,7 @@ var $elm$virtual_dom$VirtualDom$lazy6 = _VirtualDom_lazy6;
 var $elm$html$Html$Lazy$lazy6 = $elm$virtual_dom$VirtualDom$lazy6;
 var $elm$virtual_dom$VirtualDom$lazy8 = _VirtualDom_lazy8;
 var $elm$html$Html$Lazy$lazy8 = $elm$virtual_dom$VirtualDom$lazy8;
-var $author$project$Main$ToggleTreemapFull = {$: 'ToggleTreemapFull'};
+var $author$project$Main$ToggleTreemapFull = {$: 27};
 var $elm$html$Html$button = _VirtualDom_node('button');
 var $elm$html$Html$Events$on = F2(
 	function (event, decoder) {
@@ -14478,7 +14390,7 @@ var $author$project$Main$propSign = A2(
 		]));
 var $author$project$Energy$SubSource = F3(
 	function (name, color, value) {
-		return {color: color, name: name, value: value};
+		return {gR: color, cZ: name, hY: value};
 	});
 var $avh4$elm_color$Color$rgb = F3(
 	function (r, g, b) {
@@ -14489,7 +14401,7 @@ var $avh4$elm_color$Color$toRgba = function (_v0) {
 	var g = _v0.b;
 	var b = _v0.c;
 	var a = _v0.d;
-	return {alpha: a, blue: b, green: g, red: r};
+	return {bs: a, gJ: b, g5: g, hz: r};
 };
 var $author$project$Energy$tint = F2(
 	function (t, c) {
@@ -14497,9 +14409,9 @@ var $author$project$Energy$tint = F2(
 			return (t >= 0) ? (x + ((1 - x) * t)) : (x * (1 + t));
 		};
 		var _v0 = $avh4$elm_color$Color$toRgba(c);
-		var blue = _v0.blue;
-		var green = _v0.green;
-		var red = _v0.red;
+		var blue = _v0.gJ;
+		var green = _v0.g5;
+		var red = _v0.hz;
 		return A3(
 			$avh4$elm_color$Color$rgb,
 			f(red),
@@ -14519,7 +14431,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						0.12,
 						A3($author$project$Energy$rgb, 79, 163, 209)),
 					function ($) {
-						return $.windOnshore;
+						return $.eH;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
@@ -14529,7 +14441,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						-0.28,
 						A3($author$project$Energy$rgb, 79, 163, 209)),
 					function ($) {
-						return $.windOffshore;
+						return $.eG;
 					})
 				]);
 		case 'Wasserkraft':
@@ -14543,14 +14455,14 @@ var $author$project$Energy$bandSubs = function (name) {
 						0.22,
 						A3($author$project$Energy$rgb, 46, 111, 149)),
 					function ($) {
-						return $.hydroRor;
+						return $.fl;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
 					'Speicher',
 					A3($author$project$Energy$rgb, 46, 111, 149),
 					function ($) {
-						return $.hydroReservoir;
+						return $.fk;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
@@ -14560,7 +14472,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						-0.3,
 						A3($author$project$Energy$rgb, 46, 111, 149)),
 					function ($) {
-						return $.hydroPumped;
+						return $.fj;
 					})
 				]);
 		case 'Biomasse':
@@ -14571,7 +14483,7 @@ var $author$project$Energy$bandSubs = function (name) {
 					'Biomasse',
 					A3($author$project$Energy$rgb, 91, 168, 91),
 					function ($) {
-						return $.biomass;
+						return $.eR;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
@@ -14581,7 +14493,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						-0.32,
 						A3($author$project$Energy$rgb, 91, 168, 91)),
 					function ($) {
-						return $.geothermal;
+						return $.fd;
 					})
 				]);
 		case 'Kohle':
@@ -14595,7 +14507,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						-0.18,
 						A3($author$project$Energy$rgb, 74, 74, 74)),
 					function ($) {
-						return $.brownCoal;
+						return $.eU;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
@@ -14605,7 +14517,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						0.28,
 						A3($author$project$Energy$rgb, 74, 74, 74)),
 					function ($) {
-						return $.hardCoal;
+						return $.fe;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
@@ -14615,7 +14527,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						0.55,
 						A3($author$project$Energy$rgb, 74, 74, 74)),
 					function ($) {
-						return $.coalDerivedGas;
+						return $.eX;
 					})
 				]);
 		case 'Gas/Öl':
@@ -14629,7 +14541,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						0.18,
 						A3($author$project$Energy$rgb, 156, 122, 91)),
 					function ($) {
-						return $.gas;
+						return $.fc;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
@@ -14639,7 +14551,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						-0.32,
 						A3($author$project$Energy$rgb, 156, 122, 91)),
 					function ($) {
-						return $.oil;
+						return $.fN;
 					})
 				]);
 		case 'Sonstige':
@@ -14653,7 +14565,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						0.16,
 						A3($author$project$Energy$rgb, 176, 176, 176)),
 					function ($) {
-						return $.waste;
+						return $.gA;
 					}),
 					A3(
 					$author$project$Energy$SubSource,
@@ -14663,7 +14575,7 @@ var $author$project$Energy$bandSubs = function (name) {
 						-0.22,
 						A3($author$project$Energy$rgb, 176, 176, 176)),
 					function ($) {
-						return $.others;
+						return $.fQ;
 					})
 				]);
 		default:
@@ -14683,7 +14595,7 @@ var $author$project$Energy$sumByBand = function (rows) {
 				return _Utils_Tuple2(
 					b,
 					$elm$core$List$sum(
-						A2($elm$core$List$map, b.value, rows)));
+						A2($elm$core$List$map, b.hY, rows)));
 			},
 			$author$project$Energy$bands));
 };
@@ -14701,7 +14613,7 @@ var $author$project$Energy$sumBySub = F2(
 					return _Utils_Tuple2(
 						s,
 						$elm$core$List$sum(
-							A2($elm$core$List$map, s.value, rows)));
+							A2($elm$core$List$map, s.hY, rows)));
 				},
 				subs));
 	});
@@ -14717,31 +14629,31 @@ var $author$project$Energy$sumHierarchy = function (rows) {
 				A2(
 					$author$project$Energy$sumBySub,
 					rows,
-					$author$project$Energy$bandSubs(b.name)));
+					$author$project$Energy$bandSubs(b.cZ)));
 		},
 		$author$project$Energy$sumByBand(rows));
 };
-var $author$project$Chart$Treemap$KBand = {$: 'KBand'};
-var $author$project$Chart$Treemap$KGroup = {$: 'KGroup'};
-var $author$project$Chart$Treemap$KLeaf = {$: 'KLeaf'};
-var $author$project$Chart$Treemap$KRoot = {$: 'KRoot'};
+var $author$project$Chart$Treemap$KBand = 2;
+var $author$project$Chart$Treemap$KGroup = 1;
+var $author$project$Chart$Treemap$KLeaf = 3;
+var $author$project$Chart$Treemap$KRoot = 0;
 var $author$project$Chart$Treemap$TNode = F5(
 	function (name, color, value, kind, band) {
-		return {band: band, color: color, kind: kind, name: name, value: value};
+		return {bt: band, gR: color, dB: kind, cZ: name, hY: value};
 	});
 var $gampleman$elm_rosetree$Tree$children = function (_v0) {
 	var c = _v0.b;
 	return c;
 };
 var $author$project$Energy$groupColor = function (g) {
-	if (g.$ === 'Renewable') {
+	if (!g) {
 		return A3($avh4$elm_color$Color$rgb255, 35, 80, 45);
 	} else {
 		return A3($avh4$elm_color$Color$rgb255, 60, 60, 60);
 	}
 };
 var $author$project$Energy$groupName = function (g) {
-	if (g.$ === 'Renewable') {
+	if (!g) {
 		return 'Erneuerbar';
 	} else {
 		return 'Konventionell';
@@ -14752,7 +14664,7 @@ var $gampleman$elm_rosetree$Tree$label = function (_v0) {
 	return v;
 };
 var $gampleman$elm_rosetree$Tree$Continue = function (a) {
-	return {$: 'Continue', a: a};
+	return {$: 0, a: a};
 };
 var $gampleman$elm_rosetree$Tree$breadthFirstFoldHelp = F5(
 	function (f, acc, parents, trees, nextSets) {
@@ -14784,7 +14696,7 @@ var $gampleman$elm_rosetree$Tree$breadthFirstFoldHelp = F5(
 				var ch = _v3.b;
 				var rest = trees.b;
 				var _v4 = A4(f, acc, parents, d, ch);
-				if (_v4.$ === 'Continue') {
+				if (!_v4.$) {
 					var a = _v4.a;
 					if (!ch.b) {
 						var $temp$f = f,
@@ -14852,23 +14764,23 @@ var $gampleman$elm_rosetree$Tree$leaves = function (t) {
 			t));
 };
 var $gampleman$elm_visualization$Hierarchy$PaddingInner = function (a) {
-	return {$: 'PaddingInner', a: a};
+	return {$: 6, a: a};
 };
 var $gampleman$elm_visualization$Hierarchy$paddingInner = $gampleman$elm_visualization$Hierarchy$PaddingInner;
 var $gampleman$elm_visualization$Hierarchy$Batch = function (a) {
-	return {$: 'Batch', a: a};
+	return {$: 12, a: a};
 };
 var $gampleman$elm_visualization$Hierarchy$PaddingBottom = function (a) {
-	return {$: 'PaddingBottom', a: a};
+	return {$: 10, a: a};
 };
 var $gampleman$elm_visualization$Hierarchy$PaddingLeft = function (a) {
-	return {$: 'PaddingLeft', a: a};
+	return {$: 7, a: a};
 };
 var $gampleman$elm_visualization$Hierarchy$PaddingRight = function (a) {
-	return {$: 'PaddingRight', a: a};
+	return {$: 8, a: a};
 };
 var $gampleman$elm_visualization$Hierarchy$PaddingTop = function (a) {
-	return {$: 'PaddingTop', a: a};
+	return {$: 9, a: a};
 };
 var $gampleman$elm_visualization$Hierarchy$paddingOuter = function (f) {
 	return $gampleman$elm_visualization$Hierarchy$Batch(
@@ -14887,14 +14799,14 @@ var $author$project$Chart$Treemap$round1 = function (x) {
 };
 var $gampleman$elm_rosetree$Tree$Tree = F2(
 	function (a, b) {
-		return {$: 'Tree', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $gampleman$elm_rosetree$Tree$singleton = function (v) {
 	return A2($gampleman$elm_rosetree$Tree$Tree, v, _List_Nil);
 };
 var $gampleman$elm_visualization$Hierarchy$Size = F2(
 	function (a, b) {
-		return {$: 'Size', a: a, b: b};
+		return {$: 0, a: a, b: b};
 	});
 var $gampleman$elm_visualization$Hierarchy$size = $gampleman$elm_visualization$Hierarchy$Size;
 var $gampleman$elm_rosetree$Tree$defaultTopDown = F4(
@@ -14905,7 +14817,7 @@ var $gampleman$elm_rosetree$Tree$depthFirstTraversalHelp = F5(
 	function (fLabel, fTree, state, acc, stack) {
 		depthFirstTraversalHelp:
 		while (true) {
-			var _v0 = acc.todo;
+			var _v0 = acc.bW;
 			if (!_v0.b) {
 				var _v1 = A4(
 					fTree,
@@ -14913,11 +14825,11 @@ var $gampleman$elm_rosetree$Tree$depthFirstTraversalHelp = F5(
 					A2(
 						$elm$core$List$map,
 						function ($) {
-							return $.label;
+							return $.Z;
 						},
 						stack),
-					acc.label,
-					$elm$core$List$reverse(acc.done));
+					acc.Z,
+					$elm$core$List$reverse(acc.w));
 				var state_ = _v1.a;
 				var node = _v1.b;
 				if (!stack.b) {
@@ -14931,7 +14843,7 @@ var $gampleman$elm_rosetree$Tree$depthFirstTraversalHelp = F5(
 						$temp$acc = _Utils_update(
 						top,
 						{
-							done: A2($elm$core$List$cons, node, top.done)
+							w: A2($elm$core$List$cons, node, top.w)
 						}),
 						$temp$stack = rest;
 					fLabel = $temp$fLabel;
@@ -14948,11 +14860,11 @@ var $gampleman$elm_rosetree$Tree$depthFirstTraversalHelp = F5(
 				var rest = _v0.b;
 				var ancestors = A2(
 					$elm$core$List$cons,
-					acc.label,
+					acc.Z,
 					A2(
 						$elm$core$List$map,
 						function ($) {
-							return $.label;
+							return $.Z;
 						},
 						stack));
 				var _v4 = A4(fLabel, state, ancestors, l, chs);
@@ -14969,8 +14881,8 @@ var $gampleman$elm_rosetree$Tree$depthFirstTraversalHelp = F5(
 						$temp$acc = _Utils_update(
 						acc,
 						{
-							done: A2($elm$core$List$cons, newTree, acc.done),
-							todo: rest
+							w: A2($elm$core$List$cons, newTree, acc.w),
+							bW: rest
 						}),
 						$temp$stack = stack;
 					fLabel = $temp$fLabel;
@@ -14984,12 +14896,12 @@ var $gampleman$elm_rosetree$Tree$depthFirstTraversalHelp = F5(
 					var $temp$fLabel = fLabel,
 						$temp$fTree = fTree,
 						$temp$state = state0,
-						$temp$acc = {done: _List_Nil, label: label_, todo: cs},
+						$temp$acc = {w: _List_Nil, Z: label_, bW: cs},
 						$temp$stack = A2(
 						$elm$core$List$cons,
 						_Utils_update(
 							acc,
-							{todo: rest}),
+							{bW: rest}),
 						stack);
 					fLabel = $temp$fLabel;
 					fTree = $temp$fTree;
@@ -15014,7 +14926,7 @@ var $gampleman$elm_rosetree$Tree$depthFirstTraversal = F4(
 			convertLabel,
 			convertTree,
 			state_,
-			{done: _List_Nil, label: label_, todo: children_},
+			{w: _List_Nil, Z: label_, bW: children_},
 			_List_Nil);
 	});
 var $elm$core$List$sortWith = _List_sortWith;
@@ -15036,16 +14948,16 @@ var $gampleman$elm_rosetree$Tree$sortWith = F2(
 								compareFn(a),
 								c)));
 				}),
-			_Utils_Tuple0,
+			0,
 			t).b;
 	});
 var $gampleman$elm_visualization$Hierarchy$Treemap$phi = (1 + $elm$core$Basics$sqrt(5)) / 2;
 var $gampleman$elm_visualization$Hierarchy$Treemap$dice = F4(
 	function (_v0, _v1, value, children) {
-		var y1 = _v1.y1;
-		var y0 = _v1.y0;
-		var x1 = _v1.x1;
-		var x0 = _v1.x0;
+		var y1 = _v1.h6;
+		var y0 = _v1.aq;
+		var x1 = _v1.h2;
+		var x0 = _v1.ah;
 		var k = (!value) ? 0 : ((x1 - x0) / value);
 		return $elm$core$List$reverse(
 			A3(
@@ -15059,7 +14971,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$dice = F4(
 							nextX,
 							A2(
 								$elm$core$List$cons,
-								{x0: prevX, x1: nextX, y0: y0, y1: y1},
+								{ah: prevX, h2: nextX, aq: y0, h6: y1},
 								lst));
 					}),
 				_Utils_Tuple2(x0, _List_Nil),
@@ -15067,10 +14979,10 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$dice = F4(
 	});
 var $gampleman$elm_visualization$Hierarchy$Treemap$slice = F4(
 	function (_v0, _v1, value, children) {
-		var y1 = _v1.y1;
-		var y0 = _v1.y0;
-		var x1 = _v1.x1;
-		var x0 = _v1.x0;
+		var y1 = _v1.h6;
+		var y0 = _v1.aq;
+		var x1 = _v1.h2;
+		var x0 = _v1.ah;
 		var k = (!value) ? 0 : ((y1 - y0) / value);
 		return $elm$core$List$reverse(
 			A3(
@@ -15084,7 +14996,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$slice = F4(
 							nextY,
 							A2(
 								$elm$core$List$cons,
-								{x0: x0, x1: x1, y0: prevY, y1: nextY},
+								{ah: x0, h2: x1, aq: prevY, h6: nextY},
 								lst));
 					}),
 				_Utils_Tuple2(y0, _List_Nil),
@@ -15133,10 +15045,10 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$squarifyRatio = function (x) 
 	var ratio = (x > 1) ? x : 1;
 	return F4(
 		function (depth, _v0, value_, children) {
-			var y1 = _v0.y1;
-			var y0 = _v0.y0;
-			var x1 = _v0.x1;
-			var x0 = _v0.x0;
+			var y1 = _v0.h6;
+			var y0 = _v0.aq;
+			var x1 = _v0.h2;
+			var x0 = _v0.ah;
 			var keepAddingWhileRatioImproves = F7(
 				function (sumValue_, minValue_, maxValue_, minRatio, alpha, soFar, nodes) {
 					keepAddingWhileRatioImproves:
@@ -15189,7 +15101,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$squarifyRatio = function (x) 
 								return n > 0;
 							},
 							nodes);
-						if ((_v2.$ === 'Just') && _v2.a.b.b) {
+						if ((!_v2.$) && _v2.a.b.b) {
 							var _v3 = _v2.a;
 							var row = _v3.a;
 							var _v4 = _v3.b;
@@ -15226,7 +15138,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$squarifyRatio = function (x) 
 										A4(
 											$gampleman$elm_visualization$Hierarchy$Treemap$dice,
 											depth,
-											{x0: x0_, x1: x1, y0: y0_, y1: y0_ + ((dy * sumValue) / value)},
+											{ah: x0_, h2: x1, aq: y0_, h6: y0_ + ((dy * sumValue) / value)},
 											sumValue,
 											_Utils_ap(row, toAdd)),
 										soFar);
@@ -15246,7 +15158,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$squarifyRatio = function (x) 
 										A4(
 											$gampleman$elm_visualization$Hierarchy$Treemap$dice,
 											depth,
-											{x0: x0_, x1: x1, y0: y0_, y1: y1},
+											{ah: x0_, h2: x1, aq: y0_, h6: y1},
 											sumValue,
 											_Utils_ap(row, toAdd)),
 										soFar);
@@ -15268,7 +15180,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$squarifyRatio = function (x) 
 										A4(
 											$gampleman$elm_visualization$Hierarchy$Treemap$slice,
 											depth,
-											{x0: x0_, x1: x0_ + ((dx * sumValue) / value), y0: y0_, y1: y1},
+											{ah: x0_, h2: x0_ + ((dx * sumValue) / value), aq: y0_, h6: y1},
 											sumValue,
 											_Utils_ap(row, toAdd)),
 										soFar);
@@ -15288,7 +15200,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$squarifyRatio = function (x) 
 										A4(
 											$gampleman$elm_visualization$Hierarchy$Treemap$slice,
 											depth,
-											{x0: x0_, x1: x1, y0: y0_, y1: y1},
+											{ah: x0_, h2: x1, aq: y0_, h6: y1},
 											sumValue,
 											_Utils_ap(row, toAdd)),
 										soFar);
@@ -15313,14 +15225,14 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$squarify = $gampleman$elm_vis
 var $gampleman$elm_visualization$Hierarchy$squarify = $gampleman$elm_visualization$Hierarchy$Treemap$squarify;
 var $author$project$Chart$Treemap$textOn = function (c) {
 	var _v0 = $avh4$elm_color$Color$toRgba(c);
-	var blue = _v0.blue;
-	var green = _v0.green;
-	var red = _v0.red;
+	var blue = _v0.gJ;
+	var green = _v0.g5;
+	var red = _v0.hz;
 	var lum = ((0.2126 * red) + (0.7152 * green)) + (0.0722 * blue);
 	return (lum > 0.6) ? A3($avh4$elm_color$Color$rgb255, 30, 30, 30) : A3($avh4$elm_color$Color$rgb255, 250, 250, 250);
 };
 var $gampleman$elm_visualization$Hierarchy$Tile = function (a) {
-	return {$: 'Tile', a: a};
+	return {$: 11, a: a};
 };
 var $gampleman$elm_visualization$Hierarchy$tile = $gampleman$elm_visualization$Hierarchy$Tile;
 var $gampleman$elm_rosetree$Tree$defaultBottomUp = F4(
@@ -15351,10 +15263,10 @@ var $gampleman$elm_rosetree$Tree$map = F2(
 			F2(
 				function (_v0, e) {
 					return _Utils_Tuple2(
-						_Utils_Tuple0,
+						0,
 						f(e));
 				}),
-			_Utils_Tuple0,
+			0,
 			t).b;
 	});
 var $gampleman$elm_rosetree$Tree$updateLabel = F2(
@@ -15372,9 +15284,9 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$layout = function (opts) {
 		$gampleman$elm_rosetree$Tree$map(
 			function (node) {
 				return {
-					bbox: {x0: 0, x1: opts.size.a, y0: 0, y1: opts.size.b},
-					node: node,
-					value: opts.value(node)
+					aN: {ah: 0, h2: opts.gi.a, aq: 0, h6: opts.gi.b},
+					O: node,
+					hY: opts.hY(node)
 				};
 			}),
 		A2(
@@ -15383,28 +15295,28 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$layout = function (opts) {
 				$gampleman$elm_rosetree$Tree$depthFirstTraversal,
 				F4(
 					function (p, a, l, c) {
-						var node = l.node;
+						var node = l.O;
 						var depth = $elm$core$List$length(a);
-						var childPadding = opts.paddingInner(node) / 2;
-						var bbox0 = {x0: l.bbox.x0 + p, x1: l.bbox.x1 - p, y0: l.bbox.y0 + p, y1: l.bbox.y1 - p};
-						var bbox1 = (_Utils_cmp(bbox0.x1, bbox0.x0) < 0) ? _Utils_update(
+						var childPadding = opts.d0(node) / 2;
+						var bbox0 = {ah: l.aN.ah + p, h2: l.aN.h2 - p, aq: l.aN.aq + p, h6: l.aN.h6 - p};
+						var bbox1 = (_Utils_cmp(bbox0.h2, bbox0.ah) < 0) ? _Utils_update(
 							bbox0,
-							{x0: (bbox0.x0 + bbox0.x1) / 2, x1: (bbox0.x0 + bbox0.x1) / 2}) : bbox0;
-						var bbox2 = (_Utils_cmp(bbox0.y1, bbox0.y0) < 0) ? _Utils_update(
+							{ah: (bbox0.ah + bbox0.h2) / 2, h2: (bbox0.ah + bbox0.h2) / 2}) : bbox0;
+						var bbox2 = (_Utils_cmp(bbox0.h6, bbox0.aq) < 0) ? _Utils_update(
 							bbox1,
-							{y0: (bbox0.y0 + bbox0.y1) / 2, y1: (bbox0.y0 + bbox0.y1) / 2}) : bbox1;
+							{aq: (bbox0.aq + bbox0.h6) / 2, h6: (bbox0.aq + bbox0.h6) / 2}) : bbox1;
 						var childBBox0 = {
-							x0: (bbox2.x0 + opts.paddingLeft(node)) - childPadding,
-							x1: bbox2.x1 - (opts.paddingRight(node) - childPadding),
-							y0: (bbox2.y0 + opts.paddingTop(node)) - childPadding,
-							y1: bbox2.y1 - (opts.paddingBottom(node) - childPadding)
+							ah: (bbox2.ah + opts.d1(node)) - childPadding,
+							h2: bbox2.h2 - (opts.d3(node) - childPadding),
+							aq: (bbox2.aq + opts.d4(node)) - childPadding,
+							h6: bbox2.h6 - (opts.d$(node) - childPadding)
 						};
-						var childBBox1 = (_Utils_cmp(childBBox0.x1, childBBox0.x0) < 0) ? _Utils_update(
+						var childBBox1 = (_Utils_cmp(childBBox0.h2, childBBox0.ah) < 0) ? _Utils_update(
 							childBBox0,
-							{x0: (childBBox0.x0 + childBBox0.x1) / 2, x1: (childBBox0.x0 + childBBox0.x1) / 2}) : childBBox0;
-						var childBBox2 = (_Utils_cmp(childBBox1.y1, childBBox1.y0) < 0) ? _Utils_update(
+							{ah: (childBBox0.ah + childBBox0.h2) / 2, h2: (childBBox0.ah + childBBox0.h2) / 2}) : childBBox0;
+						var childBBox2 = (_Utils_cmp(childBBox1.h6, childBBox1.aq) < 0) ? _Utils_update(
 							childBBox1,
-							{y0: (childBBox1.y0 + childBBox1.y1) / 2, y1: (childBBox1.y0 + childBBox1.y1) / 2}) : childBBox1;
+							{aq: (childBBox1.aq + childBBox1.h6) / 2, h6: (childBBox1.aq + childBBox1.h6) / 2}) : childBBox1;
 						var children = A3(
 							$elm$core$List$map2,
 							function (bb) {
@@ -15412,19 +15324,19 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$layout = function (opts) {
 									function (cn) {
 										return _Utils_update(
 											cn,
-											{bbox: bb});
+											{aN: bb});
 									});
 							},
 							A4(
-								opts.tile,
+								opts.go,
 								depth,
 								childBBox2,
-								l.value,
+								l.hY,
 								A2(
 									$elm$core$List$map,
 									function (child) {
 										return function ($) {
-											return $.value;
+											return $.hY;
 										}(
 											$gampleman$elm_rosetree$Tree$label(child));
 									},
@@ -15432,7 +15344,7 @@ var $gampleman$elm_visualization$Hierarchy$Treemap$layout = function (opts) {
 							c);
 						return _Utils_Tuple3(
 							childPadding,
-							{height: bbox2.y1 - bbox2.y0, node: l.node, value: l.value, width: bbox2.x1 - bbox2.x0, x: bbox2.x0, y: bbox2.y0},
+							{cM: bbox2.h6 - bbox2.aq, O: l.O, hY: l.hY, eF: bbox2.h2 - bbox2.ah, eJ: bbox2.ah, eK: bbox2.aq},
 							children);
 					}),
 				F4(
@@ -15448,7 +15360,7 @@ var $gampleman$elm_visualization$Hierarchy$processAttributes = function (assigne
 	return $elm$core$List$foldl(
 		F2(
 			function (a, d) {
-				if (a.$ === 'Batch') {
+				if (a.$ === 12) {
 					var l = a.a;
 					return A3($gampleman$elm_visualization$Hierarchy$processAttributes, assigner, d, l);
 				} else {
@@ -15464,62 +15376,62 @@ var $gampleman$elm_visualization$Hierarchy$treemap = F2(
 				F2(
 					function (attr, d) {
 						switch (attr.$) {
-							case 'Size':
+							case 0:
 								var w = attr.a;
 								var h = attr.b;
 								return _Utils_update(
 									d,
 									{
-										size: _Utils_Tuple2(w, h)
+										gi: _Utils_Tuple2(w, h)
 									});
-							case 'PaddingInner':
+							case 6:
 								var p = attr.a;
 								return _Utils_update(
 									d,
-									{paddingInner: p});
-							case 'PaddingLeft':
+									{d0: p});
+							case 7:
 								var p = attr.a;
 								return _Utils_update(
 									d,
-									{paddingLeft: p});
-							case 'PaddingRight':
+									{d1: p});
+							case 8:
 								var p = attr.a;
 								return _Utils_update(
 									d,
-									{paddingRight: p});
-							case 'PaddingTop':
+									{d3: p});
+							case 9:
 								var p = attr.a;
 								return _Utils_update(
 									d,
-									{paddingTop: p});
-							case 'PaddingBottom':
+									{d4: p});
+							case 10:
 								var p = attr.a;
 								return _Utils_update(
 									d,
-									{paddingBottom: p});
-							case 'Padding':
+									{d$: p});
+							case 5:
 								var p = attr.a;
 								return _Utils_update(
 									d,
-									{paddingBottom: p, paddingInner: p, paddingLeft: p, paddingRight: p, paddingTop: p});
-							case 'Tile':
+									{d$: p, d0: p, d1: p, d3: p, d4: p});
+							case 11:
 								var t = attr.a;
 								return _Utils_update(
 									d,
-									{tile: t});
+									{go: t});
 							default:
 								return d;
 						}
 					}),
 				{
-					paddingBottom: $elm$core$Basics$always(0),
-					paddingInner: $elm$core$Basics$always(0),
-					paddingLeft: $elm$core$Basics$always(0),
-					paddingRight: $elm$core$Basics$always(0),
-					paddingTop: $elm$core$Basics$always(0),
-					size: _Utils_Tuple2(1, 1),
-					tile: $gampleman$elm_visualization$Hierarchy$squarify,
-					value: value
+					d$: $elm$core$Basics$always(0),
+					d0: $elm$core$Basics$always(0),
+					d1: $elm$core$Basics$always(0),
+					d3: $elm$core$Basics$always(0),
+					d4: $elm$core$Basics$always(0),
+					gi: _Utils_Tuple2(1, 1),
+					go: $gampleman$elm_visualization$Hierarchy$squarify,
+					hY: value
 				},
 				attrs));
 	});
@@ -15532,17 +15444,17 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 				var v = _v8.b;
 				return v;
 			},
-			cfg.nodes));
+			cfg.c_));
 	var share = function (v) {
 		return (total <= 0) ? 0 : ((v / total) * 100);
 	};
 	var leafSvg = function (item) {
-		var node = item.node;
+		var node = item.O;
 		var labelFill = $elm_community$typed_svg$TypedSvg$Attributes$fill(
 			$elm_community$typed_svg$TypedSvg$Types$Paint(
-				$author$project$Chart$Treemap$textOn(node.color)));
+				$author$project$Chart$Treemap$textOn(node.gR)));
 		var labels = function () {
-			if ((item.width > 54) && (item.height > 28)) {
+			if ((item.eF > 54) && (item.cM > 28)) {
 				return _List_fromArray(
 					[
 						A2(
@@ -15556,7 +15468,7 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 							]),
 						_List_fromArray(
 							[
-								$elm_community$typed_svg$TypedSvg$Core$text(node.name)
+								$elm_community$typed_svg$TypedSvg$Core$text(node.cZ)
 							])),
 						A2(
 						$elm_community$typed_svg$TypedSvg$text_,
@@ -15571,13 +15483,13 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 							[
 								$elm_community$typed_svg$TypedSvg$Core$text(
 								$author$project$Chart$Treemap$round1(
-									share(node.value)) + ' %')
+									share(node.hY)) + ' %')
 							]))
 					]);
 			} else {
-				if ((item.height > 38) && (item.width > 13)) {
-					var cy = item.height / 2;
-					var cx = item.width / 2;
+				if ((item.cM > 38) && (item.eF > 13)) {
+					var cy = item.cM / 2;
+					var cx = item.eF / 2;
 					return _List_fromArray(
 						[
 							A2(
@@ -15587,7 +15499,7 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 									$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(cx),
 									$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(cy),
 									$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(10.5),
-									$elm_community$typed_svg$TypedSvg$Attributes$textAnchor($elm_community$typed_svg$TypedSvg$Types$AnchorMiddle),
+									$elm_community$typed_svg$TypedSvg$Attributes$textAnchor(2),
 									labelFill,
 									$elm_community$typed_svg$TypedSvg$Attributes$transform(
 									_List_fromArray(
@@ -15597,11 +15509,11 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 								]),
 							_List_fromArray(
 								[
-									$elm_community$typed_svg$TypedSvg$Core$text(node.name)
+									$elm_community$typed_svg$TypedSvg$Core$text(node.cZ)
 								]))
 						]);
 				} else {
-					if ((item.width > 30) && (item.height > 13)) {
+					if ((item.eF > 30) && (item.cM > 13)) {
 						return _List_fromArray(
 							[
 								A2(
@@ -15609,13 +15521,13 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 								_List_fromArray(
 									[
 										$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(6),
-										$elm_community$typed_svg$TypedSvg$Attributes$InPx$y((item.height / 2) + 4),
+										$elm_community$typed_svg$TypedSvg$Attributes$InPx$y((item.cM / 2) + 4),
 										$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(10),
 										labelFill
 									]),
 								_List_fromArray(
 									[
-										$elm_community$typed_svg$TypedSvg$Core$text(node.name)
+										$elm_community$typed_svg$TypedSvg$Core$text(node.cZ)
 									]))
 							]);
 					} else {
@@ -15632,12 +15544,12 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 					_List_fromArray(
 						[
 							'leaf',
-							's-' + $author$project$Energy$bandKey(node.band)
+							's-' + $author$project$Energy$bandKey(node.bt)
 						])),
 					$elm_community$typed_svg$TypedSvg$Attributes$transform(
 					_List_fromArray(
 						[
-							A2($elm_community$typed_svg$TypedSvg$Types$Translate, item.x, item.y)
+							A2($elm_community$typed_svg$TypedSvg$Types$Translate, item.eJ, item.eK)
 						]))
 				]),
 			A2(
@@ -15646,21 +15558,21 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 					$elm_community$typed_svg$TypedSvg$rect,
 					_List_fromArray(
 						[
-							$elm_community$typed_svg$TypedSvg$Attributes$InPx$width(item.width),
-							$elm_community$typed_svg$TypedSvg$Attributes$InPx$height(item.height),
+							$elm_community$typed_svg$TypedSvg$Attributes$InPx$width(item.eF),
+							$elm_community$typed_svg$TypedSvg$Attributes$InPx$height(item.cM),
 							$elm_community$typed_svg$TypedSvg$Attributes$fill(
-							$elm_community$typed_svg$TypedSvg$Types$Paint(node.color)),
+							$elm_community$typed_svg$TypedSvg$Types$Paint(node.gR)),
 							$elm_community$typed_svg$TypedSvg$Attributes$class(
 							_List_fromArray(
 								['tile'])),
 							$elm_community$typed_svg$TypedSvg$Attributes$InPx$strokeWidth(1.2),
 							$elm_community$typed_svg$TypedSvg$Events$onMouseOver(
-							cfg.onHover(
-								$elm$core$Maybe$Just(node.band))),
+							cfg.dV(
+								$elm$core$Maybe$Just(node.bt))),
 							$elm_community$typed_svg$TypedSvg$Events$onMouseOut(
-							cfg.onHover($elm$core$Maybe$Nothing)),
+							cfg.dV($elm$core$Maybe$Nothing)),
 							$elm_community$typed_svg$TypedSvg$Events$onClick(
-							cfg.onPin(node.band))
+							cfg.fP(node.bt))
 						]),
 					_List_fromArray(
 						[
@@ -15670,8 +15582,8 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 							_List_fromArray(
 								[
 									$elm_community$typed_svg$TypedSvg$Core$text(
-									node.name + (((!_Utils_eq(node.name, node.band)) ? (' (' + (node.band + ')')) : '') + (' — ' + ($author$project$Chart$Treemap$round1(
-										share(node.value)) + ' %'))))
+									node.cZ + (((!_Utils_eq(node.cZ, node.bt)) ? (' (' + (node.bt + ')')) : '') + (' — ' + ($author$project$Chart$Treemap$round1(
+										share(node.hY)) + ' %'))))
 								]))
 						])),
 				labels));
@@ -15688,7 +15600,7 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 						function (t) {
 							return _Utils_cmp(
 								($elm$core$String$length(t) * fontSize) * 0.55,
-								item.width - 14) < 1;
+								item.eF - 14) < 1;
 						},
 						variants)));
 			return A2(
@@ -15705,9 +15617,9 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 						$elm_community$typed_svg$TypedSvg$rect,
 						_List_fromArray(
 							[
-								$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(item.x),
-								$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(item.y),
-								$elm_community$typed_svg$TypedSvg$Attributes$InPx$width(item.width),
+								$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(item.eJ),
+								$elm_community$typed_svg$TypedSvg$Attributes$InPx$y(item.eK),
+								$elm_community$typed_svg$TypedSvg$Attributes$InPx$width(item.eF),
 								$elm_community$typed_svg$TypedSvg$Attributes$InPx$height(h),
 								$elm_community$typed_svg$TypedSvg$Attributes$fill(
 								$elm_community$typed_svg$TypedSvg$Types$Paint(barColor))
@@ -15717,8 +15629,8 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 						$elm_community$typed_svg$TypedSvg$text_,
 						_List_fromArray(
 							[
-								$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(item.x + 8),
-								$elm_community$typed_svg$TypedSvg$Attributes$InPx$y((item.y + h) - 7),
+								$elm_community$typed_svg$TypedSvg$Attributes$InPx$x(item.eJ + 8),
+								$elm_community$typed_svg$TypedSvg$Attributes$InPx$y((item.eK + h) - 7),
 								$elm_community$typed_svg$TypedSvg$Attributes$InPx$fontSize(fontSize),
 								$elm_community$typed_svg$TypedSvg$Attributes$fill(
 								$elm_community$typed_svg$TypedSvg$Types$Paint($avh4$elm_color$Color$white))
@@ -15735,18 +15647,18 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 		var subs = _v7.c;
 		if (!subs.b) {
 			return $gampleman$elm_rosetree$Tree$singleton(
-				A5($author$project$Chart$Treemap$TNode, b.name, b.color, v, $author$project$Chart$Treemap$KLeaf, b.name));
+				A5($author$project$Chart$Treemap$TNode, b.cZ, b.gR, v, 3, b.cZ));
 		} else {
 			return A2(
 				$gampleman$elm_rosetree$Tree$tree,
-				A5($author$project$Chart$Treemap$TNode, b.name, b.color, v, $author$project$Chart$Treemap$KBand, b.name),
+				A5($author$project$Chart$Treemap$TNode, b.cZ, b.gR, v, 2, b.cZ),
 				A2(
 					$elm$core$List$map,
 					function (_v6) {
 						var s = _v6.a;
 						var sv = _v6.b;
 						return $gampleman$elm_rosetree$Tree$singleton(
-							A5($author$project$Chart$Treemap$TNode, s.name, s.color, sv, $author$project$Chart$Treemap$KLeaf, b.name));
+							A5($author$project$Chart$Treemap$TNode, s.cZ, s.gR, sv, 3, b.cZ));
 					},
 					subs));
 		}
@@ -15756,9 +15668,9 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 			$elm$core$List$filter,
 			function (_v3) {
 				var b = _v3.a;
-				return _Utils_eq(b.group, grp);
+				return _Utils_eq(b.g6, grp);
 			},
-			cfg.nodes);
+			cfg.c_);
 		if (!_v2.b) {
 			return $elm$core$Maybe$Nothing;
 		} else {
@@ -15778,7 +15690,7 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 									return v;
 								},
 								bs)),
-						$author$project$Chart$Treemap$KGroup,
+						1,
 						$author$project$Energy$groupName(grp)),
 					A2($elm$core$List$map, bandTree, bs)));
 		}
@@ -15790,13 +15702,13 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 			'Erzeugung',
 			A3($avh4$elm_color$Color$rgb255, 120, 120, 120),
 			total,
-			$author$project$Chart$Treemap$KRoot,
+			0,
 			''),
 		A2(
 			$elm$core$List$filterMap,
 			groupTree,
 			_List_fromArray(
-				[$author$project$Energy$Renewable, $author$project$Energy$Conventional])));
+				[0, 1])));
 	var layouted = A3(
 		$gampleman$elm_visualization$Hierarchy$treemap,
 		_List_fromArray(
@@ -15808,22 +15720,22 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 				$elm$core$Basics$always(2)),
 				$gampleman$elm_visualization$Hierarchy$paddingTop(
 				function (n) {
-					var _v1 = n.kind;
-					switch (_v1.$) {
-						case 'KRoot':
+					var _v1 = n.dB;
+					switch (_v1) {
+						case 0:
 							return 4;
-						case 'KGroup':
+						case 1:
 							return 22;
-						case 'KBand':
+						case 2:
 							return 17;
 						default:
 							return 0;
 					}
 				}),
-				A2($gampleman$elm_visualization$Hierarchy$size, cfg.width, cfg.height)
+				A2($gampleman$elm_visualization$Hierarchy$size, cfg.eF, cfg.cM)
 			]),
 		function ($) {
-			return $.value;
+			return $.hY;
 		},
 		A2(
 			$gampleman$elm_rosetree$Tree$sortWith,
@@ -15831,8 +15743,8 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 				function (_v0, a, b) {
 					return A2(
 						$elm$core$Basics$compare,
-						$gampleman$elm_rosetree$Tree$label(b).value,
-						$gampleman$elm_rosetree$Tree$label(a).value);
+						$gampleman$elm_rosetree$Tree$label(b).hY,
+						$gampleman$elm_rosetree$Tree$label(a).hY);
 				}),
 			root));
 	var groupHeaders = A2(
@@ -15841,13 +15753,13 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 			return A5(
 				headerBar,
 				22,
-				it.node.color,
+				it.O.gR,
 				'grp',
 				_List_fromArray(
 					[
-						it.node.name + ('  ·  ' + ($author$project$Chart$Treemap$round1(
-						share(it.node.value)) + ' %')),
-						it.node.name
+						it.O.cZ + ('  ·  ' + ($author$project$Chart$Treemap$round1(
+						share(it.O.hY)) + ' %')),
+						it.O.cZ
 					]),
 				it);
 		},
@@ -15864,34 +15776,32 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 			return A5(
 				headerBar,
 				17,
-				it.node.color,
-				$author$project$Energy$bandKey(it.node.name),
+				it.O.gR,
+				$author$project$Energy$bandKey(it.O.cZ),
 				_List_fromArray(
 					[
-						it.node.name + ('  ·  ' + ($author$project$Chart$Treemap$round1(
-						share(it.node.value)) + (' %  (' + ($elm$core$String$fromInt(nSubs) + ((nSubs === 1) ? ' Quelle)' : ' Quellen)'))))),
-						it.node.name + ('  ·  ' + ($author$project$Chart$Treemap$round1(
-						share(it.node.value)) + ' %')),
-						it.node.name
+						it.O.cZ + ('  ·  ' + ($author$project$Chart$Treemap$round1(
+						share(it.O.hY)) + (' %  (' + ($elm$core$String$fromInt(nSubs) + ((nSubs === 1) ? ' Quelle)' : ' Quellen)'))))),
+						it.O.cZ + ('  ·  ' + ($author$project$Chart$Treemap$round1(
+						share(it.O.hY)) + ' %')),
+						it.O.cZ
 					]),
 				it);
 		},
 		A2(
 			$elm$core$List$filter,
 			function (t) {
-				return _Utils_eq(
-					$gampleman$elm_rosetree$Tree$label(t).node.kind,
-					$author$project$Chart$Treemap$KBand);
+				return $gampleman$elm_rosetree$Tree$label(t).O.dB === 2;
 			},
 			A2(
 				$elm$core$List$concatMap,
 				$gampleman$elm_rosetree$Tree$children,
 				$gampleman$elm_rosetree$Tree$children(layouted))));
-	return $elm$core$List$isEmpty(cfg.nodes) ? A2(
+	return $elm$core$List$isEmpty(cfg.c_) ? A2(
 		$elm_community$typed_svg$TypedSvg$svg,
 		_List_fromArray(
 			[
-				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.width, cfg.height),
+				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.eF, cfg.cM),
 				$elm_community$typed_svg$TypedSvg$Attributes$width(
 				$elm_community$typed_svg$TypedSvg$Types$Percent(100))
 			]),
@@ -15913,7 +15823,7 @@ var $author$project$Chart$Treemap$view = function (cfg) {
 		$elm_community$typed_svg$TypedSvg$svg,
 		_List_fromArray(
 			[
-				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.width, cfg.height),
+				A4($elm_community$typed_svg$TypedSvg$Attributes$viewBox, 0, 0, cfg.eF, cfg.cM),
 				$elm_community$typed_svg$TypedSvg$Attributes$width(
 				$elm_community$typed_svg$TypedSvg$Types$Percent(100))
 			]),
@@ -15930,13 +15840,13 @@ var $author$project$Main$treeCard = F4(
 	function (tz, focusedDay, windowDays, rows) {
 		var sortedRows = A2($author$project$Main$windowRows, windowDays, rows);
 		var treemapRows = function () {
-			if (focusedDay.$ === 'Just') {
+			if (!focusedDay.$) {
 				var d = focusedDay.a;
 				return A2(
 					$elm$core$List$filter,
 					function (r) {
 						return _Utils_eq(
-							A2($author$project$Energy$localDayOf, tz, r.unixSeconds),
+							A2($author$project$Energy$localDayOf, tz, r.gw),
 							d);
 					},
 					sortedRows);
@@ -15968,16 +15878,16 @@ var $author$project$Main$treeCard = F4(
 			$author$project$Main$focusNoteOf(focusedDay),
 			$author$project$Chart$Treemap$view(
 				{
-					height: 480,
-					nodes: $author$project$Energy$sumHierarchy(treemapRows),
-					onHover: $author$project$Main$HoverSource,
-					onPin: $author$project$Main$PinSource,
-					width: 660
+					cM: 480,
+					c_: $author$project$Energy$sumHierarchy(treemapRows),
+					dV: $author$project$Main$HoverSource,
+					fP: $author$project$Main$PinSource,
+					eF: 660
 				}));
 	});
 var $author$project$Main$chartsView = F2(
 	function (model, rows) {
-		var metric = A2($elm$core$Maybe$withDefault, model.metric, model.previewMetric);
+		var metric = A2($elm$core$Maybe$withDefault, model.aS, model.bM);
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -15993,7 +15903,7 @@ var $author$project$Main$chartsView = F2(
 				]),
 			_List_fromArray(
 				[
-					A7($elm$html$Html$Lazy$lazy6, $author$project$Main$areaCard, model.tz, model.focusedDay, model.windowDays, model.areaSpan, model.areaOffset, rows),
+					A7($elm$html$Html$Lazy$lazy6, $author$project$Main$areaCard, model.c9, model.e9, model.m, model.aL, model.as, rows),
 					A2(
 					$elm$html$Html$div,
 					_List_fromArray(
@@ -16002,8 +15912,8 @@ var $author$project$Main$chartsView = F2(
 						]),
 					_List_fromArray(
 						[
-							A9($elm$html$Html$Lazy$lazy8, $author$project$Main$heatCard, model.tz, metric, model.focusedDay, model.windowDays, model.solar, model.heatSpan, model.heatOffset, rows),
-							A5($elm$html$Html$Lazy$lazy4, $author$project$Main$treeCard, model.tz, model.focusedDay, model.windowDays, rows)
+							A9($elm$html$Html$Lazy$lazy8, $author$project$Main$heatCard, model.c9, metric, model.e9, model.m, model.en, model.bB, model.aP, rows),
+							A5($elm$html$Html$Lazy$lazy4, $author$project$Main$treeCard, model.c9, model.e9, model.m, rows)
 						]))
 				]));
 	});
@@ -16024,9 +15934,9 @@ var $author$project$Main$countryLabel = function (code) {
 					$author$project$Main$countries))));
 };
 var $author$project$Main$emptyHint = function (model) {
-	var _v0 = model.status;
-	if (_v0.$ === 'Ready') {
-		return 'Keine Daten für ' + ($author$project$Main$countryLabel(model.country) + ' im gewählten Zeitfenster – in dieser Entwicklungs-DB enthält das Land evtl. nur Platzhalter. Bitte ein anderes Land wählen.');
+	var _v0 = model.o;
+	if (_v0.$ === 4) {
+		return 'Keine Daten für ' + ($author$project$Main$countryLabel(model.U) + ' im gewählten Zeitfenster – in dieser Entwicklungs-DB enthält das Land evtl. nur Platzhalter. Bitte ein anderes Land wählen.');
 	} else {
 		return 'Noch keine Daten geladen – bitte oben rechts auf „Verbinden“ klicken.';
 	}
@@ -16191,13 +16101,13 @@ var $author$project$Energy$bandColorByName = function (name) {
 		A2(
 			$elm$core$Maybe$map,
 			function ($) {
-				return $.color;
+				return $.gR;
 			},
 			$elm$core$List$head(
 				A2(
 					$elm$core$List$filter,
 					function (b) {
-						return _Utils_eq(b.name, name);
+						return _Utils_eq(b.cZ, name);
 					},
 					$author$project$Energy$bands))));
 };
@@ -16226,14 +16136,14 @@ var $author$project$Energy$bandInfo = function (name) {
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $author$project$Main$tooltipView = function (model) {
-	var _v0 = _Utils_Tuple2(model.hovered, model.infoTip);
-	if (_v0.a.$ === 'Nothing') {
-		if (_v0.b.$ === 'Just') {
+	var _v0 = _Utils_Tuple2(model.aQ, model.bC);
+	if (_v0.a.$ === 1) {
+		if (!_v0.b.$) {
 			var _v1 = _v0.a;
 			var _v2 = _v0.b.a;
 			var heading = _v2.a;
 			var body = _v2.b;
-			var _v3 = model.mouse;
+			var _v3 = model.ci;
 			var x = _v3.a;
 			var y = _v3.b;
 			return A2(
@@ -16289,7 +16199,7 @@ var $author$project$Main$tooltipView = function (model) {
 		}
 	} else {
 		var name = _v0.a.a;
-		var _v4 = model.mouse;
+		var _v4 = model.ci;
 		var x = _v4.a;
 		var y = _v4.b;
 		return A2(
@@ -16350,58 +16260,58 @@ var $author$project$Main$tooltipView = function (model) {
 					_List_fromArray(
 						[
 							$elm$html$Html$text(
-							A2($elm$core$List$member, name, model.pinned) ? 'Klick: Fixierung lösen' : 'Klick: fixieren')
+							A2($elm$core$List$member, name, model.ae) ? 'Klick: Fixierung lösen' : 'Klick: fixieren')
 						]))
 				]));
 	}
 };
-var $author$project$Main$ResetFilters = {$: 'ResetFilters'};
-var $author$project$Main$ToggleNavPin = {$: 'ToggleNavPin'};
-var $author$project$Energy$LoadMetric = {$: 'LoadMetric'};
-var $author$project$Energy$RenewableShare = {$: 'RenewableShare'};
+var $author$project$Main$ResetFilters = {$: 20};
+var $author$project$Main$ToggleNavPin = {$: 14};
+var $author$project$Energy$LoadMetric = 2;
+var $author$project$Energy$RenewableShare = 1;
 var $author$project$Main$SelectCountry = function (a) {
-	return {$: 'SelectCountry', a: a};
+	return {$: 6, a: a};
 };
 var $author$project$Main$SelectMetric = function (a) {
-	return {$: 'SelectMetric', a: a};
+	return {$: 8, a: a};
 };
 var $author$project$Main$SetCalendar = function (a) {
-	return {$: 'SetCalendar', a: a};
+	return {$: 22, a: a};
 };
-var $author$project$Main$ToggleCalendar = {$: 'ToggleCalendar'};
+var $author$project$Main$ToggleCalendar = {$: 21};
 var $author$project$Main$CalShift = function (a) {
-	return {$: 'CalShift', a: a};
+	return {$: 23, a: a};
 };
 var $author$project$Main$PickDay = function (a) {
-	return {$: 'PickDay', a: a};
+	return {$: 24, a: a};
 };
 var $author$project$Main$monthName = function (d) {
 	var _v0 = A2(
 		$elm$time$Time$toMonth,
 		$elm$time$Time$utc,
 		$author$project$Main$dayPosix(d));
-	switch (_v0.$) {
-		case 'Jan':
+	switch (_v0) {
+		case 0:
 			return 'Januar';
-		case 'Feb':
+		case 1:
 			return 'Februar';
-		case 'Mar':
+		case 2:
 			return 'März';
-		case 'Apr':
+		case 3:
 			return 'April';
-		case 'May':
+		case 4:
 			return 'Mai';
-		case 'Jun':
+		case 5:
 			return 'Juni';
-		case 'Jul':
+		case 6:
 			return 'Juli';
-		case 'Aug':
+		case 7:
 			return 'August';
-		case 'Sep':
+		case 8:
 			return 'September';
-		case 'Oct':
+		case 9:
 			return 'Oktober';
-		case 'Nov':
+		case 10:
 			return 'November';
 		default:
 			return 'Dezember';
@@ -16433,25 +16343,25 @@ var $author$project$Main$weekdayCol = function (d) {
 		$elm$time$Time$toWeekday,
 		$elm$time$Time$utc,
 		$author$project$Main$dayPosix(d));
-	switch (_v0.$) {
-		case 'Mon':
+	switch (_v0) {
+		case 0:
 			return 0;
-		case 'Tue':
+		case 1:
 			return 1;
-		case 'Wed':
+		case 2:
 			return 2;
-		case 'Thu':
+		case 3:
 			return 3;
-		case 'Fri':
+		case 4:
 			return 4;
-		case 'Sat':
+		case 5:
 			return 5;
 		default:
 			return 6;
 	}
 };
 var $author$project$Main$SelectWindow = function (a) {
-	return {$: 'SelectWindow', a: a};
+	return {$: 7, a: a};
 };
 var $author$project$Main$windowOptions = _List_fromArray(
 	[7, 14, 30, 90, 180, 365]);
@@ -16531,24 +16441,24 @@ var $author$project$Main$windowSlider = function (current) {
 var $author$project$Main$calendarPanel = function (model) {
 	var rows = A2(
 		$author$project$Main$windowRows,
-		model.windowDays,
+		model.m,
 		$author$project$Main$activeRows(model));
 	var stamps = A2(
 		$elm$core$List$map,
 		function ($) {
-			return $.unixSeconds;
+			return $.gw;
 		},
 		rows);
 	var dmin = A2(
 		$author$project$Energy$localDayOf,
-		model.tz,
+		model.c9,
 		A2(
 			$elm$core$Maybe$withDefault,
 			0,
 			$elm$core$List$minimum(stamps)));
 	var dmax = A2(
 		$author$project$Energy$localDayOf,
-		model.tz,
+		model.c9,
 		A2(
 			$elm$core$Maybe$withDefault,
 			0,
@@ -16567,7 +16477,7 @@ var $author$project$Main$calendarPanel = function (model) {
 							_Utils_Tuple2(
 							'is-sel',
 							_Utils_eq(
-								model.focusedDay,
+								model.e9,
 								$elm$core$Maybe$Just(d)))
 						])),
 					$elm$html$Html$Attributes$disabled(!inRange),
@@ -16581,7 +16491,7 @@ var $author$project$Main$calendarPanel = function (model) {
 						$author$project$Main$dayOfMonth(d)))
 				]));
 	};
-	var anchor = A2($elm$core$Maybe$withDefault, dmax, model.calAnchor);
+	var anchor = A2($elm$core$Maybe$withDefault, dmax, model.bu);
 	var first = $author$project$Main$firstOfMonth(anchor);
 	var lead = A2(
 		$elm$core$List$repeat,
@@ -16632,7 +16542,7 @@ var $author$project$Main$calendarPanel = function (model) {
 							[
 								$elm$html$Html$text('Geladener Zeitraum')
 							])),
-						$author$project$Main$windowSlider(model.windowDays)
+						$author$project$Main$windowSlider(model.m)
 					])),
 				A2(
 				$elm$html$Html$div,
@@ -16756,7 +16666,7 @@ var $author$project$Main$countBadge = function (model) {
 		A2(
 			$elm$core$List$filter,
 			function (r) {
-				return ($author$project$Energy$totalGeneration(r) > 0) || (r.load > 0);
+				return ($author$project$Energy$totalGeneration(r) > 0) || (r.hg > 0);
 			},
 			A2(
 				$elm$core$Maybe$withDefault,
@@ -16764,17 +16674,17 @@ var $author$project$Main$countBadge = function (model) {
 				A2(
 					$elm$core$Dict$get,
 					$author$project$Main$activeCountry(model),
-					model.rowsByCountry))));
-	var _v0 = model.status;
+					model.a_))));
+	var _v0 = model.o;
 	switch (_v0.$) {
-		case 'Ready':
+		case 4:
 			return (count > 0) ? A2(
 				$elm$html$Html$span,
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('count-badge'),
 						$elm$html$Html$Attributes$title(
-						$elm$core$String$fromInt(count) + (' Messpunkte · ' + ($elm$core$String$fromInt(model.windowDays) + ' Tage geladen')))
+						$elm$core$String$fromInt(count) + (' Messpunkte · ' + ($elm$core$String$fromInt(model.m) + ' Tage geladen')))
 					]),
 				_List_fromArray(
 					[
@@ -16788,7 +16698,7 @@ var $author$project$Main$countBadge = function (model) {
 						$elm$html$Html$text(
 						$elm$core$String$fromInt(count) + ' Pkt')
 					])) : $elm$html$Html$text('');
-		case 'Failed':
+		case 5:
 			var e = _v0.a;
 			return A2(
 				$elm$html$Html$span,
@@ -16949,7 +16859,7 @@ var $author$project$Main$controlCluster = function (model) {
 							A3(
 							$author$project$Main$dropdown,
 							_List_Nil,
-							$author$project$Main$countryFlag(model.country) + ('  ' + $author$project$Main$countryLabel(model.country)),
+							$author$project$Main$countryFlag(model.U) + ('  ' + $author$project$Main$countryLabel(model.U)),
 							A2(
 								$elm$core$List$map,
 								function (_v0) {
@@ -16957,7 +16867,7 @@ var $author$project$Main$controlCluster = function (model) {
 									var name = _v0.b;
 									return A4(
 										$author$project$Main$dropdownItem,
-										_Utils_eq(code, model.country),
+										_Utils_eq(code, model.U),
 										_List_Nil,
 										$author$project$Main$SelectCountry(code),
 										$author$project$Main$countryFlag(code) + ('  ' + name));
@@ -17001,7 +16911,7 @@ var $author$project$Main$controlCluster = function (model) {
 									_List_fromArray(
 										[
 											_Utils_Tuple2('cal-trigger', true),
-											_Utils_Tuple2('is-open', model.calOpen)
+											_Utils_Tuple2('is-open', model.au)
 										])),
 									$elm$html$Html$Events$onClick($author$project$Main$ToggleCalendar)
 								]),
@@ -17016,7 +16926,7 @@ var $author$project$Main$controlCluster = function (model) {
 									_List_fromArray(
 										[
 											$elm$html$Html$text(
-											$author$project$Main$windowLabel(model.windowDays))
+											$author$project$Main$windowLabel(model.m))
 										])),
 									A2(
 									$elm$html$Html$span,
@@ -17026,7 +16936,7 @@ var $author$project$Main$controlCluster = function (model) {
 										]),
 									_List_Nil)
 								])),
-							model.calOpen ? $author$project$Main$calendarPanel(model) : $elm$html$Html$text('')
+							model.au ? $author$project$Main$calendarPanel(model) : $elm$html$Html$text('')
 						]))),
 				A3(
 				$author$project$Main$control,
@@ -17035,19 +16945,19 @@ var $author$project$Main$controlCluster = function (model) {
 				A3(
 					$author$project$Main$dropdown,
 					_List_Nil,
-					$author$project$Energy$metricLabel(model.metric),
+					$author$project$Energy$metricLabel(model.aS),
 					A2(
 						$elm$core$List$map,
 						function (m) {
 							return A4(
 								$author$project$Main$dropdownItem,
-								_Utils_eq(m, model.metric),
+								_Utils_eq(m, model.aS),
 								_List_Nil,
 								$author$project$Main$SelectMetric(m),
 								$author$project$Energy$metricLabel(m));
 						},
 						_List_fromArray(
-							[$author$project$Energy$SolarShare, $author$project$Energy$RenewableShare, $author$project$Energy$LoadMetric, $author$project$Energy$Irradiance]))))
+							[0, 1, 2, 3]))))
 			]));
 };
 var $author$project$Main$iconToggle = F4(
@@ -17090,8 +17000,8 @@ var $elm$html$Html$Events$onMouseOver = function (msg) {
 };
 var $author$project$Main$legendChip = F3(
 	function (hl, pinned, band) {
-		var isPinned = A2($elm$core$List$member, band.name, pinned);
-		var dim = (!$elm$core$List$isEmpty(hl)) && (!A2($elm$core$List$member, band.name, hl));
+		var isPinned = A2($elm$core$List$member, band.cZ, pinned);
+		var dim = (!$elm$core$List$isEmpty(hl)) && (!A2($elm$core$List$member, band.cZ, hl));
 		return A2(
 			$elm$html$Html$span,
 			_List_fromArray(
@@ -17105,11 +17015,11 @@ var $author$project$Main$legendChip = F3(
 						])),
 					$elm$html$Html$Events$onMouseOver(
 					$author$project$Main$HoverSource(
-						$elm$core$Maybe$Just(band.name))),
+						$elm$core$Maybe$Just(band.cZ))),
 					$elm$html$Html$Events$onMouseOut(
 					$author$project$Main$HoverSource($elm$core$Maybe$Nothing)),
 					$elm$html$Html$Events$onClick(
-					$author$project$Main$PinSource(band.name))
+					$author$project$Main$PinSource(band.cZ))
 				]),
 			_List_fromArray(
 				[
@@ -17121,14 +17031,14 @@ var $author$project$Main$legendChip = F3(
 							A2(
 							$elm$html$Html$Attributes$style,
 							'background',
-							$avh4$elm_color$Color$toCssString(band.color))
+							$avh4$elm_color$Color$toCssString(band.gR))
 						]),
 					_List_Nil),
-					$elm$html$Html$text(band.name)
+					$elm$html$Html$text(band.cZ)
 				]));
 	});
 var $author$project$Main$legend = function (model) {
-	var hl = A2($author$project$Main$activeOf, model.pinned, model.hovered);
+	var hl = A2($author$project$Main$activeOf, model.ae, model.aQ);
 	return A2(
 		$elm$html$Html$div,
 		_List_fromArray(
@@ -17163,7 +17073,7 @@ var $author$project$Main$legend = function (model) {
 					]),
 				A2(
 					$elm$core$List$map,
-					A2($author$project$Main$legendChip, hl, model.pinned),
+					A2($author$project$Main$legendChip, hl, model.ae),
 					$author$project$Energy$bands))
 			]));
 };
@@ -17177,8 +17087,8 @@ var $author$project$Main$navClass = function (model) {
 			_List_fromArray(
 				[
 					$elm$core$Maybe$Just('topnav'),
-					(model.navHidden && (!model.navPinned)) ? $elm$core$Maybe$Just('is-hidden') : $elm$core$Maybe$Nothing,
-					model.navPinned ? $elm$core$Maybe$Just('is-pinned') : $elm$core$Maybe$Nothing
+					(model.cj && (!model.bf)) ? $elm$core$Maybe$Just('is-hidden') : $elm$core$Maybe$Nothing,
+					model.bf ? $elm$core$Maybe$Just('is-pinned') : $elm$core$Maybe$Nothing
 				])));
 };
 var $elm$virtual_dom$VirtualDom$node = function (tag) {
@@ -17186,38 +17096,38 @@ var $elm$virtual_dom$VirtualDom$node = function (tag) {
 		_VirtualDom_noScript(tag));
 };
 var $elm$html$Html$node = $elm$virtual_dom$VirtualDom$node;
-var $author$project$Main$Connect = {$: 'Connect'};
-var $author$project$Main$Reload = {$: 'Reload'};
+var $author$project$Main$Connect = {$: 1};
+var $author$project$Main$Reload = {$: 30};
 var $author$project$Main$oneDecimal = function (x) {
 	return $elm$core$String$fromFloat(
 		$elm$core$Basics$round(x * 10) / 10);
 };
 var $author$project$Main$primaryButton = function (model) {
 	var fillPct = function () {
-		var _v2 = model.status;
+		var _v2 = model.o;
 		switch (_v2.$) {
-			case 'Connecting':
+			case 1:
 				return '30%';
-			case 'LoadingBounds':
+			case 2:
 				return '62%';
-			case 'LoadingRows':
+			case 3:
 				return '88%';
 			default:
 				return '100%';
 		}
 	}();
-	var busy = $author$project$Main$isBusy(model.status);
-	var action = _Utils_eq(model.latest, $elm$core$Maybe$Nothing) ? $author$project$Main$Connect : $author$project$Main$Reload;
+	var busy = $author$project$Main$isBusy(model.o);
+	var action = _Utils_eq(model.bd, $elm$core$Maybe$Nothing) ? $author$project$Main$Connect : $author$project$Main$Reload;
 	var _v0 = function () {
-		var _v1 = model.status;
+		var _v1 = model.o;
 		switch (_v1.$) {
-			case 'Connecting':
+			case 1:
 				return _Utils_Tuple2('Token', 'ico-refresh');
-			case 'LoadingBounds':
+			case 2:
 				return _Utils_Tuple2('Struktur', 'ico-refresh');
-			case 'LoadingRows':
+			case 3:
 				return _Utils_Tuple2('Lädt', 'ico-refresh');
-			case 'Ready':
+			case 4:
 				return _Utils_Tuple2('Aktualisieren', 'ico-refresh');
 			default:
 				return _Utils_Tuple2('Verbinden', 'ico-link');
@@ -17284,7 +17194,7 @@ var $author$project$Main$primaryButton = function (model) {
 						_List_fromArray(
 							[
 								$elm$html$Html$text(
-								$author$project$Main$oneDecimal(model.elapsed) + 's')
+								$author$project$Main$oneDecimal(model.az) + 's')
 							])) : $elm$html$Html$text('')
 					]))
 			]));
@@ -17360,7 +17270,7 @@ var $author$project$Main$topNav = function (model) {
 													]),
 												_List_fromArray(
 													[
-														A4($author$project$Main$iconToggle, model.navPinned, $author$project$Main$ToggleNavPin, 'ico-pin', 'Leiste dauerhaft einblenden')
+														A4($author$project$Main$iconToggle, model.bf, $author$project$Main$ToggleNavPin, 'ico-pin', 'Leiste dauerhaft einblenden')
 													])),
 												A2(
 												$elm$html$Html$button,
@@ -17391,19 +17301,19 @@ var $author$project$Main$topNav = function (model) {
 					]))
 			]));
 };
-var $author$project$Main$NoOp = {$: 'NoOp'};
+var $author$project$Main$NoOp = {$: 28};
 var $author$project$Main$treemapOverlay = F2(
 	function (model, rows) {
-		var sortedRows = A2($author$project$Main$windowRows, model.windowDays, rows);
+		var sortedRows = A2($author$project$Main$windowRows, model.m, rows);
 		var treemapRows = function () {
-			var _v0 = model.focusedDay;
-			if (_v0.$ === 'Just') {
+			var _v0 = model.e9;
+			if (!_v0.$) {
 				var d = _v0.a;
 				return A2(
 					$elm$core$List$filter,
 					function (r) {
 						return _Utils_eq(
-							A2($author$project$Energy$localDayOf, model.tz, r.unixSeconds),
+							A2($author$project$Energy$localDayOf, model.c9, r.gw),
 							d);
 					},
 					sortedRows);
@@ -17480,11 +17390,11 @@ var $author$project$Main$treemapOverlay = F2(
 								[
 									$author$project$Chart$Treemap$view(
 									{
-										height: 860,
-										nodes: $author$project$Energy$sumHierarchy(treemapRows),
-										onHover: $author$project$Main$HoverSource,
-										onPin: $author$project$Main$PinSource,
-										width: 1600
+										cM: 860,
+										c_: $author$project$Energy$sumHierarchy(treemapRows),
+										dV: $author$project$Main$HoverSource,
+										fP: $author$project$Main$PinSource,
+										eF: 1600
 									})
 								]))
 						]))
@@ -17495,7 +17405,7 @@ var $author$project$Main$view = function (model) {
 	var visibleRows = A2(
 		$elm$core$List$filter,
 		function (r) {
-			return ($author$project$Energy$totalGeneration(r) > 0) || (r.load > 0);
+			return ($author$project$Energy$totalGeneration(r) > 0) || (r.hg > 0);
 		},
 		rows);
 	return A2(
@@ -17520,11 +17430,11 @@ var $author$project$Main$view = function (model) {
 						$elm$core$List$isEmpty(visibleRows) ? $author$project$Main$emptyView(model) : A2($author$project$Main$chartsView, model, rows)
 					])),
 				$author$project$Main$tooltipView(model),
-				model.treemapFull ? A2($author$project$Main$treemapOverlay, model, rows) : $elm$html$Html$text('')
+				model.bY ? A2($author$project$Main$treemapOverlay, model, rows) : $elm$html$Html$text('')
 			]));
 };
 var $author$project$Main$main = $elm$browser$Browser$element(
-	{init: $author$project$Main$init, subscriptions: $author$project$Main$subscriptions, update: $author$project$Main$update, view: $author$project$Main$view});
+	{hb: $author$project$Main$init, hN: $author$project$Main$subscriptions, hX: $author$project$Main$update, h$: $author$project$Main$view});
 _Platform_export({'Main':{'init':$author$project$Main$main(
 	A2(
 		$elm$json$Json$Decode$andThen,
@@ -17533,7 +17443,7 @@ _Platform_export({'Main':{'init':$author$project$Main$main(
 				$elm$json$Json$Decode$andThen,
 				function (now) {
 					return $elm$json$Json$Decode$succeed(
-						{now: now, tz: tz});
+						{dT: now, c9: tz});
 				},
 				A2($elm$json$Json$Decode$field, 'now', $elm$json$Json$Decode$float));
 		},
